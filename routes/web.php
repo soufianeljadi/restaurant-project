@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RestaurantController;
+use GuzzleHttp\Middleware;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,24 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+/*Restaurant route */
+
+Route::prefix('restaurant')->group(function () {
+
+    Route::get('/login', [RestaurantController::class, 'Index'])->name('login_form');
+    Route::post('/login/owner', [RestaurantController::class, 'Login'])->name('restaurant.login');
+
+    Route::get('/dashboard', [RestaurantController::class, 'Dashboard'])->name('restaurant.dashboard')
+        ->Middleware('Restaurant');
+
+    Route::get('/logout', [RestaurantController::class, 'logout'])->name('restaurant.logout')
+        ->Middleware('Restaurant');
+
+    Route::get('/register', [RestaurantController::class, 'Register'])->name('restaurant.register');
+    Route::post('/register/create', [RestaurantController::class, 'RegisterCreate'])->name('restaurant.register.create');
+});
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -28,4 +48,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
