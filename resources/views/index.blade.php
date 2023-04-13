@@ -82,11 +82,11 @@
 
                 <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
                     <ul class="navbar-nav d-flex justify-content-between">
-                        <li class="nav-item only-desktop">
+                        {{-- <li class="nav-item only-desktop">
                             <a class="nav-link" id="side-nav-open" href="#">
                                 <span class="lnr lnr-menu"></span>
                             </a>
-                        </li>
+                        </li> --}}
                         <div class="d-flex flex-lg-row flex-column">
                             <li class="nav-item active">
                                 <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
@@ -121,7 +121,7 @@
                             </li>
 
                             <li class="nav-item dropdown">
-                                <a class="nav-link" href="{{ route('login') }}">Admin</a>
+                                <a class="nav-link" href="{{ route('admin_login_form') }}">Admin</a>
                             </li>
                         </div>
                         {{-- <li class="nav-item">

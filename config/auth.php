@@ -50,6 +50,10 @@ return [
             'driver' => 'session',
             'provider' => 'clients',
         ],
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'admins',
+        ],
     ],
 
     /*
@@ -79,10 +83,14 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\Restaurant::class,
         ],
-        
+
         'clients' => [
             'driver' => 'eloquent',
             'model' => App\Models\Client::class,
+        ],
+        'admins' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Admin::class,
         ],
         // 'users' => [
         //     'driver' => 'database',

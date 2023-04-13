@@ -63,13 +63,13 @@
 										<label class="form-control-label">Mot de passe</label>
 										<div class="pass-group">
 											<input type="password" class="form-control pass-input" name="password">
-											<span class="fas fa-eye toggle-password"></span>
+											{{-- <span class="fas fa-eye toggle-password"></span> --}}
 										</div>
 									</div>
 
-									<div class="text-end">
+									{{-- <div class="text-end">
 										<a class="forgot-link" href="forgot-password.html">Forgot Password ?</a>
-									</div>
+									</div> --}}
 									<button class="btn btn-primary login-btn" type="submit">Login</button>
 									<div class="text-center dont-have">Don’t have an account? <a href="{{ route('restaurant.register') }}">Register</a></div>
 								</form>

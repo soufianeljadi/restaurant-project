@@ -3,7 +3,7 @@
 	<head>
 
 		<meta charset="utf-8">
-		<title>Client Login</title>
+		<title>Admin - Login </title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
 
 		<!-- Favicon -->
@@ -18,7 +18,7 @@
 
 		<!-- Main CSS -->
 		<link rel="stylesheet" href="{{ asset('assets1/css/style.css') }}">
-        <link rel="stylesheet" href="{{ asset('assets1/css/client.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets1/css/admin.css') }}">
 
 	</head>
 	<body class="account-page">
@@ -36,7 +36,7 @@
 						<div class="account-box">
 							<div class="login-right">
 								<div class="login-header">
-									<h3>Login <span>Client</span></h3>
+									<h3>Login <span>Admin</span></h3>
 									<p class="text-muted">Accéder à votre tableau de bord</p>
 								</div>
                                 @if (Session::has('error'))
@@ -53,7 +53,7 @@
 
                                 @endif
 
-								<form action="{{ route('client.login') }}" method="post">
+								<form action="{{ route('admin.login') }}" method="post">
                                     @csrf
 									<div class="form-group">
 										<label class="form-control-label">Email Addresse</label>
@@ -71,7 +71,7 @@
 										<a class="forgot-link" href="forgot-password.html">Forgot Password ?</a>
 									</div> --}}
 									<button class="btn btn-primary login-btn" type="submit">Login</button>
-									<div class="text-center dont-have">Don’t have an account? <a href="{{ route('client.register') }}">Register</a></div>
+									<div class="text-center dont-have">Don’t have an account? <a href="{{ route('admin.register') }}">Register</a></div>
 								</form>
 							</div>
 						</div>

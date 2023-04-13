@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RestaurantController;
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\AdminController;
 use GuzzleHttp\Middleware;
 
 /*
@@ -43,20 +44,30 @@ Route::prefix('client')->group(function () {
 });
 /*-----------------------------End Client route-------------------------------- */
 
+Route::prefix('admin')->group(function () {
+
+    Route::get('/login', [AdminController::class, 'AdminIndex'])->name('admin_login_form');
+    Route::post('/login/owner', [AdminController::class, 'AdminLogin'])->name('admin.login');
+    Route::get('/dashboard', [AdminController::class, 'AdminDashboard'])->name('admin.dashboard')->Middleware('Admin');
+    Route::get('/logout', [AdminController::class, 'Adminlogout'])->name('admin.logout')->Middleware('Admin');
+    Route::get('/register', [AdminController::class, 'Adminregister'])->name('admin.register');
+    Route::post('/register/create', [AdminController::class, 'AdminRegisterCreate'])->name('admin.register.create');
+});
+/*-----------------------------End Client route-------------------------------- */
 
 
 Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
+// Route::middleware('auth')->group(function () {
+//     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+//     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+//     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+// });
 
 require __DIR__ . '/auth.php';
