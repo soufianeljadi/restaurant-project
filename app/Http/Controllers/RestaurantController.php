@@ -7,19 +7,20 @@ use Illuminate\Support\Facades\Auth;
 USE App\Models\Restaurant;
 use Illuminate\Support\Facades\Hash;
 use Carbon\Carbon;
+
 class RestaurantController extends Controller
 {
     //
-    public function Index()
+    public function RestaurantIndex()
     {
         return view('restaurant.restaurant_login');
     }
-    public function Dashboard()
+    public function RestaurantDashboard()
     {
         return view('restaurant.index');
     }
 
-    public function Login(Request $request)
+    public function RestaurantLogin(Request $request)
     {
         //dd($request->all());
         $check = $request->all();
@@ -30,16 +31,16 @@ class RestaurantController extends Controller
         }
         //return view('restaurant.index');
     }
-    public function logout()
+    public function Restaurantlogout()
     {
         Auth::guard('restaurant')->logout();
-        return redirect()->route('login_form')->with('logout', 'Se déconnecter avec succès');
+        return redirect()->route('home')->with('logout', 'Se déconnecter avec succès');
     }
-    public function Register()
+    public function RestaurantRegister()
     {
         return view('restaurant.restaurant_register');
     }
-    public function RegisterCreate(Request $request)
+    public function RestaurantRegisterCreate(Request $request)
     {
        // dd($request->all());
        Restaurant::insert([

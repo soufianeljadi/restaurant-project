@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RestaurantController;
+use App\Http\Controllers\ClientController;
 use GuzzleHttp\Middleware;
 
 /*
@@ -16,22 +17,32 @@ use GuzzleHttp\Middleware;
 |
 */
 
-/*Restaurant route */
+/*-----------------------------Restaurant route--------------------------------- */
 
 Route::prefix('restaurant')->group(function () {
 
-    Route::get('/login', [RestaurantController::class, 'Index'])->name('login_form');
-    Route::post('/login/owner', [RestaurantController::class, 'Login'])->name('restaurant.login');
-
-    Route::get('/dashboard', [RestaurantController::class, 'Dashboard'])->name('restaurant.dashboard')
-        ->Middleware('Restaurant');
-
-    Route::get('/logout', [RestaurantController::class, 'logout'])->name('restaurant.logout')
-        ->Middleware('Restaurant');
-
-    Route::get('/register', [RestaurantController::class, 'Register'])->name('restaurant.register');
-    Route::post('/register/create', [RestaurantController::class, 'RegisterCreate'])->name('restaurant.register.create');
+    Route::get('/login', [RestaurantController::class, 'RestaurantIndex'])->name('login_form');
+    Route::post('/login/owner', [RestaurantController::class, 'RestaurantLogin'])->name('restaurant.login');
+    Route::get('/dashboard', [RestaurantController::class, 'RestaurantDashboard'])->name('restaurant.dashboard')->Middleware('Restaurant');
+    Route::get('/logout', [RestaurantController::class, 'Restaurantlogout'])->name('restaurant.logout')->Middleware('Restaurant');
+    Route::get('/register', [RestaurantController::class, 'RestaurantRegister'])->name('restaurant.register');
+    Route::post('/register/create', [RestaurantController::class, 'RestaurantRegisterCreate'])->name('restaurant.register.create');
 });
+
+/*-----------------------------End Restaurant route----------------------------- */
+
+/*------------------------------Client route----------------------------------- */
+Route::prefix('client')->group(function () {
+
+    Route::get('/login', [ClientController::class, 'ClientIndex'])->name('client_login_form');
+    Route::post('/login/owner', [ClientController::class, 'ClientLogin'])->name('client.login');
+    Route::get('/dashboard', [ClientController::class, 'ClientDashboard'])->name('client.dashboard')->Middleware('Client');
+    Route::get('/logout', [ClientController::class, 'Clientlogout'])->name('client.logout')->Middleware('Client');
+    Route::get('/register', [ClientController::class, 'ClientRegister'])->name('client.register');
+    Route::post('/register/create', [ClientController::class, 'ClientRegisterCreate'])->name('client.register.create');
+});
+/*-----------------------------End Client route-------------------------------- */
+
 
 
 Route::get('/', function () {

@@ -102,7 +102,7 @@
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="special-dishes.html">Beef Steak Sauce</a>
-                                    <a class="dropdown-item" href="special-dishes.html">Salmon Zucchini</a>
+                                    <a class="dropdown-item" href="special-dishes.html">Reservation</a>
                                 </div>
                             </li>
                         </div>
@@ -114,14 +114,14 @@
                     <ul class="navbar-nav d-flex justify-content-between">
                         <div class="d-flex flex-lg-row flex-column">
                             <li class="nav-item active">
-                                <a class="nav-link" href="reservation.html">Reservation</a>
+                                <a class="nav-link" href="{{ route('client.register') }}">Espace client</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('restaurant.register') }}">Enregistrer mon restaurant</a>
+                                <a class="nav-link" href="{{ route('restaurant.register') }}">Espace restaurant</a>
                             </li>
 
                             <li class="nav-item dropdown">
-                                <a class="nav-link" href="reservation.html">Admin</a>
+                                <a class="nav-link" href="{{ route('login') }}">Admin</a>
                             </li>
                         </div>
                         {{-- <li class="nav-item">

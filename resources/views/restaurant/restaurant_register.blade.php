@@ -82,7 +82,7 @@
 									</div> --}}
 									<button class="btn btn-primary login-btn" type="submit">Créer un compte</button>
 									<div class="account-footer text-center mt-3">
-										Vous avez déjà un compte? <a class="forgot-link mb-0" href="{{ route('restaurant.login') }}">Login</a>
+										Vous avez déjà un compte? <a class="forgot-link mb-0" href="{{ route('login_form') }}">Login</a>
 									</div>
 								</form>
 								<!-- /Register Form -->
