@@ -25,16 +25,19 @@ class RestaurantController extends Controller
         //dd($request->all());
         $check = $request->all();
         if (Auth::guard('restaurant')->attempt(['email' => $check['email'], 'password' => $check['password']])) {
-            return redirect()->route('restaurant.dashboard')->with('error', 'Connectez-vous avec succès');
+            toastr()->success('Connectez-vous avec succès');
+            return redirect()->route('restaurant.dashboard');
         } else {
-            return back()->with('error', 'Email ou mot de passe invalide');
+            toastr()->error('Email ou mot de passe invalide');
+            return back();
         }
         //return view('restaurant.index');
     }
     public function Restaurantlogout()
     {
         Auth::guard('restaurant')->logout();
-        return redirect()->route('home')->with('logout', 'Se déconnecter avec succès');
+        toastr()->info('Se déconnecter avec succès');
+        return redirect()->route('/');
     }
     public function RestaurantRegister()
     {
@@ -49,6 +52,7 @@ class RestaurantController extends Controller
         'password' => Hash::make($request->password),
         'created_at' => Carbon::now(),
        ]);
+       toastr()->success('Données enregistrées avec succès');
         return redirect()->route("restaurant.dashboard");
 
 

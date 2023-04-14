@@ -39,7 +39,7 @@
 									<h3>Login <span>Restaurant</span></h3>
 									<p class="text-muted">Accéder à votre tableau de bord</p>
 								</div>
-                                @if (Session::has('error'))
+                                {{-- @if (Session::has('error'))
                                 <div class="alert alert-warning" role="alert">
                                     {{ session::get('error') }}
                                   </div>
@@ -51,7 +51,7 @@
                                     {{ session::get('logout') }}
                                   </div>
 
-                                @endif
+                                @endif --}}
 
 								<form action="{{ route('restaurant.login') }}" method="post">
                                     @csrf

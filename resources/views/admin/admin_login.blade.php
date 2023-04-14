@@ -39,20 +39,6 @@
 									<h3>Login <span>Admin</span></h3>
 									<p class="text-muted">Accéder à votre tableau de bord</p>
 								</div>
-                                @if (Session::has('error'))
-                                <div class="alert alert-warning" role="alert">
-                                    {{ session::get('error') }}
-                                  </div>
-
-                                @endif
-
-                                @if (Session::has('logout'))
-                                <div class="alert alert-dark" role="alert">
-                                    {{ session::get('logout') }}
-                                  </div>
-
-                                @endif
-
 								<form action="{{ route('admin.login') }}" method="post">
                                     @csrf
 									<div class="form-group">

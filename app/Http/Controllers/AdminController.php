@@ -26,7 +26,8 @@ class AdminController extends Controller
         //dd($request->all());
         $check = $request->all();
         if (Auth::guard('admin')->attempt(['email' => $check['email'], 'password' => $check['password']])) {
-            return redirect()->route('admin.dashboard')->with('error', 'Connectez-vous avec succès');
+            toastr()->success('Connectez-vous avec succès');
+            return redirect()->route('admin.dashboard');
         } else {
             return back()->with('error', 'Email ou mot de passe invalide');
         }
@@ -35,7 +36,8 @@ class AdminController extends Controller
     public function Adminlogout()
     {
         Auth::guard('admin')->logout();
-        return redirect()->route('home')->with('logout', 'Se déconnecter avec succès');
+        toastr()->info('Se déconnecter avec succès');
+        return redirect()->route('/');
     }
     public function AdminRegister()
     {
@@ -50,6 +52,7 @@ class AdminController extends Controller
         'password' => Hash::make($request->password),
         'created_at' => Carbon::now(),
        ]);
+       toastr()->success('Données enregistrées avec succès');
         return redirect()->route("admin.dashboard");
 
 

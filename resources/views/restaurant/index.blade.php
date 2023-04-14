@@ -2,12 +2,6 @@
 @section('restaurant')
 <div class="content container-fluid">
 
-    @if (Session::has('error'))
-    <div class="alert alert-success" role="alert">
-        {{ session::get('error') }}
-      </div>
-
-    @endif
 
     <!-- Page Header -->
     <div class="page-header">
