@@ -170,6 +170,9 @@
 							<li class="active">
 								<a href="{{route('client.dashboard') }}"><span>Dashboard</span></a>
 							</li>
+                            <li class="active">
+								<a href="{{route('client.reservation') }}"><span>Reservation</span></a>
+							</li>
 							{{-- <li>
 								<a href="mentor.html"><span>Mentor</span></a>
 							</li>

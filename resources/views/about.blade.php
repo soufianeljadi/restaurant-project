@@ -5,7 +5,7 @@
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Resto - Home</title>
+    <title>Resto - à propos</title>
     <meta name="description" content="Resto">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -37,7 +37,7 @@
     <div id="side-nav" class="sidenav">
         <a href="javascript:void(0)" id="side-nav-close">&times;</a>
 
-        {{-- <div class="sidenav-content">
+        <div class="sidenav-content">
             <p>
                 Kuncen WB1, Wirobrajan 10010, DIY
             </p>
@@ -45,7 +45,7 @@
                 <span class="fs-16 primary-color">(+68) 120034509</span>
             </p>
             <p>info@yourdomain.com</p>
-        </div> --}}
+        </div>
     </div>
     {{-- <div id="side-search" class="sidenav">
         <a href="javascript:void(0)" id="side-search-close">&times;</a>
@@ -97,16 +97,6 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="/about">À propos</a>
                             </li>
-                            {{-- <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Special Dishes
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="special-dishes.html">Beef Steak Sauce</a>
-                                    <a class="dropdown-item" href="special-dishes.html">Reservation</a>
-                                </div>
-                            </li> --}}
                         </div>
                     </ul>
 
@@ -149,7 +139,7 @@
                 </div>
             </div>
         </nav>
-        <div class="hero">
+        {{-- <div class="hero">
             <div class="container">
                 <div class="row d-flex align-items-center">
                     <div class="col-lg-6 hero-left">
@@ -162,7 +152,7 @@
                                 <span class="lnr lnr-film-play"></span>
                                 Play Video
                             </a> --}}
-                        </div>
+                        {{-- </div>
 
                         <ul class="hero-info list-unstyled d-flex text-center mb-0">
                             <li class="border-right">
@@ -196,7 +186,7 @@
                     </div>
                 </div>
             </div>
-        </div> <!-- Welcome Section -->
+        </div> <!-- Welcome Section --> --}}
         <section id="gtco-welcome" class="bg-white section-padding">
             <div class="container">
                 <div class="section-content">
@@ -633,7 +623,7 @@
         </section> --}}
         <!-- End of Team Section -->
         <!-- Reservation Section -->
-        <section id="gtco-reservation" class="bg-fixed bg-white section-padding overlay"
+        {{-- <section id="gtco-reservation" class="bg-fixed bg-white section-padding overlay"
             style="background-image: url(img/reservation-bg.jpg);">
             <div class="container">
                 <div class="row">
@@ -714,7 +704,7 @@
                 </div>
 
             </div>
-        </section>
+        </section> --}}
         <!-- End of Reservation Section -->
         <footer class="mastfoot pb-5 bg-white section-padding pb-0">
             <div class="inner container">

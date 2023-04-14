@@ -15,9 +15,14 @@ class ClientController extends Controller
     {
         return view('client.client_login');
     }
+
     public function ClientDashboard()
     {
         return view('client.index');
+    }
+    public function ClientReservation()
+    {
+        return view('client.reservation');
     }
 
     public function ClientLogin(Request $request)

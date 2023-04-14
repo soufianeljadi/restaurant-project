@@ -35,6 +35,7 @@ Route::prefix('restaurant')->group(function () {
 /*------------------------------Client route----------------------------------- */
 Route::prefix('client')->group(function () {
 
+    Route::get('/reservation', [ClientController::class, 'ClientReservation'])->name('client.reservation')->Middleware('Client');
     Route::get('/login', [ClientController::class, 'ClientIndex'])->name('client_login_form');
     Route::post('/login/owner', [ClientController::class, 'ClientLogin'])->name('client.login');
     Route::get('/dashboard', [ClientController::class, 'ClientDashboard'])->name('client.dashboard')->Middleware('Client');
@@ -59,7 +60,9 @@ Route::prefix('admin')->group(function () {
 Route::get('/', function () {
     return view('index');
 });
-
+Route::get('/about', function () {
+    return view('about');
+});
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');
