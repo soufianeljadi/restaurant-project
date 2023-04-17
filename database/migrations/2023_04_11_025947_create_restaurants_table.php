@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('restaurants', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('location')->nullable();
+            $table->string('description')->nullable();
             $table->tinyInteger('status')->default(0);
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();

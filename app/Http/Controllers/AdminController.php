@@ -20,6 +20,10 @@ class AdminController extends Controller
     {
         return view('admin.index');
     }
+    public function AdminProfile()
+    {
+        return view('admin.admin_profile');
+    }
 
     public function AdminLogin(Request $request)
     {
@@ -37,7 +41,7 @@ class AdminController extends Controller
     {
         Auth::guard('admin')->logout();
         toastr()->info('Se déconnecter avec succès');
-        return redirect()->route('/');
+        return redirect('/');
     }
     public function AdminRegister()
     {

@@ -20,6 +20,8 @@ class Restaurant extends Authenticatable
     protected $guard = 'restaurant';
     protected $fillable = [
         'name',
+        'location',
+        'description',
         'email',
         'password',
         'status'

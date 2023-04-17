@@ -18,11 +18,19 @@ class ClientController extends Controller
 
     public function ClientDashboard()
     {
-        return view('client.index');
+        $restaurants = Restaurant::all();
+        return view('client.index',compact("restaurants"));
+    }
+    public function ClientProfile()
+    {
+        return view('client.client_profile');
     }
     public function ClientReservation()
     {
-        return view('client.reservation');
+        $restaurants = restaurant::all();
+        return view('client.reservation')->with([
+            "restaurants" => $restaurants,
+          ]);
     }
 
     public function ClientLogin(Request $request)

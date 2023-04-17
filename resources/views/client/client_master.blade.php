@@ -136,17 +136,22 @@
 
 					<!-- User Menu -->
 					<li class="nav-item dropdown has-arrow">
-						<a href="#" class="dropdown-toggle nav-link" data-bs-toggle="dropdown">
-							<span class="user-img"><img class="rounded-circle"  width="31" alt="{{  Auth::guard('client')->user()->name }}"></span>
+                        <a href="#" class="dropdown-toggle nav-link" data-bs-toggle="dropdown">
+							<span class="user-img"><img class="rounded-circle" src="{{ asset('img/client_user.png') }}" width="31" alt="Ryan Taylor"></span>
 						</a>
 						<div class="dropdown-menu">
 							<div class="user-header">
+								<div class="user-text">
+                                    <div class="avatar avatar-sm">
+                                        <img src="{{ asset('img/client_user.png') }}" alt="User Image" class="avatar-img rounded-circle">
+                                    </div>
+                                </div>
 								<div class="user-text">
 									<h6>{{  Auth::guard('client')->user()->name }}</h6>
 									<p class="text-muted mb-0">Client</p>
 								</div>
 							</div>
-							<a class="dropdown-item" href="profile.html">My Profile</a>
+							<a class="dropdown-item" href="{{ route('client.profile') }}">Mon Profile</a>
 
 							<a class="dropdown-item" href="{{ route('client.logout') }}">Logout</a>
 						</div>

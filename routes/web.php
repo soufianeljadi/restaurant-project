@@ -28,6 +28,7 @@ Route::prefix('restaurant')->group(function () {
     Route::get('/logout', [RestaurantController::class, 'Restaurantlogout'])->name('restaurant.logout')->Middleware('Restaurant');
     Route::get('/register', [RestaurantController::class, 'RestaurantRegister'])->name('restaurant.register');
     Route::post('/register/create', [RestaurantController::class, 'RestaurantRegisterCreate'])->name('restaurant.register.create');
+    Route::get('/profile', [RestaurantController::class, 'RestaurantProfile'])->name('restaurant.profile');
 });
 
 /*-----------------------------End Restaurant route----------------------------- */
@@ -42,6 +43,8 @@ Route::prefix('client')->group(function () {
     Route::get('/logout', [ClientController::class, 'Clientlogout'])->name('client.logout')->Middleware('Client');
     Route::get('/register', [ClientController::class, 'ClientRegister'])->name('client.register');
     Route::post('/register/create', [ClientController::class, 'ClientRegisterCreate'])->name('client.register.create');
+    Route::get('/profile', [ClientController::class, 'ClientProfile'])->name('client.profile');
+
 });
 /*-----------------------------End Client route-------------------------------- */
 
@@ -53,6 +56,12 @@ Route::prefix('admin')->group(function () {
     Route::get('/logout', [AdminController::class, 'Adminlogout'])->name('admin.logout')->Middleware('Admin');
     Route::get('/register', [AdminController::class, 'Adminregister'])->name('admin.register');
     Route::post('/register/create', [AdminController::class, 'AdminRegisterCreate'])->name('admin.register.create');
+    Route::get('/profile', [AdminController::class, 'AdminProfile'])->name('admin.profile');
+
+
+
+    Route::get('/restaurants', [RestaurantController::class, 'AdminShow'])->name('Admin.restaurants');
+    Route::get('/destroy-restaurant/{id}', [RestaurantController::class, 'destroy'])->name('restaurant.delete');
 });
 /*-----------------------------End Client route-------------------------------- */
 

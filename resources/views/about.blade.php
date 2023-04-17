@@ -122,7 +122,7 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ route('login_form') }}">Connexion</a>
-                                <a class="dropdown-item" href="{{ route('restaurant.register') }}">Créer un compte</a>
+                                <a class="dropdown-item" href="{{ route('restaurant.register') }}">Enregistrer votre restaurant</a>
                             </div>
                         </li>
 

@@ -15,6 +15,15 @@ class RestaurantController extends Controller
     {
         return view('restaurant.restaurant_login');
     }
+    public function RestaurantProfile()
+    {
+        return view('restaurant.restaurant_profile');
+    }
+    public function AdminShow()
+    {
+        $restaurants = Restaurant::all();
+        return view("admin.restaurants_list", compact("restaurants"));
+    }
     public function RestaurantDashboard()
     {
         return view('restaurant.index');
@@ -37,7 +46,7 @@ class RestaurantController extends Controller
     {
         Auth::guard('restaurant')->logout();
         toastr()->info('Se déconnecter avec succès');
-        return redirect()->route('/');
+        return redirect('/');
     }
     public function RestaurantRegister()
     {
@@ -48,6 +57,8 @@ class RestaurantController extends Controller
        // dd($request->all());
        Restaurant::insert([
         'name' => $request->name,
+        'location' => $request->location,
+        'description' => $request->name,
         'email' => $request->email,
         'password' => Hash::make($request->password),
         'created_at' => Carbon::now(),
@@ -55,6 +66,14 @@ class RestaurantController extends Controller
        toastr()->success('Données enregistrées avec succès');
         return redirect()->route("restaurant.dashboard");
 
+
+    }
+    public function destroy($id)
+    {
+      $restaurant = Restaurant::findOrFail($id);
+      $restaurant ->delete();
+      toastr()->error('L\'enseignant a été bien supprimé !'," ");
+      return redirect()->route("admin.restaurants_list");
 
     }
 }
