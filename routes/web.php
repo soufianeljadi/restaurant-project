@@ -29,6 +29,8 @@ Route::prefix('restaurant')->group(function () {
     Route::get('/register', [RestaurantController::class, 'RestaurantRegister'])->name('restaurant.register');
     Route::post('/register/create', [RestaurantController::class, 'RestaurantRegisterCreate'])->name('restaurant.register.create');
     Route::get('/profile', [RestaurantController::class, 'RestaurantProfile'])->name('restaurant.profile');
+    Route::post('/update', [RestaurantController::class, 'RestaurantEdit'])->name('restaurant.update');
+
 });
 
 /*-----------------------------End Restaurant route----------------------------- */

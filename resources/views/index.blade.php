@@ -738,7 +738,7 @@
                         </div>
 
                     </div>
-                    <div class="col-lg-4">
+                    {{-- <div class="col-lg-4">
                         <div class="footer-widget px-lg-5 px-0">
                             <h4>Open Hours</h4>
                             <ul class="list-unstyled open-hours">
@@ -758,11 +758,13 @@
                             </ul>
                         </div>
 
-                    </div>
+                    </div> --}}
 
                     <div class="col-lg-4">
                         <div class="footer-widget pl-lg-5 pl-0">
                             <h4>Contact</h4>
+                            <p>+212 642 912 362</p>
+                            <p>Resto@mail.com</p>
                             <nav class="nav nav-mastfoot justify-content-start">
                                 <a class="nav-link" href="#">
                                     <i class="fab fa-facebook-f"></i>

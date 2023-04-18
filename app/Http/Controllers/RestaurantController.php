@@ -17,7 +17,8 @@ class RestaurantController extends Controller
     }
     public function RestaurantProfile()
     {
-        return view('restaurant.restaurant_profile');
+        $restaurants = Restaurant::all();
+        return view("restaurant.restaurant_profile", compact("restaurants"));
     }
     public function ShowRestaurants()
     {
@@ -58,13 +59,27 @@ class RestaurantController extends Controller
        Restaurant::insert([
         'name' => $request->name,
         'location' => $request->location,
-        'description' => $request->name,
+        'description' => $request->description,
         'email' => $request->email,
         'password' => Hash::make($request->password),
         'created_at' => Carbon::now(),
        ]);
        toastr()->success('Données enregistrées avec succès');
         return redirect()->route("restaurant.dashboard");
+
+
+    }
+    public function RestaurantEdit (Request $request){
+
+        $restaurant = Restaurant::find($request->id);
+        $restaurant->name = $request->name;
+        $restaurant->email = $request->email;
+        $restaurant->location = $request->location;
+        $restaurant->description = $request->description;
+        // $restaurant->password = Hash::make($request->password);
+        $restaurant->save();
+           toastr()->success('Données enregistrées avec succès');
+            return redirect()->route("restaurant.profile");
 
 
     }
