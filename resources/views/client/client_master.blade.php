@@ -196,7 +196,7 @@
 							<li>
 								<a href="settings.html"><span>Settings</span></a>
 							</li> --}}
-							<li class="submenu">
+							{{-- <li class="submenu">
 								<a href="#"><span> Reports</span> <span class="menu-arrow"></span></a>
 								<ul style="display: none;">
 									<li><a href="invoices.html">Invoices List</a></li>
@@ -206,7 +206,7 @@
 									<li><a href="view-invoice.html">Invoice Details</a></li>
 									<li><a href="invoices-settings.html">invoice settings</a></li>
 								</ul>
-							</li>
+							</li> --}}
 							{{-- <li>
 								<a href="invoice-items.html"><span>Items</span></a>
 							</li>

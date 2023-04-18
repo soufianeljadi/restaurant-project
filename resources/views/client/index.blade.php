@@ -29,7 +29,7 @@
                         <thead>
                             <tr>
                                 <th>Nom du resto</th>
-                                <th>Status</th>
+                                {{-- <th>Status</th> --}}
                                 <th>Controle</th>
                             </tr>
                         </thead>
@@ -37,7 +37,7 @@
                             @foreach ($restaurants as $restaurant)
                                 <tr>
                                     <td>{{ $restaurant->name }} </td>
-                                    <td>{{ $restaurant->status }} </td>
+                                    {{-- <td>{{ $restaurant->status }} </td> --}}
 
                                     <td>
                                         <a data-bs-toggle="modal" href="detail_restaurant_{{ $restaurant->id }}"

@@ -46,6 +46,7 @@ Route::prefix('client')->group(function () {
     Route::get('/register', [ClientController::class, 'ClientRegister'])->name('client.register');
     Route::post('/register/create', [ClientController::class, 'ClientRegisterCreate'])->name('client.register.create');
     Route::get('/profile', [ClientController::class, 'ClientProfile'])->name('client.profile');
+    Route::post('/update', [ClientController::class, 'ClientEdit'])->name('client.update');
 
 });
 /*-----------------------------End Client route-------------------------------- */

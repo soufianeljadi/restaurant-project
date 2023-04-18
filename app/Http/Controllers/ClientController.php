@@ -75,6 +75,18 @@ class ClientController extends Controller
 
 
     }
+    public function ClientEdit (Request $request){
+
+        $client = Client::find($request->id);
+        $client->name = $request->name;
+        $client->email = $request->email;
+        // $client->password = Hash::make($request->password);
+        $client->save();
+           toastr()->success('Données enregistrées avec succès');
+            return redirect()->route("client.profile");
+
+
+    }
     public function destroy(Request $request)
     {
       $client = Client::findOrFail($request->id);
