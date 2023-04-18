@@ -26,15 +26,15 @@
                                 <div class="col-auto profile-image">
                                     <a href="#">
                                         <img class="rounded-circle" alt="User Image"
-                                            src="{{ asset('img/resto_user.png') }}">
+                                            src="{{ asset('img/manager.png') }}">
                                     </a>
                                 </div>
                                 <div class="col ms-md-n2 profile-user-info">
                                     <h2 class="user-name mb-0">{{ Auth::guard('admin')->user()->name }}</h2><br>
                                     <h6 class="text-muted">{{ Auth::guard('admin')->user()->email }}</h6>
-                                    <div class="pb-3"><i class="fa fa-map-marker"></i>
+                                    {{-- <div class="pb-3"><i class="fa fa-map-marker"></i>
                                         {{ Auth::guard('admin')->user()->location }}</div>
-                                    <div class="about-text">{{ Auth::guard('admin')->user()->description }}</div>
+                                    <div class="about-text">{{ Auth::guard('admin')->user()->description }}</div> --}}
                                 </div>
                                 <div class="col-auto profile-btn">
                                 </div>
@@ -61,13 +61,13 @@
                                         <div class="card">
                                             <div class="card-body">
                                                 <h5 class="card-title d-flex justify-content-between">
-                                                    <span>Détails du admin</span>
-                                                    <a class="edit-link" data-bs-toggle="modal"
+                                                    <span>Détails de l'administrateur</span>
+                                                    {{-- <a class="edit-link" data-bs-toggle="modal"
                                                         href="#edit_personal_details"><i
-                                                            class="fa fa-edit me-1"></i>Edit</a>
+                                                            class="fa fa-edit me-1"></i>Edit</a> --}}
                                                 </h5>
                                                 <div class="row">
-                                                    <p class="col-sm-2 text-muted mb-0 mb-sm-3">Nom du resto</p>
+                                                    <p class="col-sm-2 text-muted mb-0 mb-sm-3">Nom de l'administrateur</p>
                                                     <p class="col-sm-10">{{ Auth::guard('admin')->user()->name }}</p>
                                                 </div>
                                                 {{-- <div class="row">
@@ -78,7 +78,7 @@
                                                     <p class="col-sm-2 text-muted mb-0 mb-sm-3">Email ID</p>
                                                     <p class="col-sm-10">{{ Auth::guard('admin')->user()->email }}</p>
                                                 </div>
-                                                <div class="row">
+                                                {{-- <div class="row">
                                                     <p class="col-sm-2 text-muted mb-0 mb-sm-3">Emplacement</p>
                                                     <p class="col-sm-10 ">{{ Auth::guard('admin')->user()->location }}
                                                     </p>
@@ -87,7 +87,7 @@
                                                     <p class="col-sm-2 text-muted mb-0 mb-sm-3">Description</p>
                                                     <p class="col-sm-10">
                                                         {{ Auth::guard('admin')->user()->description }}</p>
-                                                </div>
+                                                </div> --}}
                                             </div>
                                         </div>
 

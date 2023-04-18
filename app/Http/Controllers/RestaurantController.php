@@ -19,7 +19,7 @@ class RestaurantController extends Controller
     {
         return view('restaurant.restaurant_profile');
     }
-    public function AdminShow()
+    public function ShowRestaurants()
     {
         $restaurants = Restaurant::all();
         return view("admin.restaurants_list", compact("restaurants"));
@@ -68,12 +68,12 @@ class RestaurantController extends Controller
 
 
     }
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-      $restaurant = Restaurant::findOrFail($id);
+      $restaurant = Restaurant::findOrFail($request->id);
       $restaurant ->delete();
-      toastr()->error('L\'enseignant a été bien supprimé !'," ");
-      return redirect()->route("admin.restaurants_list");
+      toastr()->error('Le restaurant a été bien supprimé !'," ");
+      return redirect()->route("Admin.restaurants");
 
     }
 }

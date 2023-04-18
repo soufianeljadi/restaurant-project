@@ -153,7 +153,7 @@
 							</div>
 							<a class="dropdown-item" href="{{ route('client.profile') }}">Mon Profile</a>
 
-							<a class="dropdown-item" href="{{ route('client.logout') }}">Logout</a>
+							<a class="dropdown-item" href="{{ route('client.logout') }}">Se déconnecter</a>
 						</div>
 					</li>
 					<!-- /User Menu -->

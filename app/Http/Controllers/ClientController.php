@@ -15,6 +15,11 @@ class ClientController extends Controller
     {
         return view('client.client_login');
     }
+    public function ShowClients()
+    {
+        $clients = Client::all();
+        return view("admin.clients_list", compact("clients"));
+    }
 
     public function ClientDashboard()
     {
@@ -68,6 +73,14 @@ class ClientController extends Controller
        toastr()->success('Données enregistrées avec succès');
         return redirect()->route("client.dashboard");
 
+
+    }
+    public function destroy(Request $request)
+    {
+      $client = Client::findOrFail($request->id);
+      $client ->delete();
+      toastr()->error('Le client a été bien supprimé !'," ");
+      return redirect()->route("Admin.clients");
 
     }
 }

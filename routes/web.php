@@ -60,8 +60,10 @@ Route::prefix('admin')->group(function () {
 
 
 
-    Route::get('/restaurants', [RestaurantController::class, 'AdminShow'])->name('Admin.restaurants');
-    Route::get('/destroy-restaurant/{id}', [RestaurantController::class, 'destroy'])->name('restaurant.delete');
+    Route::get('/restaurants', [RestaurantController::class, 'ShowRestaurants'])->name('Admin.restaurants');
+    Route::post('/destroy-restaurant', [RestaurantController::class, 'destroy'])->name('restaurant.delete');
+    Route::get('/clients', [ClientController::class, 'Showclients'])->name('Admin.clients');
+    Route::post('/destroy-client', [ClientController::class, 'destroy'])->name('client.delete');
 });
 /*-----------------------------End Client route-------------------------------- */
 

@@ -135,20 +135,26 @@
 					<!-- /Notifications -->
 
 					<!-- User Menu -->
+					<!-- User Menu -->
 					<li class="nav-item dropdown has-arrow">
-						<a href="#" class="dropdown-toggle nav-link" data-bs-toggle="dropdown">
-							<span class="user-img"><img class="rounded-circle"  width="31" alt="{{  Auth::guard('admin')->user()->name }}"></span>
+                        <a href="#" class="dropdown-toggle nav-link" data-bs-toggle="dropdown">
+							<span class="user-img"><img class="rounded-circle" src="{{ asset('img/manager.png') }}" width="31" alt="Ryan Taylor"></span>
 						</a>
 						<div class="dropdown-menu">
 							<div class="user-header">
 								<div class="user-text">
+                                    <div class="avatar avatar-sm">
+                                        <img src="{{ asset('img/manager.png') }}" alt="User Image" class="avatar-img rounded-circle">
+                                    </div>
+                                </div>
+								<div class="user-text">
 									<h6>{{  Auth::guard('admin')->user()->name }}</h6>
-									<p class="text-muted mb-0">Administrator</p>
+									<p class="text-muted mb-0">Admin</p>
 								</div>
 							</div>
 							<a class="dropdown-item" href="{{ route('admin.profile') }}">Mon Profile</a>
 
-							<a class="dropdown-item" href="{{ route('admin.logout') }}">Logout</a>
+							<a class="dropdown-item" href="{{ route('admin.logout') }}">Se déconnecter</a>
 						</div>
 					</li>
 					<!-- /User Menu -->
@@ -170,9 +176,9 @@
 							<li class="active">
 								<a href="{{route('admin.dashboard') }}"><span>Dashboard</span></a>
 							</li>
-							<li class="active">
+							{{-- <li class="active">
 								<a href="{{route('Admin.restaurants') }}"><span>Restaurants</span></a>
-							</li>
+							</li> --}}
 
 							{{-- <li>
 								<a href="mentor.html"><span>Mentor</span></a>
@@ -193,6 +199,13 @@
 								<a href="settings.html"><span>Settings</span></a>
 							</li> --}}
 							<li class="submenu">
+								<a href="#"><span> Gérer les utilisateurs</span> <span class="menu-arrow"></span></a>
+								<ul style="display: none;">
+									<li><a href="{{route('Admin.restaurants') }}">Restaurants</a></li>
+									<li><a href="{{route('Admin.clients') }}">Clients</a></li>
+								</ul>
+							</li>
+							{{-- <li class="submenu">
 								<a href="#"><span> Reports</span> <span class="menu-arrow"></span></a>
 								<ul style="display: none;">
 									<li><a href="invoices.html">Invoices List</a></li>
@@ -202,7 +215,7 @@
 									<li><a href="view-invoice.html">Invoice Details</a></li>
 									<li><a href="invoices-settings.html">invoice settings</a></li>
 								</ul>
-							</li>
+							</li> --}}
 							{{-- <li>
 								<a href="invoice-items.html"><span>Items</span></a>
 							</li>
