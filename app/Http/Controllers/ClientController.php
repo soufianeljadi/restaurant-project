@@ -64,12 +64,13 @@ class ClientController extends Controller
     public function ClientRegisterCreate(Request $request)
     {
        // dd($request->all());
-       Client::insert([
+       $client = Client::create([
         'name' => $request->name,
         'email' => $request->email,
         'password' => Hash::make($request->password),
         'created_at' => Carbon::now(),
        ]);
+       Auth::guard("client")->login($client);
        toastr()->success('Données enregistrées avec succès');
         return redirect()->route("client.dashboard");
 

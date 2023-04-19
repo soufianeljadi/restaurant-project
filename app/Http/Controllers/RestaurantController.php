@@ -56,7 +56,7 @@ class RestaurantController extends Controller
     public function RestaurantRegisterCreate(Request $request)
     {
        // dd($request->all());
-       Restaurant::insert([
+       $restaurant = Restaurant::create([
         'name' => $request->name,
         'location' => $request->location,
         'description' => $request->description,
@@ -64,6 +64,8 @@ class RestaurantController extends Controller
         'password' => Hash::make($request->password),
         'created_at' => Carbon::now(),
        ]);
+       Auth::guard("restaurant")->login($restaurant);
+
        toastr()->success('Données enregistrées avec succès');
         return redirect()->route("restaurant.dashboard");
 
