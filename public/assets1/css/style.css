@@ -503,16 +503,16 @@ button.bg-danger:hover {
     color: #757575 !important;
 }
 .btn-primary {
-	background-color: #1e88e5;
-	border: 1px solid #1e88e5;
+	background-color: #ac1e1e;
+	border: 1px solid #ac1e1e;
 }
 .btn-primary:hover,
 .btn-primary:focus,
 .btn-primary.active,
 .btn-primary:active,
 .open > .dropdown-toggle.btn-primary {
-	background-color: #1879cd;
-	border: 1px solid #1879cd;
+	background-color: #ac1e1e;
+	border: 1px solid #ac1e1e;
 }
 .btn-primary.active.focus,
 .btn-primary.active:focus,
@@ -2843,7 +2843,7 @@ html.menu-opened body {
 }
 .login-right .dont-have a {
     border-bottom: 1px dashed;
-    color: #1e88e5;
+    color: #ac1e1e;
 }
 .login-btn {
     font-size: 16px;

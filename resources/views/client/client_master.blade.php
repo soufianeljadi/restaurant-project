@@ -36,7 +36,7 @@
 						<img src="{{ asset('/img/logo.png') }}" alt="Logo">
 					</a>
 					<a href="{{ route('client.dashboard') }}"  class="logo logo-small">
-						<img src="{{ asset('assets/img/logo-small.png') }}" alt="Logo" width="30" height="30">
+						<img src="{{ asset('/img/logo.png') }}" alt="Logo" width="30" height="30">
 					</a>
                 </div>
 				<!-- /Logo -->

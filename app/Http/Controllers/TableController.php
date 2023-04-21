@@ -1,8 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Restaurant;
+use App\Models\Table;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Carbon\Carbon;
 
 class TableController extends Controller
 {
@@ -17,17 +21,32 @@ class TableController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function RestaurantTableCreate()
     {
-        //
+        return view('restaurant.table_create');
     }
 
+    public function RestaurantTables(Request $request)
+    {
+        // $restaurant = Restaurant::find($request->id);
+        // $tables = $restaurant->tables;
+        // return view('restaurant.restaurant_tables' , compact("tables"));
+    }
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function RestaurantTableStore(Request $request)
     {
-        //
+                // dd($request->all());
+        $table = Table::create([
+            'number' => $request->number,
+            'location' => $request->location,
+            'guest_number' => $request->guest_number,
+            'restaurant_id' => $request->restaurant_id,
+            'created_at' => Carbon::now(),
+        ]);
+        toastr()->success('Table enregistrées avec succès');
+        return redirect()->route("restaurant.table.create");
     }
 
     /**

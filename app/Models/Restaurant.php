@@ -26,6 +26,10 @@ class Restaurant extends Authenticatable
         'password',
         'status'
     ];
+    public function tables()
+    {
+        return $this->hasMany(Table::class);
+    }
 
     /**
      * The attributes that should be hidden for serialization.

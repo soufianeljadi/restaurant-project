@@ -38,7 +38,7 @@
                     <img src="{{ asset('/img/logo.png') }}" alt="Logo">
                 </a>
                 <a href="{{ route('restaurant.dashboard') }}" class="logo logo-small">
-                    <img src="{{ asset('assets/img/logo-small.png') }}" alt="Logo" width="30" height="30">
+                    <img src="{{ asset('/img/logo.png') }}" alt="Logo" width="30" height="30">
                 </a>
             </div>
             <!-- /Logo -->
@@ -179,6 +179,12 @@
                         <li class="active">
                             <a href="{{ route('restaurant.dashboard') }}"><span>Dashboard</span></a>
                         </li>
+                        <li class="active">
+                            <a href="{{ route('restaurant.tables') }}"><span>Tables</span></a>
+                        </li>
+                        <li class="active">
+                            <a href="{{ route('restaurant.table.create') }}"><span>Tables</span></a>
+                        </li>
                         {{-- <li>
 								<a href="mentor.html"><span>Mentor</span></a>
 							</li>
@@ -197,7 +203,7 @@
 							<li>
 								<a href="settings.html"><span>Settings</span></a>
 							</li> --}}
-                        <li class="submenu">
+                        {{-- <li class="submenu">
                             <a href="#"><span> Reports</span> <span class="menu-arrow"></span></a>
                             <ul style="display: none;">
                                 <li><a href="invoices.html">Invoices List</a></li>
@@ -207,7 +213,7 @@
                                 <li><a href="view-invoice.html">Invoice Details</a></li>
                                 <li><a href="invoices-settings.html">invoice settings</a></li>
                             </ul>
-                        </li>
+                        </li> --}}
                         {{-- <li>
 								<a href="invoice-items.html"><span>Items</span></a>
 							</li>

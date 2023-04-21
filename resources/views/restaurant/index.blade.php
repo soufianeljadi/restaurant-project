@@ -8,9 +8,9 @@
         <div class="row">
             <div class="col-sm-12">
                 <h3 class="page-title">Bienvenue {{  Auth::guard('restaurant')->user()->name }}</h3>
-                <ul class="breadcrumb">
+                {{-- <ul class="breadcrumb">
                     <li class="breadcrumb-item active">{{  Auth::guard('restaurant')->user()->email }}</li>
-                </ul>
+                </ul> --}}
             </div>
         </div>
     </div>
