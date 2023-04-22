@@ -1,7 +1,7 @@
 @extends('restaurant.restaurant_master')
 @section('restaurant')
     <!-- Page Wrapper -->
-    <div class="page-wrapper">
+    {{-- {{-- <div class="page-wrapper"> --}}
         <div class="content container-fluid">
 
             <!-- Page Header -->
@@ -22,7 +22,7 @@
                 {{-- <div class="col-lg-12"> --}}
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">Basic Inputs</h4>
+                        <h4 class="card-title">Table formulaire</h4>
                     </div>
                     <div class="card-body">
                         <form method="post" action="{{ route('restaurant.table.store') }}">
@@ -69,7 +69,7 @@
             </div>
         </div>
 
-    </div>
+    </div> --}}
 @endsection
 <!-- /Main Wrapper -->
 {{--

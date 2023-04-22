@@ -32,9 +32,11 @@ Route::prefix('restaurant')->group(function () {
     Route::get('/profile', [RestaurantController::class, 'RestaurantProfile'])->name('restaurant.profile')->Middleware('Restaurant');
     Route::post('/update', [RestaurantController::class, 'RestaurantEdit'])->name('restaurant.update')->Middleware('Restaurant');
 
-    Route::get('/tables', [TableController::class, 'RestaurantTables'])->name('restaurant.tables')->Middleware('Restaurant');
+    Route::get('/tables', [TableController::class, 'RestaurantTables'])->name('restaurant.tables');
     Route::get('/addtable', [TableController::class, 'RestaurantTableCreate'])->name('restaurant.table.create');
     Route::post('/storetable', [TableController::class, 'RestaurantTableStore'])->name('restaurant.table.store');
+    Route::post('/destroy-table', [TableController::class, 'destroy'])->name('table.delete');
+
 
 
 });

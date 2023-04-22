@@ -179,12 +179,12 @@
                         <li class="active">
                             <a href="{{ route('restaurant.dashboard') }}"><span>Dashboard</span></a>
                         </li>
-                        <li class="active">
+                        {{-- <li class="active">
                             <a href="{{ route('restaurant.tables') }}"><span>Tables</span></a>
                         </li>
                         <li class="active">
                             <a href="{{ route('restaurant.table.create') }}"><span>Tables</span></a>
-                        </li>
+                        </li> --}}
                         {{-- <li>
 								<a href="mentor.html"><span>Mentor</span></a>
 							</li>
@@ -203,17 +203,13 @@
 							<li>
 								<a href="settings.html"><span>Settings</span></a>
 							</li> --}}
-                        {{-- <li class="submenu">
-                            <a href="#"><span> Reports</span> <span class="menu-arrow"></span></a>
+                        <li class="submenu">
+                            <a href="#"><span> Tables</span> <span class="menu-arrow"></span></a>
                             <ul style="display: none;">
-                                <li><a href="invoices.html">Invoices List</a></li>
-                                <li><a href="invoice-grid.html">Invoices Grid</a></li>
-                                <li><a href="add-invoice.html">Add Invoices</a></li>
-                                <li><a href="edit-invoice.html">Edit Invoices</a></li>
-                                <li><a href="view-invoice.html">Invoice Details</a></li>
-                                <li><a href="invoices-settings.html">invoice settings</a></li>
+                                <li><a href="{{ route('restaurant.tables') }}">All tables</a></li>
+                                <li><a href="{{ route('restaurant.table.create') }}">Add table</a></li>
                             </ul>
-                        </li> --}}
+                        </li>
                         {{-- <li>
 								<a href="invoice-items.html"><span>Items</span></a>
 							</li>

@@ -28,9 +28,15 @@ class TableController extends Controller
 
     public function RestaurantTables(Request $request)
     {
-        // $restaurant = Restaurant::find($request->id);
+        // $restaurant = Restaurant::find($id);
+        // dd($request->id);
+        // if (!$restaurant) {
+        //     return abort(404);
+        // }
         // $tables = $restaurant->tables;
-        // return view('restaurant.restaurant_tables' , compact("tables"));
+        return view('restaurant.restaurant_tables')->with([
+            "restaurants" => Restaurant::all(),
+            "tables" => Table::all(),]);
     }
     /**
      * Store a newly created resource in storage.
@@ -76,8 +82,11 @@ class TableController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Request $request)
     {
-        //
+        $table = Table::findOrFail($request->id);
+        $table->delete();
+        toastr()->error('la table a été bien supprimé !', " ");
+        return redirect()->route("restaurant.tables");
     }
 }
