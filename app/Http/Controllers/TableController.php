@@ -16,32 +16,25 @@ class TableController extends Controller
     public function index()
     {
         //
+        return view('restaurant.restaurant_tables')->with([
+            "restaurants" => Restaurant::all(),
+            "tables" => Table::all(),]);
+
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function RestaurantTableCreate()
+    public function create()
     {
         return view('restaurant.table_create');
     }
 
-    public function RestaurantTables(Request $request)
-    {
-        // $restaurant = Restaurant::find($id);
-        // dd($request->id);
-        // if (!$restaurant) {
-        //     return abort(404);
-        // }
-        // $tables = $restaurant->tables;
-        return view('restaurant.restaurant_tables')->with([
-            "restaurants" => Restaurant::all(),
-            "tables" => Table::all(),]);
-    }
+
     /**
      * Store a newly created resource in storage.
      */
-    public function RestaurantTableStore(Request $request)
+    public function store(Request $request)
     {
                 // dd($request->all());
         $table = Table::create([

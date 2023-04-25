@@ -16,11 +16,11 @@ class AdminController extends Controller
     {
         return view('admin.admin_login');
     }
-    public function AdminDashboard()
+    public function dashboard()
     {
         return view('admin.index');
     }
-    public function AdminProfile()
+    public function profile()
     {
         return view('admin.admin_profile');
     }
@@ -37,7 +37,7 @@ class AdminController extends Controller
         }
         //return view('restaurant.index');
     }
-    public function Adminlogout()
+    public function logout()
     {
         Auth::guard('admin')->logout();
         toastr()->info('Se déconnecter avec succès');

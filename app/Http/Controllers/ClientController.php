@@ -15,22 +15,22 @@ class ClientController extends Controller
     {
         return view('client.client_login');
     }
-    public function ShowClients()
+    public function clients()
     {
         $clients = Client::all();
         return view("admin.clients_list", compact("clients"));
     }
 
-    public function ClientDashboard()
+    public function dashboard()
     {
         $restaurants = Restaurant::all();
         return view('client.index',compact("restaurants"));
     }
-    public function ClientProfile()
+    public function profile()
     {
         return view('client.client_profile');
     }
-    public function ClientReservation()
+    public function reservation()
     {
         $restaurants = restaurant::all();
         return view('client.reservation')->with([
@@ -51,12 +51,6 @@ class ClientController extends Controller
         }
         //return view('restaurant.index');
     }
-    public function Clientlogout()
-    {
-        Auth::guard('client')->logout();
-        toastr()->info('Se déconnecter avec succès');
-        return redirect('/');
-    }
     public function ClientRegister()
     {
         return view('client.client_register');
@@ -76,15 +70,15 @@ class ClientController extends Controller
 
 
     }
-    public function ClientEdit (Request $request){
+    public function update (Request $request){
 
         $client = Client::find($request->id);
         $client->name = $request->name;
         $client->email = $request->email;
         // $client->password = Hash::make($request->password);
         $client->save();
-           toastr()->success('Données enregistrées avec succès');
-            return redirect()->route("client.profile");
+        toastr()->success('Données enregistrées avec succès');
+        return redirect()->route("client.profile");
 
 
     }
@@ -95,6 +89,12 @@ class ClientController extends Controller
       toastr()->error('Le client a été bien supprimé !'," ");
       return redirect()->route("Admin.clients");
 
+    }
+    public function logout()
+    {
+        Auth::guard('client')->logout();
+        toastr()->info('Se déconnecter avec succès');
+        return redirect('/');
     }
 }
 

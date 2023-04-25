@@ -15,17 +15,17 @@ class RestaurantController extends Controller
     {
         return view('restaurant.restaurant_login');
     }
-    public function RestaurantProfile()
+    public function profile()
     {
         $restaurants = Restaurant::all();
         return view("restaurant.restaurant_profile", compact("restaurants"));
     }
-    public function ShowRestaurants()
+    public function restaurants()
     {
         $restaurants = Restaurant::all();
         return view("admin.restaurants_list", compact("restaurants"));
     }
-    public function RestaurantDashboard()
+    public function dashboard()
     {
         return view('restaurant.index');
     }
@@ -43,7 +43,7 @@ class RestaurantController extends Controller
         }
         //return view('restaurant.index');
     }
-    public function Restaurantlogout()
+    public function logout()
     {
         Auth::guard('restaurant')->logout();
         toastr()->info('Se déconnecter avec succès');
@@ -73,7 +73,7 @@ class RestaurantController extends Controller
         return redirect()->route("restaurant.dashboard");
     }
 
-    public function RestaurantEdit(Request $request)
+    public function update(Request $request)
     {
 
         $restaurant = Restaurant::find($request->id);

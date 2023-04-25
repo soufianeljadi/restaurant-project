@@ -22,65 +22,71 @@ use GuzzleHttp\Middleware;
 /*-----------------------------Restaurant route--------------------------------- */
 
 Route::prefix('restaurant')->group(function () {
-
+    //Auth ROUTES
     Route::get('/login', [RestaurantController::class, 'RestaurantIndex'])->name('login_form');
     Route::post('/login/owner', [RestaurantController::class, 'RestaurantLogin'])->name('restaurant.login');
-    Route::get('/dashboard', [RestaurantController::class, 'RestaurantDashboard'])->name('restaurant.dashboard')->Middleware('Restaurant');
-    Route::get('/logout', [RestaurantController::class, 'Restaurantlogout'])->name('restaurant.logout')->Middleware('Restaurant');
     Route::get('/register', [RestaurantController::class, 'RestaurantRegister'])->name('restaurant.register');
     Route::post('/register/create', [RestaurantController::class, 'RestaurantRegisterCreate'])->name('restaurant.register.create');
-    Route::get('/profile', [RestaurantController::class, 'RestaurantProfile'])->name('restaurant.profile')->Middleware('Restaurant');
-    Route::post('/update', [RestaurantController::class, 'RestaurantEdit'])->name('restaurant.update')->Middleware('Restaurant');
+    //middleware ROUTES
+    Route::middleware(['Restaurant'])->group(function () {
 
-    Route::get('/tables', [TableController::class, 'RestaurantTables'])->name('restaurant.tables');
-    Route::get('/addtable', [TableController::class, 'RestaurantTableCreate'])->name('restaurant.table.create');
-    Route::post('/storetable', [TableController::class, 'RestaurantTableStore'])->name('restaurant.table.store');
-    Route::post('/destroy-table', [TableController::class, 'destroy'])->name('table.delete');
-
-
-
+        Route::get('/logout', [RestaurantController::class, 'logout'])->name('restaurant.logout');
+        Route::get('/dashboard', [RestaurantController::class, 'dashboard'])->name('restaurant.dashboard');
+        Route::get('/profile', [RestaurantController::class, 'profile'])->name('restaurant.profile');
+        Route::post('/update', [RestaurantController::class, 'update'])->name('restaurant.update');
+        //manage Tables
+        Route::get('/tables', [TableController::class, 'index'])->name('restaurant.tables');
+        Route::get('/new-table', [TableController::class, 'create'])->name('restaurant.table.create');
+        Route::post('/store-table', [TableController::class, 'store'])->name('restaurant.table.store');
+        Route::post('/destroy-table', [TableController::class, 'destroy'])->name('table.delete');
+    });
 });
 
 /*-----------------------------End Restaurant route----------------------------- */
 
 /*------------------------------Client route----------------------------------- */
 Route::prefix('client')->group(function () {
-
+    //Auth ROUTES
     Route::get('/login', [ClientController::class, 'ClientIndex'])->name('client_login_form');
     Route::post('/login/owner', [ClientController::class, 'ClientLogin'])->name('client.login');
-    Route::get('/dashboard', [ClientController::class, 'ClientDashboard'])->name('client.dashboard')->Middleware('Client');
-    Route::get('/logout', [ClientController::class, 'Clientlogout'])->name('client.logout')->Middleware('Client');
     Route::get('/register', [ClientController::class, 'ClientRegister'])->name('client.register');
     Route::post('/register/create', [ClientController::class, 'ClientRegisterCreate'])->name('client.register.create');
-    Route::get('/profile', [ClientController::class, 'ClientProfile'])->name('client.profile');
-    Route::post('/update', [ClientController::class, 'ClientEdit'])->name('client.update');
+    //middleware ROUTES
+    Route::middleware(['Client'])->group(function () {
 
-    Route::get('/reservation', [ClientController::class, 'ClientReservation'])->name('client.reservation')->Middleware('Client');
+        Route::get('/dashboard', [ClientController::class, 'dashboard'])->name('client.dashboard');
+        Route::get('/logout', [ClientController::class, 'logout'])->name('client.logout');
+        Route::get('/profile', [ClientController::class, 'profile'])->name('client.profile');
+        Route::post('/update', [ClientController::class, 'update'])->name('client.update');
+        Route::get('/reservation', [ClientController::class, 'reservation'])->name('client.reservation');
+    });
 });
 /*-----------------------------End Client route-------------------------------- */
 
 /*------------------------------admin route----------------------------------- */
 Route::prefix('admin')->group(function () {
-
+    //Auth ROUTES
     Route::get('/login', [AdminController::class, 'AdminIndex'])->name('admin_login_form');
     Route::post('/login/owner', [AdminController::class, 'AdminLogin'])->name('admin.login');
-    Route::get('/dashboard', [AdminController::class, 'AdminDashboard'])->name('admin.dashboard')->Middleware('Admin');
-    Route::get('/logout', [AdminController::class, 'Adminlogout'])->name('admin.logout')->Middleware('Admin');
     Route::get('/register', [AdminController::class, 'Adminregister'])->name('admin.register');
     Route::post('/register/create', [AdminController::class, 'AdminRegisterCreate'])->name('admin.register.create');
-    Route::get('/profile', [AdminController::class, 'AdminProfile'])->name('admin.profile');
+    //middleware ROUTES
+    Route::middleware(['Admin'])->group(function () {
 
-
-//controle restaurants
-Route::get('/restaurants', [RestaurantController::class, 'ShowRestaurants'])->name('Admin.restaurants');
-Route::post('/destroy-restaurant', [RestaurantController::class, 'destroy'])->name('restaurant.delete');
-//controle clients
-    Route::get('/clients', [ClientController::class, 'Showclients'])->name('Admin.clients');
-    Route::post('/destroy-client', [ClientController::class, 'destroy'])->name('client.delete');
+        Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+        Route::get('/logout', [AdminController::class, 'logout'])->name('admin.logout');
+        Route::get('/profile', [AdminController::class, 'profile'])->name('admin.profile');
+        //manage restaurants
+        Route::get('/restaurants', [RestaurantController::class, 'restaurants'])->name('Admin.restaurants');
+        Route::post('/destroy-restaurant', [RestaurantController::class, 'destroy'])->name('restaurant.delete');
+        //manage clients
+        Route::get('/clients', [ClientController::class, 'clients'])->name('Admin.clients');
+        Route::post('/destroy-client', [ClientController::class, 'destroy'])->name('client.delete');
+    });
 });
 /*-----------------------------End admin route-------------------------------- */
 
-
+//Common routes
 Route::get('/', function () {
     return view('index');
 });
