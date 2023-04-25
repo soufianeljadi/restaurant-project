@@ -11,7 +11,7 @@ use Carbon\Carbon;
 class RestaurantController extends Controller
 {
     //
-    public function RestaurantIndex()
+    public function login()
     {
         return view('restaurant.restaurant_login');
     }
@@ -30,7 +30,7 @@ class RestaurantController extends Controller
         return view('restaurant.index');
     }
 
-    public function RestaurantLogin(Request $request)
+    public function connect(Request $request)
     {
         //dd($request->all());
         $check = $request->all();
@@ -49,14 +49,14 @@ class RestaurantController extends Controller
         toastr()->info('Se déconnecter avec succès');
         return redirect('/');
     }
-    public function RestaurantRegister()
+    public function register()
     {
         return view('restaurant.restaurant_register');
     }
 
 
 
-    public function RestaurantRegisterCreate(Request $request)
+    public function create(Request $request)
     {
         // dd($request->all());
         $restaurant = Restaurant::create([

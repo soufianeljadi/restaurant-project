@@ -12,7 +12,7 @@ use Carbon\Carbon;
 class AdminController extends Controller
 {
     //
-    public function AdminIndex()
+    public function login()
     {
         return view('admin.admin_login');
     }
@@ -25,7 +25,7 @@ class AdminController extends Controller
         return view('admin.admin_profile');
     }
 
-    public function AdminLogin(Request $request)
+    public function connect(Request $request)
     {
         //dd($request->all());
         $check = $request->all();
@@ -43,11 +43,11 @@ class AdminController extends Controller
         toastr()->info('Se déconnecter avec succès');
         return redirect('/');
     }
-    public function AdminRegister()
+    public function register()
     {
         return view('admin.admin_register');
     }
-    public function AdminRegisterCreate(Request $request)
+    public function create(Request $request)
     {
        // dd($request->all());
        Admin::insert([

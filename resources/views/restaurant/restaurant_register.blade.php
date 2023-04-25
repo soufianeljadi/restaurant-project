@@ -26,7 +26,7 @@
 
 
 			<!-- Page Content -->
-			<div class="bg-pattern-style bg-pattern-style-register">
+			<div class="bg-pattern-style">
 				<div class="content">
 
 					<!-- Register Content -->
@@ -49,19 +49,12 @@
                                                 <input  type="text" class="form-control" name="name" autofocus="">
                                             </div>
                                         </div>
-                                    <div class="row">
-                                        {{-- <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <label class="form-control-label">Last Name</label>
-												<input id="last-name" type="text" class="form-control" name="last_name">
-											</div>
-										</div> --}}
-									</div>
+                                        <div class="form-group">
 										<label class="form-control-label">Adresse e-mail</label>
 										<input  type="email" name="email"class="form-control">
-									</div>
+                                    </div>
 									<div class="row">
-										<div class="col-lg-6">
+                                        <div class="col-lg-6">
 											<div class="form-group">
 												<label class="form-control-label">Mot de passe</label>
 												<input  type="password" class="form-control" name="password">
@@ -74,6 +67,7 @@
 											</div>
 										</div>
 									</div>
+                                </div>
 									{{-- <div class="form-group">
 										<div class="form-check form-check-xs custom-checkbox">
 											<input type="checkbox" class="form-check-input" name="agreeCheckboxUser" id="agree_checkbox_user">

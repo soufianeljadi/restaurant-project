@@ -11,7 +11,7 @@ use Carbon\Carbon;
 class ClientController extends Controller
 {
     //
-    public function ClientIndex()
+    public function login()
     {
         return view('client.client_login');
     }
@@ -38,7 +38,7 @@ class ClientController extends Controller
           ]);
     }
 
-    public function ClientLogin(Request $request)
+    public function connect(Request $request)
     {
         //dd($request->all());
         $check = $request->all();
@@ -51,11 +51,11 @@ class ClientController extends Controller
         }
         //return view('restaurant.index');
     }
-    public function ClientRegister()
+    public function register()
     {
         return view('client.client_register');
     }
-    public function ClientRegisterCreate(Request $request)
+    public function create(Request $request)
     {
        // dd($request->all());
        $client = Client::create([

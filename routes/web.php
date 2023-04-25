@@ -19,14 +19,14 @@ use GuzzleHttp\Middleware;
 |
 */
 
-/*-----------------------------Restaurant route--------------------------------- */
+/*-----------------------------Restaurant routes--------------------------------- */
 
 Route::prefix('restaurant')->group(function () {
     //Auth ROUTES
-    Route::get('/login', [RestaurantController::class, 'RestaurantIndex'])->name('login_form');
-    Route::post('/login/owner', [RestaurantController::class, 'RestaurantLogin'])->name('restaurant.login');
-    Route::get('/register', [RestaurantController::class, 'RestaurantRegister'])->name('restaurant.register');
-    Route::post('/register/create', [RestaurantController::class, 'RestaurantRegisterCreate'])->name('restaurant.register.create');
+    Route::get('/login', [RestaurantController::class, 'login'])->name('login_form');
+    Route::post('/connect', [RestaurantController::class, 'connect'])->name('restaurant.login');
+    Route::get('/register', [RestaurantController::class, 'register'])->name('restaurant.register');
+    Route::post('/create', [RestaurantController::class, 'create'])->name('restaurant.register.create');
     //middleware ROUTES
     Route::middleware(['Restaurant'])->group(function () {
 
@@ -42,39 +42,39 @@ Route::prefix('restaurant')->group(function () {
     });
 });
 
-/*-----------------------------End Restaurant route----------------------------- */
+/*-----------------------------End Restaurant routes----------------------------- */
 
-/*------------------------------Client route----------------------------------- */
+/*------------------------------Client routes----------------------------------- */
 Route::prefix('client')->group(function () {
     //Auth ROUTES
-    Route::get('/login', [ClientController::class, 'ClientIndex'])->name('client_login_form');
-    Route::post('/login/owner', [ClientController::class, 'ClientLogin'])->name('client.login');
-    Route::get('/register', [ClientController::class, 'ClientRegister'])->name('client.register');
-    Route::post('/register/create', [ClientController::class, 'ClientRegisterCreate'])->name('client.register.create');
+    Route::get('/login', [ClientController::class, 'login'])->name('client_login_form');
+    Route::post('/connect', [ClientController::class, 'connect'])->name('client.login');
+    Route::get('/register', [ClientController::class, 'register'])->name('client.register');
+    Route::post('/create', [ClientController::class, 'create'])->name('client.register.create');
     //middleware ROUTES
     Route::middleware(['Client'])->group(function () {
 
-        Route::get('/dashboard', [ClientController::class, 'dashboard'])->name('client.dashboard');
         Route::get('/logout', [ClientController::class, 'logout'])->name('client.logout');
+        Route::get('/dashboard', [ClientController::class, 'dashboard'])->name('client.dashboard');
         Route::get('/profile', [ClientController::class, 'profile'])->name('client.profile');
         Route::post('/update', [ClientController::class, 'update'])->name('client.update');
         Route::get('/reservation', [ClientController::class, 'reservation'])->name('client.reservation');
     });
 });
-/*-----------------------------End Client route-------------------------------- */
+/*-----------------------------End Client routes-------------------------------- */
 
-/*------------------------------admin route----------------------------------- */
+/*------------------------------admin routes----------------------------------- */
 Route::prefix('admin')->group(function () {
     //Auth ROUTES
-    Route::get('/login', [AdminController::class, 'AdminIndex'])->name('admin_login_form');
-    Route::post('/login/owner', [AdminController::class, 'AdminLogin'])->name('admin.login');
-    Route::get('/register', [AdminController::class, 'Adminregister'])->name('admin.register');
-    Route::post('/register/create', [AdminController::class, 'AdminRegisterCreate'])->name('admin.register.create');
+    Route::get('/login', [AdminController::class, 'login'])->name('admin_login_form');
+    Route::post('/connect', [AdminController::class, 'connect'])->name('admin.login');
+    Route::get('/register', [AdminController::class, 'register'])->name('admin.register');
+    Route::post('/create', [AdminController::class, 'create'])->name('admin.register.create');
     //middleware ROUTES
     Route::middleware(['Admin'])->group(function () {
 
-        Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
         Route::get('/logout', [AdminController::class, 'logout'])->name('admin.logout');
+        Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
         Route::get('/profile', [AdminController::class, 'profile'])->name('admin.profile');
         //manage restaurants
         Route::get('/restaurants', [RestaurantController::class, 'restaurants'])->name('Admin.restaurants');
@@ -84,7 +84,7 @@ Route::prefix('admin')->group(function () {
         Route::post('/destroy-client', [ClientController::class, 'destroy'])->name('client.delete');
     });
 });
-/*-----------------------------End admin route-------------------------------- */
+/*-----------------------------End admin routes-------------------------------- */
 
 //Common routes
 Route::get('/', function () {
@@ -93,6 +93,8 @@ Route::get('/', function () {
 Route::get('/about', function () {
     return view('about');
 });
+
+
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');
