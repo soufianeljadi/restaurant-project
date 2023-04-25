@@ -123,6 +123,14 @@ Version      : 1.0
 	font-weight: 400;
 	src: local('Impact'), url('../fonts/impact.ttf') format('ttf');
 }
+.home-icon {
+    font-size: 20px;
+    color: #7a1717;
+    float: right;
+    padding-right: 10px;
+
+  }
+
 html {
     height: 100%;
 }

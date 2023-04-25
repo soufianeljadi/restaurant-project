@@ -34,6 +34,8 @@
 						<div class="account-box">
 							<div class="login-right">
 								<div class="login-header">
+                                    <a href="/" class="home-icon"><i class="fas fa-arrow-circle-left"></i></a>
+
 									<h3><span>Restaurant</span> Register</h3>
 									<p class="text-muted"><br>Vous souhaitez augmenter les revenus de votre restaurant et optimiser votre activité ?<br>
                                         Commencez à capturer plus de réservations de clients du coin de la rue et du monde entier</p>

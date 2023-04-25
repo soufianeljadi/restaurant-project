@@ -34,6 +34,8 @@
 						<div class="account-box">
 							<div class="login-right">
 								<div class="login-header">
+                                    <a href="/" class="home-icon"><i class="fas fa-arrow-circle-left"></i></a>
+
 									<h3><span>Admin</span> Register</h3>
 									<p class="text-muted"><br></p>
 								</div>
