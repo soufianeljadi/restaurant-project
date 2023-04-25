@@ -633,7 +633,7 @@
         </section> --}}
         <!-- End of Team Section -->
         <!-- Reservation Section -->
-        <section id="gtco-reservation" class="bg-fixed bg-white section-padding overlay"
+        {{-- <section id="gtco-reservation" class="bg-fixed bg-white section-padding overlay"
             style="background-image: url(img/reservation-bg.jpg);">
             <div class="container">
                 <div class="row">
@@ -714,7 +714,7 @@
                 </div>
 
             </div>
-        </section>
+        </section> --}}
         <!-- End of Reservation Section -->
         <footer class="mastfoot pb-5 bg-white section-padding pb-0">
             <div class="inner container">

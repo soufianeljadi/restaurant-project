@@ -1,92 +1,98 @@
 @extends('client.client_master')
 @section('client')
-<div class="content container-fluid">
+    <div class="content container-fluid">
 
 
 
-    <!-- Page Header -->
-    <div class="page-header">
-        <div class="row">
-            <div class="col-sm-12">
-                <h3 class="page-title">Bienvenue {{  Auth::guard('client')->user()->name }}</h3>
-                <h4 class="page-title">La liste des restaurants</h4>
-                <ul class="breadcrumb">
+        <!-- Page Header -->
+        <div class="page-header">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h2 class="page-title">Bienvenue {{ Auth::guard('client')->user()->name }}</h2></br>
+                    <h4 class="page-title">La liste des restaurants</h4>
+                    <ul class="breadcrumb">
 
                         <li class="breadcrumb-item active">Ce tableau contient tous les restaurants et leurs informations
                         </li>
-                 </ul>
+                    </ul>
 
+                </div>
             </div>
         </div>
-    </div>
 
 
 
 
 
-                <div class="table-responsive ">
-                    <table class="datatable table table-stripped" id="myTable">
-                        <thead>
-                            <tr>
-                                <th>Nom du resto</th>
-                                {{-- <th>Status</th> --}}
-                                <th>Controle</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($restaurants as $restaurant)
-                                <tr>
-                                    <td>{{ $restaurant->name }} </td>
-                                    {{-- <td>{{ $restaurant->status }} </td> --}}
+        <div class="table-responsive ">
+            <table class="datatable table table-stripped" id="myTable">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        {{-- <th>Controle</th> --}}
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($restaurants as $restaurant)
+                        <tr>
 
-                                    <td>
-                                        <a data-bs-toggle="modal" href="detail_restaurant_{{ $restaurant->id }}"
-                                            class="btn btn-sm bg-info-light">Details</a>
-                                        {{-- <a data-bs-toggle="modal" class="btn btn-sm bg-warning-light">Modifier</a> --}}
-
-                                    </td>
-                                </tr>
-                                <div class="modal fade" id="detail_restaurant_{{ $restaurant->id }}" aria-hidden="true"
-                                    role="dialog">
-                                    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title">Details Restaurant</h5>
-                                                <button type="button" class="close" data-bs-dismiss="modal"
-                                                    aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                            </div>
-                                            <div class="modal-body">
-                                                {{-- <form action="{{ route('Admin.restaurants') }}" method="get">
-                                                    @csrf --}}
-                                                    <input type="hidden" name="id" value="{{ $restaurant->id }}">
-                                                    <div class="row form-row">
-                                                        <div class="col-12 col-sm-6">
-                                                            <div class="form-group">
-                                                                <label>Nom du resto</label>
-                                                                <input type="text" name="name" class="form-control"
-                                                                    value="{{ $restaurant->name }}">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                {{-- </form> --}}
+                            <td>
+                                <div class="row">
+                                    <h4 class="page-title">{{ $restaurant->name }}
+                                    </h4><br>
+                                    <div class="col-md-12">
+                                        <div class="profile-header">
+                                            <div class="row align-items-center">
+                                                {{-- <div class="col-auto profile-image">
+                                                    <a href="#">
+                                                        <img class="rounded-circle" alt="User Image"
+                                                            src="{{ asset('img/resto_user.png') }}">
+                                                    </a>
+                                                </div> --}}
+                                                <div class="col ms-md-n2 profile-user-info">
+                                                    <h6 class="text-muted">Email :{{ $restaurant->email }}
+                                                    </h6>
+                                                    <div class="pb-3"><i class="fa fa-map-marker"></i>
+                                                        L'emplacement :{{ $restaurant->location }}</div>
+                                                    <div class="about-text">
+                                                        Description :{{ $restaurant->description }}</div>
+                                                </div>
+                                                <div class="col-auto profile-btn">
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            @endforeach
-                        </tbody>
-                    </table>
-                </div>
-                {{-- Detail --}}
+                            </td>
+                            {{-- <td>{{ $restaurant->status }} </td> --}}
 
-            </div>
+                            <td>
+
+                                {{-- <a data-bs-toggle="modal" href="}"
+                                    class="btn btn-sm bg-info-light">Réservez ici</a> --}}
+                                    <div class="mb-2">
+                                        <a style="margin-top:50%" class="btn btn-primary btn-shadow btn-lg" href="{{ route('client.reservation') }}" role="button">Réservez ici</a>
+
+                                    </div>
+
+                            </td>
+                        </tr>
+                      <tr>
+
+                      </tr>
+                    @endforeach
+                </tbody>
+            </table>
         </div>
+        {{-- Detail --}}
+
+    </div>
+    </div>
 
 
     <!-- /Page Header -->
-{{--
+    {{--
     <div class="row">
         <div class="col-xl-3 col-sm-6 col-12">
             <div class="card">
@@ -552,10 +558,10 @@
                     </div>
                 </div>
             </div> --}}
-            <!-- /Recent Orders -->
+    <!-- /Recent Orders -->
 
-        </div>
+    </div>
     </div>
 
-</div>
+    </div>
 @endsection
