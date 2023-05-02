@@ -22,6 +22,8 @@ use GuzzleHttp\Middleware;
 /*-----------------------------Restaurant routes--------------------------------- */
 
 Route::prefix('restaurant')->group(function () {
+
+
     //Auth ROUTES
     Route::get('/login', [RestaurantController::class, 'login'])->name('login_form');
     Route::post('/connect', [RestaurantController::class, 'connect'])->name('restaurant.login');

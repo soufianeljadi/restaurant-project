@@ -170,9 +170,9 @@
                 <div class="sidebar-inner slimscroll">
 					<div id="sidebar-menu" class="sidebar-menu">
 						<ul>
-							<li class="menu-title">
+							{{-- <li class="menu-title">
 								<span><i class="fe fe-home"></i> Main</span>
-							</li>
+							</li> --}}
 							<li class="active">
 								<a href="{{route('admin.dashboard') }}"><span>Dashboard</span></a>
 							</li>

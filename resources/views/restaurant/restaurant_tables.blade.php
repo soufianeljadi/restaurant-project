@@ -9,6 +9,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     <h3 class="page-title">La liste des tables</h3>
+
                     <ul class="breadcrumb">
                         <li class="breadcrumb-item active">Ce tableau contient tous les tables et leurs informations
                         </li>
@@ -26,7 +27,7 @@
                         <tr>
                             <th>Nr</th>
                             <th>Guest number</th>
-                            <th>resto</th>
+                            {{-- <th>resto</th>--}}
                             <th>Status</th>
                             <th>location</th>
                             <th>Controle</th>
@@ -34,11 +35,11 @@
                     </thead>
                     <tbody>
 
-                            @foreach ($tables as $table)
+                            @foreach (Auth::guard('restaurant')->user()->tables   as $table)
                             <tr>
                                 <td>{{ $table->number }} </td>
                                 <td>{{ $table->guest_number }} </td>
-                                <td>{{ $table->restaurant->name }} </td>
+                                {{-- <td>{{ $table->restaurant->name }} </td> --}}
                                 <td>{{ $table->status }} </td>
                                 <td>{{ $table->location }}</td>
                                 <td>

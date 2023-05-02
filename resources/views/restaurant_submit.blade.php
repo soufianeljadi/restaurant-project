@@ -37,6 +37,7 @@
 
 <body>
 
+
 	<header class="header clearfix element_to_stick">
 		<div class="container">
 		<div id="logo">
@@ -98,227 +99,210 @@
 	<!-- /header -->
 
 	<main>
-		<div class="hero_single version_2">
+		<div class="hero_single inner_pages background-image" data-background="url(img/hero_submit.jpg)">
 			<div class="opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.6)">
 				<div class="container">
 					<div class="row justify-content-center">
 						<div class="col-xl-9 col-lg-10 col-md-8">
-							<h1>Découvrez &amp; Réservez</h1>
-							<p>le meilleur restaurant <span class="element" style="font-weight: 500"></span></p>
-							<form method="post" action="grid-listing-filterscol.html">
-								<div class="row g-0 custom-search-input">
-									<div class="col-lg-4">
-										<div class="form-group">
-											<input class="form-control" type="text" placeholder="What are you looking for...">
-											<i class="icon_search"></i>
-										</div>
-									</div>
-									<div class="col-lg-6">
-										<div class="form-group">
-											<input class="form-control no_border_r" type="text" placeholder="Address, neighborhood...">
-											<i class="icon_pin_alt"></i>
-										</div>
-									</div>
-									<div class="col-lg-2">
-										<input type="submit" value="Search">
-									</div>
-								</div>
-								<!-- /row -->
-							</form>
+							<h1>Attract New Customers</h1>
+							<p>More bookings from diners around the corner</p>
 						</div>
 					</div>
 					<!-- /row -->
 				</div>
 			</div>
 		</div>
+		<!-- /hero_single -->
 
-
-		<div class="container margin_60_40">
-			<div class="main_title">
+		<div class="bg_gray">
+			<div class="container margin_60_40">
+			<div class="main_title center">
 				<span><em></em></span>
-				<h2>Restaurants populaires</h2>
-				{{-- <p>Cum doctus civibus efficiantur in imperdiet deterruisset.</p> --}}
-				<a href="#0">View All</a>
+				<h2>Why Submit to Foogra</h2>
+				<p>Cum doctus civibus efficiantur in imperdiet deterruisset.</p>
 			</div>
 
-			<div class="owl-carousel owl-theme carousel_4">
-			    <div class="item">
-			        <div class="strip">
-			            <figure>
-			                <span class="ribbon off">-30%</span>
-			                <img src="img/lazy-placeholder.png" data-src="img/location_1.jpg" class="owl-lazy" alt="">
-			                <a href="detail-restaurant.html" class="strip_info">
-			                    <small>Pizza</small>
-			                    <div class="item_title">
-			                        <h3>Da Alfredo</h3>
-			                        <small>27 Old Gloucester St</small>
-			                    </div>
-			                </a>
-			            </figure>
-			            <ul>
-			                <li><span class="loc_open">Now Open</span></li>
-			                <li>
-			                    <div class="score"><span>Superb<em>350 Reviews</em></span><strong>8.9</strong></div>
-			                </li>
-			            </ul>
-			        </div>
-			    </div>
-			    <div class="item">
-			        <div class="strip">
-			            <figure>
-			                <span class="ribbon off">-40%</span>
-			                <img src="img/lazy-placeholder.png" data-src="img/location_2.jpg" class="owl-lazy" alt="">
-			                <a href="detail-restaurant.html" class="strip_info">
-			                    <small>Burghers</small>
-			                    <div class="item_title">
-			                        <h3>Best Burghers</h3>
-			                        <small>27 Old Gloucester St</small>
-			                    </div>
-			                </a>
-			            </figure>
-			            <ul>
-			                <li><span class="loc_open">Now Open</span></li>
-			                <li>
-			                    <div class="score"><span>Superb<em>350 Reviews</em></span><strong>9.5</strong></div>
-			                </li>
-			            </ul>
-			        </div>
-			    </div>
-			    <div class="item">
-			        <div class="strip">
-			            <figure>
-			                <span class="ribbon off">-30%</span>
-			                <img src="img/lazy-placeholder.png" data-src="img/location_3.jpg" class="owl-lazy" alt="">
-			                <a href="detail-restaurant.html" class="strip_info">
-			                    <small>Vegetarian</small>
-			                    <div class="item_title">
-			                        <h3>Vego Life</h3>
-			                        <small>27 Old Gloucester St</small>
-			                    </div>
-			                </a>
-			            </figure>
-			            <ul>
-			                <li><span class="loc_open">Now Open</span></li>
-			                <li>
-			                    <div class="score"><span>Superb<em>350 Reviews</em></span><strong>7.5</strong></div>
-			                </li>
-			            </ul>
-			        </div>
-			    </div>
-			    <div class="item">
-			        <div class="strip">
-			            <figure>
-			                <span class="ribbon off">-25%</span>
-			                <img src="img/lazy-placeholder.png" data-src="img/location_4.jpg" class="owl-lazy" alt="">
-			                <a href="detail-restaurant.html" class="strip_info">
-			                    <small>Japanese</small>
-			                    <div class="item_title">
-			                        <h3>Sushi Temple</h3>
-			                        <small>27 Old Gloucester St</small>
-			                    </div>
-			                </a>
-			            </figure>
-			            <ul>
-			                <li><span class="loc_open">Now Open</span></li>
-			                <li>
-			                    <div class="score"><span>Superb<em>350 Reviews</em></span><strong>9.5</strong></div>
-			                </li>
-			            </ul>
-			        </div>
-			    </div>
-			    <div class="item">
-			        <div class="strip">
-			            <figure>
-			                <span class="ribbon off">-30%</span>
-			                <img src="img/lazy-placeholder.png" data-src="img/location_5.jpg" class="owl-lazy" alt="">
-			                <a href="detail-restaurant.html" class="strip_info">
-			                    <small>Pizza</small>
-			                    <div class="item_title">
-			                        <h3>Auto Pizza</h3>
-			                        <small>27 Old Gloucester St</small>
-			                    </div>
-			                </a>
-			            </figure>
-			            <ul>
-			                <li><span class="loc_open">Now Open</span></li>
-			                <li>
-			                    <div class="score"><span>Superb<em>350 Reviews</em></span><strong>7.0</strong></div>
-			                </li>
-			            </ul>
-			        </div>
-			    </div>
-			    <div class="item">
-			        <div class="strip">
-			            <figure>
-			                <span class="ribbon off">-15%</span>
-			                <img src="img/lazy-placeholder.png" data-src="img/location_6.jpg" class="owl-lazy" alt="">
-			                <a href="detail-restaurant.html" class="strip_info">
-			                    <small>Burghers</small>
-			                    <div class="item_title">
-			                        <h3>Alliance</h3>
-			                        <small>27 Old Gloucester St</small>
-			                    </div>
-			                </a>
-			            </figure>
-			            <ul>
-			                <li><span class="loc_open">Now Open</span></li>
-			                <li>
-			                    <div class="score"><span>Superb<em>350 Reviews</em></span><strong>8.9</strong></div>
-			                </li>
-			            </ul>
-			        </div>
-			    </div>
-			    <div class="item">
-			        <div class="strip">
-			            <figure>
-			                <span class="ribbon off">-30%</span>
-			                <img src="img/lazy-placeholder.png" data-src="img/location_7.jpg" class="owl-lazy" alt="">
-			                <a href="detail-restaurant.html" class="strip_info">
-			                    <small>Chinese</small>
-			                    <div class="item_title">
-			                        <h3>Alliance</h3>
-			                        <small>27 Old Gloucester St</small>
-			                    </div>
-			                </a>
-			            </figure>
-			            <ul>
-			                <li><span class="loc_closed">Now Closed</span></li>
-			                <li>
-			                    <div class="score"><span>Superb<em>350 Reviews</em></span><strong>8.9</strong></div>
-			                </li>
-			            </ul>
-			        </div>
-			    </div>
-			</div>
-			<!-- /carousel -->
-
-			<div class="banner lazy" data-bg="url(assets-home/img/detail_2.jpg)">
-				<div class="wrapper d-flex align-items-center opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.2)">
-					<div>
-						<small>Resto</small>
-						<h3>More than 3000 Restaurants</h3>
-						<p>Réservez une table facilement au meilleur prix</p>
-						{{-- <a href="grid-listing-filterscol.html" class="btn_1">View All</a> --}}
+			<div class="row justify-content-center align-items-center add_bottom_15">
+					<div class="col-lg-5">
+						<div class="box_about">
+							<h3>Boost your Bookings</h3>
+							<p class="lead">Est falli invenire interpretaris id, magna libris sensibus mel id.</p>
+							<p>Per eu nostrud feugiat. Et quo molestiae persecuti neglegentur. At zril definitionem mei, vel ei choro volumus. An tota nulla soluta has, ei nec essent audiam, te nisl dignissim vel. Ex velit audire perfecto pro, ei mei doming vivendo legendos. Cu sit magna zril, an odio delectus constituto vis. Vis ludus omnesque ne, est veri quaeque ad.</p>
+							<img src="img/arrow_about.png" alt="" class="arrow_1">
+						</div>
+					</div>
+					<div class="col-lg-5 pl-lg-5 text-center d-none d-lg-block">
+							<img src="img/about_1.svg" alt="" class="img-fluid" width="250" height="250">
 					</div>
 				</div>
-				<!-- /wrapper -->
+				<!-- /row -->
+				<div class="row justify-content-center align-items-center add_bottom_15">
+					<div class="col-lg-5 pr-lg-5 text-center d-none d-lg-block">
+							<img src="img/about_2.svg" alt="" class="img-fluid" width="250" height="250">
+					</div>
+					<div class="col-lg-5">
+						<div class="box_about">
+							<h3>Manage Easly</h3>
+							<p class="lead">Est falli invenire interpretaris id, magna libris sensibus mel id.</p>
+							<p>Per eu nostrud feugiat. Et quo molestiae persecuti neglegentur. At zril definitionem mei, vel ei choro volumus. An tota nulla soluta has, ei nec essent audiam, te nisl dignissim vel. Ex velit audire perfecto pro, ei mei doming vivendo legendos. Cu sit magna zril, an odio delectus constituto vis. Vis ludus omnesque ne, est veri quaeque ad.</p>
+							<img src="img/arrow_about.png" alt="" class="arrow_2">
+						</div>
+					</div>
+				</div>
+				<!-- /row -->
+				<div class="row justify-content-center align-items-center">
+					<div class="col-lg-5">
+						<div class="box_about">
+							<h3>Reach New Customers</h3>
+							<p class="lead">Est falli invenire interpretaris id, magna libris sensibus mel id.</p>
+							<p>Per eu nostrud feugiat. Et quo molestiae persecuti neglegentur. At zril definitionem mei, vel ei choro volumus. An tota nulla soluta has, ei nec essent audiam, te nisl dignissim vel. Ex velit audire perfecto pro, ei mei doming vivendo legendos. Cu sit magna zril, an odio delectus constituto vis. Vis ludus omnesque ne, est veri quaeque ad.</p>
+						</div>
+
+					</div>
+					<div class="col-lg-5 pl-lg-5 text-center d-none d-lg-block">
+							<img src="img/about_3.svg" alt="" class="img-fluid" width="250" height="250">
+					</div>
+				</div>
+				<!-- /row -->
 			</div>
-			<!-- /banner -->
+			<!-- /container -->
+		</div>
+		<!-- /bg_gray -->
 
+		<div class="container margin_60_40">
+			<div class="main_title center">
+				<span><em></em></span>
+				<h2>Our Pricing Plans</h2>
+				<p>Cum doctus civibus efficiantur in imperdiet deterruisset.</p>
+			</div>
+				 <div class="row plans">
+                <div class="plan col-md-4">
+                	<div class="plan-title">
+	                    <h3>1 Month</h3>
+	                    <p>Free of charge one standard listing</p>
+                	</div>
+                    <p class="plan-price">Free</p>
+                    <ul class="plan-features">
+                        <li><strong>Check and go</strong> included</li>
+                        <li><strong>1 month</strong> valid</li>
+                        <li><strong>Unsubscribe</strong> anytime</li>
+                    </ul>
+                    <a href="#submit" class="btn_1 gray btn_scroll">Submit</a>
+                </div> <!-- End col-md-4 -->
 
+                <div class="plan plan-tall col-md-4">
+                	<div class="plan-title">
+	                    <h3>6 Months</h3>
+	                    <p>One time fee for one listing, highlighted in search results</p>
+                	</div>
+                    <p class="plan-price">$199</p>
+                    <ul class="plan-features">
+                    	<li><strong>Premium</strong> support</li>
+                        <li><strong>Check and go</strong> included</li>
+                         <li><strong>APP</strong> included</li>
+                        <li><strong>6 months</strong> valid</li>
+                        <li><strong>Unsubscribe</strong> anytime</li>
+                    </ul>
+                    <a href="#submit" class="btn_1 btn_scroll">Submit</a>
+                </div><!-- End col-md-4 -->
 
-		<div class="call_section lazy" data-bg="url(img/table1.jpg)">
-		    <div class="container clearfix">
-		        <div class="col-lg-5 col-md-6 float-end wow">
-		            <div class="box_1">
-		                <h3>Êtes-vous un propriétaire de restaurant?</h3>
-		                <p>Rejoignez-nous pour augmenter votre visibilité en ligne. Vous aurez accès à encore plus de clients qui souhaitent profiter de vos plats savoureux à la maison.</p>
-		                <a href=" class="btn_1">En savoir plus</a>
-		            </div>
-		        </div>
-    		</div>
-    	</div>
-   		<!--/call_section-->
+                <div class="plan col-md-4">
+                   <div class="plan-title">
+	                    <h3>12 Months</h3>
+	                    <p>Monthly subscription for unlimited listings</p>
+                	</div>
+                    <p class="plan-price">$299</p>
+                    <ul class="plan-features">
+                    	<li><strong>Premium</strong> support</li>
+                        <li><strong>Check and go</strong> included</li>
+                        <li><strong>12 months</strong> valid</li>
+                        <li><strong>Unsubscribe</strong> anytime</li>
+                    </ul>
+                    <a href="#submit" class="btn_1 gray btn_scroll">Submit</a>
+                </div><!-- End col-md-4 -->
+            </div><!-- End row plans-->
+		</div>
+		<!-- /container -->
+
+		<div class="bg_gray pattern" id="submit">
+			<div class="container margin_60_40">
+				<div class="row justify-content-center">
+					<div class="col-lg-5">
+						<div class="text-center add_bottom_15">
+							<h4>Please fill the form below</h4>
+							<p>Id persius indoctum sed, audiam verear his in, te eum quot comprehensam. Sed impetus vocibus repudiare et.</p>
+						</div>
+						<div id="message-register"></div>
+							<form method="post" action="assets/register.php" id="register">
+								<h6>Personal data</h6>
+								<div class="row">
+									<div class="col-lg-12">
+										<div class="form-group">
+											<input type="text" class="form-control" placeholder="Name and Last Name" name="name_register" id="name_register">
+										</div>
+									</div>
+								</div>
+								<!-- /row -->
+								<div class="row add_bottom_15">
+									<div class="col-lg-12">
+										<div class="form-group">
+											<input type="email" class="form-control" placeholder="Email Address" name="email_register" id="email_register">
+										</div>
+									</div>
+								</div>
+								<!-- /row -->
+								<h6>Restaurant data</h6>
+								<div class="row">
+									<div class="col-lg-12">
+										<div class="form-group">
+											<input type="text" class="form-control" placeholder="Restaurant Name" name="restaurantname_register" id="restaurantname_register">
+										</div>
+									</div>
+								</div>
+								<!-- /row -->
+								<div class="row">
+									<div class="col-lg-12">
+										<div class="form-group">
+											<input type="text" class="form-control" placeholder="Address" name="address_register" id="address_register">
+										</div>
+									</div>
+								</div>
+								<!-- /row -->
+								<div class="row add_bottom_15">
+									<div class="col-md-6">
+										<div class="form-group">
+											<input type="text" class="form-control" placeholder="City" name="city_register" id="city_register">
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<select class="form-control" name="country_register" id="country_register">
+												<option value="">Country</option>
+												<option value="Europe">Europe</option>
+												<option value="Asia">Asia</option>
+												<option value="Unated States">Unated States</option>
+											</select>
+										</div>
+									</div>
+								</div>
+								<!-- /row -->
+								<h6>I am not a robot</h6>
+								<div class="row add_bottom_25">
+									<div class="col-lg-12">
+										<div class="form-group">
+											<input type="text" id="verify_register" class="form-control" placeholder="Human verify: 3 + 1 =?">
+										</div>
+									</div>
+								</div>
+								<!-- /row -->
+								<div class="form-group text-center"><input type="submit" class="btn_1" value="Submit" id="submit-register"></div>
+							</form>
+					</div>
+				</div>
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /bg_gray -->
 
 	</main>
 	<!-- /main -->
@@ -375,7 +359,7 @@
 						<div class="follow_us">
 							<h5>Follow Us</h5>
 							<ul>
-								<li><a href="#0"><img  data-src="img/twitter_icon.svg" alt="" class="lazy"></a></li>
+								<li><a href="#0"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="img/twitter_icon.svg" alt="" class="lazy"></a></li>
 								<li><a href="#0"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="img/facebook_icon.svg" alt="" class="lazy"></a></li>
 								<li><a href="#0"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="img/instagram_icon.svg" alt="" class="lazy"></a></li>
 								<li><a href="#0"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="img/youtube_icon.svg" alt="" class="lazy"></a></li>
@@ -386,7 +370,7 @@
 			</div>
 			<!-- /row-->
 			<hr>
-			{{-- <div class="row add_bottom_25">
+			<div class="row add_bottom_25">
 				<div class="col-lg-6">
 					<ul class="footer-selector clearfix">
 						<li>
@@ -417,7 +401,7 @@
 						<li><span>© Foogra</span></li>
 					</ul>
 				</div>
-			</div> --}}
+			</div>
 		</div>
 	</footer>
 	<!--/footer-->
@@ -427,7 +411,7 @@
 	<div class="layer"></div><!-- Opacity Mask Menu Mobile -->
 
 	<!-- Sign In Modal -->
-	{{-- <div id="sign-in-dialog" class="zoom-anim-dialog mfp-hide">
+	<div id="sign-in-dialog" class="zoom-anim-dialog mfp-hide">
 		<div class="modal_header">
 			<h3>Sign In</h3>
 		</div>
@@ -469,30 +453,34 @@
 					<div class="text-center"><input type="submit" value="Reset Password" class="btn_1"></div>
 				</div>
 			</div>
-		</form> --}}
+		</form>
 		<!--form -->
-	{{-- </div> --}}
+	</div>
 	<!-- /Sign In Modal -->
 
 	<!-- COMMON SCRIPTS -->
-    <script src="assets-home/js/common_scripts.min.js"></script>
-    <script src="assets-home/js/common_func.js"></script>
-    <script src="assets-home/assets/validate.js"></script>
-
-    <!-- TYPE EFFECT -->
-    <script src="assets-home/js/typed.min.js"></script>
-    <script>
-    	var typed = new Typed('.element', {
-		  strings: ["au meilleur prix", "avec une nourriture unique", "avec un bel emplacement"],
-		  startDelay: 10,
-		  loop: true,
-		  backDelay: 2000,
-		  typeSpeed: 50
-		});
-    </script>
+    <script src="js/common_scripts.min.js"></script>
+    <script src="js/common_func.js"></script>
+    <script src="assets/validate.js"></script>
 
     <!-- COLOR SWITCHER  -->
-
+	<script src="js/switcher.js"></script>
+	<div id="style-switcher">
+		<h6>Color Switcher <a href="#"><i class="icon_cog"></i></a></h6>
+		<div>
+			<ul class="colors" id="color1">
+				<li><a href="#" class="default" title="Default"></a></li>
+				<li><a href="#" class="aqua" title="Aqua"></a></li>
+				<li><a href="#" class="orange" title="Orange"></a></li>
+				<li><a href="#" class="beige" title="Beige"></a></li>
+				<li><a href="#" class="gray" title="Gray"></a></li>
+				<li><a href="#" class="green-2" title="Green"></a></li>
+				<li><a href="#" class="purple" title="Purple"></a></li>
+				<li><a href="#" class="red" title="Red"></a></li>
+				<li><a href="#" class="violet" title="Violet"></a></li>
+			</ul>
+		</div>
+	</div>
 
 </body>
 </html>
