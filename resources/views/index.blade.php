@@ -16,6 +16,7 @@
     <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="assets-home/img/apple-touch-icon-144x144-precomposed.png"> --}}
 
     <!-- GOOGLE WEB FONT -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
     <link rel="preload" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap" as="fetch" crossorigin="anonymous">
@@ -105,7 +106,7 @@
 						<div class="col-xl-9 col-lg-10 col-md-8">
 							<h1>Découvrez &amp; Réservez</h1>
 							<p>le meilleur restaurant <span class="element" style="font-weight: 500"></span></p>
-							<form method="post" action="grid-listing-filterscol.html">
+							{{-- <form method="post" action="grid-listing-filterscol.html">
 								<div class="row g-0 custom-search-input">
 									<div class="col-lg-4">
 										<div class="form-group">
@@ -124,7 +125,7 @@
 									</div>
 								</div>
 								<!-- /row -->
-							</form>
+							</form> --}}
 						</div>
 					</div>
 					<!-- /row -->
@@ -163,140 +164,14 @@
 			            </ul>
 			        </div>
 			    </div>
-			    <div class="item">
-			        <div class="strip">
-			            <figure>
-			                <span class="ribbon off">-40%</span>
-			                <img src="img/lazy-placeholder.png" data-src="img/location_2.jpg" class="owl-lazy" alt="">
-			                <a href="detail-restaurant.html" class="strip_info">
-			                    <small>Burghers</small>
-			                    <div class="item_title">
-			                        <h3>Best Burghers</h3>
-			                        <small>27 Old Gloucester St</small>
-			                    </div>
-			                </a>
-			            </figure>
-			            <ul>
-			                <li><span class="loc_open">Now Open</span></li>
-			                <li>
-			                    <div class="score"><span>Superb<em>350 Reviews</em></span><strong>9.5</strong></div>
-			                </li>
-			            </ul>
-			        </div>
-			    </div>
-			    <div class="item">
-			        <div class="strip">
-			            <figure>
-			                <span class="ribbon off">-30%</span>
-			                <img src="img/lazy-placeholder.png" data-src="img/location_3.jpg" class="owl-lazy" alt="">
-			                <a href="detail-restaurant.html" class="strip_info">
-			                    <small>Vegetarian</small>
-			                    <div class="item_title">
-			                        <h3>Vego Life</h3>
-			                        <small>27 Old Gloucester St</small>
-			                    </div>
-			                </a>
-			            </figure>
-			            <ul>
-			                <li><span class="loc_open">Now Open</span></li>
-			                <li>
-			                    <div class="score"><span>Superb<em>350 Reviews</em></span><strong>7.5</strong></div>
-			                </li>
-			            </ul>
-			        </div>
-			    </div>
-			    <div class="item">
-			        <div class="strip">
-			            <figure>
-			                <span class="ribbon off">-25%</span>
-			                <img src="img/lazy-placeholder.png" data-src="img/location_4.jpg" class="owl-lazy" alt="">
-			                <a href="detail-restaurant.html" class="strip_info">
-			                    <small>Japanese</small>
-			                    <div class="item_title">
-			                        <h3>Sushi Temple</h3>
-			                        <small>27 Old Gloucester St</small>
-			                    </div>
-			                </a>
-			            </figure>
-			            <ul>
-			                <li><span class="loc_open">Now Open</span></li>
-			                <li>
-			                    <div class="score"><span>Superb<em>350 Reviews</em></span><strong>9.5</strong></div>
-			                </li>
-			            </ul>
-			        </div>
-			    </div>
-			    <div class="item">
-			        <div class="strip">
-			            <figure>
-			                <span class="ribbon off">-30%</span>
-			                <img src="img/lazy-placeholder.png" data-src="img/location_5.jpg" class="owl-lazy" alt="">
-			                <a href="detail-restaurant.html" class="strip_info">
-			                    <small>Pizza</small>
-			                    <div class="item_title">
-			                        <h3>Auto Pizza</h3>
-			                        <small>27 Old Gloucester St</small>
-			                    </div>
-			                </a>
-			            </figure>
-			            <ul>
-			                <li><span class="loc_open">Now Open</span></li>
-			                <li>
-			                    <div class="score"><span>Superb<em>350 Reviews</em></span><strong>7.0</strong></div>
-			                </li>
-			            </ul>
-			        </div>
-			    </div>
-			    <div class="item">
-			        <div class="strip">
-			            <figure>
-			                <span class="ribbon off">-15%</span>
-			                <img src="img/lazy-placeholder.png" data-src="img/location_6.jpg" class="owl-lazy" alt="">
-			                <a href="detail-restaurant.html" class="strip_info">
-			                    <small>Burghers</small>
-			                    <div class="item_title">
-			                        <h3>Alliance</h3>
-			                        <small>27 Old Gloucester St</small>
-			                    </div>
-			                </a>
-			            </figure>
-			            <ul>
-			                <li><span class="loc_open">Now Open</span></li>
-			                <li>
-			                    <div class="score"><span>Superb<em>350 Reviews</em></span><strong>8.9</strong></div>
-			                </li>
-			            </ul>
-			        </div>
-			    </div>
-			    <div class="item">
-			        <div class="strip">
-			            <figure>
-			                <span class="ribbon off">-30%</span>
-			                <img src="img/lazy-placeholder.png" data-src="img/location_7.jpg" class="owl-lazy" alt="">
-			                <a href="detail-restaurant.html" class="strip_info">
-			                    <small>Chinese</small>
-			                    <div class="item_title">
-			                        <h3>Alliance</h3>
-			                        <small>27 Old Gloucester St</small>
-			                    </div>
-			                </a>
-			            </figure>
-			            <ul>
-			                <li><span class="loc_closed">Now Closed</span></li>
-			                <li>
-			                    <div class="score"><span>Superb<em>350 Reviews</em></span><strong>8.9</strong></div>
-			                </li>
-			            </ul>
-			        </div>
-			    </div>
 			</div>
 			<!-- /carousel -->
 
-			<div class="banner lazy" data-bg="url(assets-home/img/detail_2.jpg)">
+			<div class="banner lazy" data-bg="url(assets-home/img/blog-1.jpg)">
 				<div class="wrapper d-flex align-items-center opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.2)">
 					<div>
 						<small>Resto</small>
-						<h3>More than 3000 Restaurants</h3>
+						<h3>Plus de 100 restaurants</h3>
 						<p>Réservez une table facilement au meilleur prix</p>
 						{{-- <a href="grid-listing-filterscol.html" class="btn_1">View All</a> --}}
 					</div>
@@ -307,13 +182,13 @@
 
 
 
-		<div class="call_section lazy" data-bg="url(img/table1.jpg)">
+		<div class="call_section lazy" data-bg="url(img/reservation-bg.jpg)">
 		    <div class="container clearfix">
 		        <div class="col-lg-5 col-md-6 float-end wow">
 		            <div class="box_1">
 		                <h3>Êtes-vous un propriétaire de restaurant?</h3>
 		                <p>Rejoignez-nous pour augmenter votre visibilité en ligne. Vous aurez accès à encore plus de clients qui souhaitent profiter de vos plats savoureux à la maison.</p>
-		                <a href=" class="btn_1">En savoir plus</a>
+		                <a href="{{ route ('restaurant.register') }}" class="btn_1">Enregistrer votre restaurant maintenant</a>
 		            </div>
 		        </div>
     		</div>
@@ -327,26 +202,26 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-3 col-md-6">
-					<h3 data-bs-target="#collapse_1">Quick Links</h3>
+					<h3 data-bs-target="#collapse_1">Liens rapides</h3>
 					<div class="collapse dont-collapse-sm links" id="collapse_1">
 						<ul>
-							<li><a href="submit-rider.html">Become a Rider</a></li>
+							{{-- <li><a href="submit-rider.html">Become a Rider</a></li>
 							<li><a href="submit-restaurant.html">Add your restaurant</a></li>
 							<li><a href="help.html">Help</a></li>
 							<li><a href="account.html">My account</a></li>
 							<li><a href="blog.html">Blog</a></li>
-							<li><a href="contacts.html">Contacts</a></li>
+							<li><a href="contacts.html">Contacts</a></li> --}}
 						</ul>
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-6">
-					<h3 data-bs-target="#collapse_2">Categories</h3>
+					<h3 data-bs-target="#collapse_2">Connexion</h3>
 					<div class="collapse dont-collapse-sm links" id="collapse_2">
 						<ul>
-							<li><a href="grid-listing-filterscol.html">Top Categories</a></li>
-							<li><a href="grid-listing-filterscol-full-masonry.html">Best Rated</a></li>
-							<li><a href="grid-listing-filterscol-full-width.html">Best Price</a></li>
-							<li><a href="grid-listing-filterscol-full-masonry.html">Latest Submissions</a></li>
+							<li><a href="{{ route('client_login_form') }}">Client</a></li>
+							<li><a href="{{ route('login_form') }}">Proprietaire d'un restaurant</a></li>
+							<li><a href="{{ route('admin_login_form') }}">administrateur</a></li>
+
 						</ul>
 					</div>
 				</div>
@@ -354,16 +229,16 @@
 						<h3 data-bs-target="#collapse_3">Contacts</h3>
 					<div class="collapse dont-collapse-sm contacts" id="collapse_3">
 						<ul>
-							<li><i class="icon_house_alt"></i>97845 Baker st. 567<br>Los Angeles - US</li>
-							<li><i class="icon_mobile"></i>+94 423-23-221</li>
-							<li><i class="icon_mail_alt"></i><a href="#0">info@domain.com</a></li>
+							<li><i class="icon_house_alt"></i>Fquih Ben Salah<br>MOROCCO</li>
+							<li><i class="icon_mobile"></i>+212 642 912 362</li>
+							<li><i class="icon_mail_alt"></i><a href="#0">Resto@mail.com</a></li>
 						</ul>
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-6">
-						<h3 data-bs-target="#collapse_4">Keep in touch</h3>
+						{{-- <h3 data-bs-target="#collapse_4">Keep in touch</h3> --}}
 					<div class="collapse dont-collapse-sm" id="collapse_4">
-						<div id="newsletter">
+						{{-- <div id="newsletter">
 							<div id="message-newsletter"></div>
 							<form method="post" action="assets/newsletter.php" name="newsletter_form" id="newsletter_form">
 								<div class="form-group">
@@ -371,14 +246,11 @@
 									<button type="submit" id="submit-newsletter"><i class="arrow_carrot-right"></i></button>
 								</div>
 							</form>
-						</div>
+						</div> --}}
 						<div class="follow_us">
-							<h5>Follow Us</h5>
+							<h5>Suivez-nous</h5>
 							<ul>
-								<li><a href="#0"><img  data-src="img/twitter_icon.svg" alt="" class="lazy"></a></li>
-								<li><a href="#0"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="img/facebook_icon.svg" alt="" class="lazy"></a></li>
-								<li><a href="#0"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="img/instagram_icon.svg" alt="" class="lazy"></a></li>
-								<li><a href="#0"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="img/youtube_icon.svg" alt="" class="lazy"></a></li>
+								<li><a href="#0"><img  data-src="assets-home/img/facebook1.svg" alt="" class="lazy"></a></li>
 							</ul>
 						</div>
 					</div>
@@ -386,38 +258,6 @@
 			</div>
 			<!-- /row-->
 			<hr>
-			{{-- <div class="row add_bottom_25">
-				<div class="col-lg-6">
-					<ul class="footer-selector clearfix">
-						<li>
-							<div class="styled-select lang-selector">
-								<select>
-									<option value="English" selected>English</option>
-									<option value="French">French</option>
-									<option value="Spanish">Spanish</option>
-									<option value="Russian">Russian</option>
-								</select>
-							</div>
-						</li>
-						<li>
-							<div class="styled-select currency-selector">
-								<select>
-									<option value="US Dollars" selected>US Dollars</option>
-									<option value="Euro">Euro</option>
-								</select>
-							</div>
-						</li>
-						<li><img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="img/cards_all.svg" alt="" width="198" height="30" class="lazy"></li>
-					</ul>
-				</div>
-				<div class="col-lg-6">
-					<ul class="additional_links">
-						<li><a href="#0">Terms and conditions</a></li>
-						<li><a href="#0">Privacy</a></li>
-						<li><span>© Foogra</span></li>
-					</ul>
-				</div>
-			</div> --}}
 		</div>
 	</footer>
 	<!--/footer-->
@@ -426,53 +266,6 @@
 
 	<div class="layer"></div><!-- Opacity Mask Menu Mobile -->
 
-	<!-- Sign In Modal -->
-	{{-- <div id="sign-in-dialog" class="zoom-anim-dialog mfp-hide">
-		<div class="modal_header">
-			<h3>Sign In</h3>
-		</div>
-		<form>
-			<div class="sign-in-wrapper">
-				<a href="#0" class="social_bt facebook">Login with Facebook</a>
-				<a href="#0" class="social_bt google">Login with Google</a>
-				<div class="divider"><span>Or</span></div>
-				<div class="form-group">
-					<label>Email</label>
-					<input type="email" class="form-control" name="email" id="email">
-					<i class="icon_mail_alt"></i>
-				</div>
-				<div class="form-group">
-					<label>Password</label>
-					<input type="password" class="form-control" name="password" id="password" value="">
-					<i class="icon_lock_alt"></i>
-				</div>
-				<div class="clearfix add_bottom_15">
-					<div class="checkboxes float-start">
-						<label class="container_check">Remember me
-						  <input type="checkbox">
-						  <span class="checkmark"></span>
-						</label>
-					</div>
-					<div class="float-end"><a id="forgot" href="javascript:void(0);">Forgot Password?</a></div>
-				</div>
-				<div class="text-center">
-					<input type="submit" value="Log In" class="btn_1 full-width mb_5">
-					Don’t have an account? <a href="account.html">Sign up</a>
-				</div>
-				<div id="forgot_pw">
-					<div class="form-group">
-						<label>Please confirm login email below</label>
-						<input type="email" class="form-control" name="email_forgot" id="email_forgot">
-						<i class="icon_mail_alt"></i>
-					</div>
-					<p>You will receive an email containing a link allowing you to reset your password to a new preferred one.</p>
-					<div class="text-center"><input type="submit" value="Reset Password" class="btn_1"></div>
-				</div>
-			</div>
-		</form> --}}
-		<!--form -->
-	{{-- </div> --}}
-	<!-- /Sign In Modal -->
 
 	<!-- COMMON SCRIPTS -->
     <script src="assets-home/js/common_scripts.min.js"></script>
