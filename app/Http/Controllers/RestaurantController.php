@@ -23,8 +23,9 @@ class RestaurantController extends Controller
     public function restaurants()
     {
         $restaurants = Restaurant::all();
-        return view("admin.restaurants_list", compact("restaurants"));
+        return view("admin.restaurants", compact("restaurants"));
     }
+
     public function dashboard()
     {
         return view('restaurant.index');

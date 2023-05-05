@@ -9,11 +9,9 @@
     <title>Resto - Découvrez & Réservez</title>
 
     <!-- Favicons-->
-    {{-- <link rel="shortcut icon" href="img/fork.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" type="image/x-icon" href="assets-home/img/apple-touch-icon-57x57-precomposed.png">
-    <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="assets-home/img/apple-touch-icon-72x72-precomposed.png">
-    <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="assets-home/img/apple-touch-icon-114x114-precomposed.png">
-    <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="assets-home/img/apple-touch-icon-144x144-precomposed.png"> --}}
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" type="image/x-icon" href="favicon.ico">
+
 
     <!-- GOOGLE WEB FONT -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -41,9 +39,9 @@
 	<header class="header clearfix element_to_stick">
 		<div class="container">
 		<div id="logo">
-			<a href="index.html">
-				{{-- <img src="assets-home/img/fork.png" width="140" height="35" alt="" class="logo_normal"> --}}
-				<img src="img/logo.png" width="140" height="35" alt="" class="logo_sticky">
+			<a href="/">
+				<img src="assets-home/img/resto2.png" width="125" height="40" alt="" class="logo_normal">
+				<img src="assets-home/img/resto.png" width="125" height="40" alt="" class="logo_sticky">
 			</a>
 		</div>
 		<ul id="top_menu">
