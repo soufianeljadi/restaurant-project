@@ -1,5 +1,7 @@
 @extends('master')
 @section('guest')
+<title>Resto - Attirez de nouveaux clients</title>
+
     <main>
         <div class="hero_single version_3">
             <div class="opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.6)">
@@ -52,7 +54,7 @@
                     <div class="col-lg-5">
                         <div class="box_about">
                             <h3>Gérer facilement</h3>
-                            <p>En choisissant "Gérer facilement", les propriétaires d'entreprise peuvent gagner du temps et
+                            <p>Les propriétaires d'entreprise peuvent gagner du temps et
                                 de l'efficacité en ayant tous les outils de gestion essentiels à portée de main. Cela peut
                                 leur permettre de se concentrer sur la croissance de leur entreprise et de fournir un
                                 meilleur service à leurs clients.</p>
@@ -65,7 +67,7 @@
                     <div class="col-lg-5">
                         <div class="box_about">
                             <h3>Atteindre de nouveaux clients</h3>
-                            <p>les entreprises peuvent étendre leur portée et augmenter leur nombre de clients
+                            <p>Les entreprises peuvent étendre leur portée et augmenter leur nombre de clients
                                 potentiels. Cela peut aider à stimuler la croissance de l'entreprise et à améliorer sa
                                 rentabilité.</p>
                         </div>

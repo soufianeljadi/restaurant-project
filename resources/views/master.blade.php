@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Foogra - Discover & Book the best restaurants at the best price">
     <meta name="author" content="Ansonika">
-    <title>Resto - Découvrez & Réservez</title>
+    {{-- <title>Resto - Découvrez & Réservez</title> --}}
 
     {{-- <!-- Favicons-->
     <link rel="shortcut icon" href="{{ asset('img/favicon.ico') }}" type="image/x-icon">
@@ -50,14 +50,11 @@
             }).then(f).catch(a)) : a()
         }(window, document, localStorage);
     </script>
-
     <!-- BASE CSS -->
     <link href="{{ asset('assets-home/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('assets-home/css/style.css') }}" rel="stylesheet">
-
     <!-- SPECIFIC CSS -->
     <link href="{{ asset('assets-home/css/home.css') }}" rel="stylesheet">
-
     <!-- ALTERNATIVE COLORS CSS -->
     <link href="#" id="colors" rel="stylesheet">
     <!-- SPECIFIC CSS -->
@@ -126,11 +123,9 @@
     </header>
     <div class="page-wrapper">
 
-
         @yield('guest')
 
     </div>
-
     <footer>
         <div class="container">
             <div class="row">

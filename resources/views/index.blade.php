@@ -1,5 +1,6 @@
 @extends('master')
 @section('guest')
+<title>Resto - Découvrez & Réservez</title>
 
 	<!-- /header -->
 
@@ -44,7 +45,7 @@
 				<span><em></em></span>
 				<h2>Restaurants populaires</h2>
 				{{-- <p>Cum doctus civibus efficiantur in imperdiet deterruisset.</p> --}}
-				<a href="#0">View All</a>
+				<a href="{{ route('view_all') }}">View All</a>
 			</div>
 
 			<div class="owl-carousel owl-theme carousel_4">

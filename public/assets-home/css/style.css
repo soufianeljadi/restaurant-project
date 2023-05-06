@@ -2701,6 +2701,14 @@ ul#top_menu li a.login:before {
     -o-background-size: cover;
     background-size: cover
 }
+.hero_single.version_4 {
+    height: 580px;
+    background: #ededed url(../img/detail_3.jpg) center center no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover
+}
 
 .hero_single.inner_pages {
     height: 480px;
