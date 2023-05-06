@@ -7,13 +7,13 @@
                 <li class="breadcrumb-item">
                     <a href="#">Dashboard</a>
                 </li>
-                <li class="breadcrumb-item active">Restaurants</li>
+                <li class="breadcrumb-item active">Clients</li>
             </ol>
 
             <!-- Example DataTables Card-->
             <div class="card mb-3">
                 <div class="card-header">
-                    <i class="fa fa-table"></i> Liste des restaurants
+                    <i class="fa fa-table"></i> Liste des clients
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -37,83 +37,72 @@
                                 </tr>
                             </tfoot>
                             <tbody>
-                                @foreach ($restaurants as $restaurant)
+                                @foreach ($clients as $client)
                                     <tr>
-                                        <td>{{ $restaurant->id }} </td>
-                                        <td>{{ $restaurant->name }} </td>
-                                        <td>{{ $restaurant->status }} </td>
-                                        <td>{{ $restaurant->email }}</td>
-                                        <td><a data-toggle="modal" href="#detailsModal_{{ $restaurant->id }}"><strong>Voir
+                                        <td>{{ $client->id }} </td>
+                                        <td>{{ $client->name }} </td>
+                                        <td>{{ $client->status }} </td>
+                                        <td>{{ $client->email }}</td>
+                                        <td><a data-toggle="modal" href="#detailsModal_{{ $client->id }}"><strong>Voir
                                                     les détails</strong></a> | <a data-toggle="modal"
-                                                href="#deleteModal_{{ $restaurant->id }}"><strong>Supprimer</strong></a>
+                                                href="#deleteModal_{{ $client->id }}"><strong>Supprimer</strong></a>
                                         </td>
                                     </tr>
                                     <!-- details Modal-->
-                                    <div class="modal fade" id="detailsModal_{{ $restaurant->id }}" tabindex="-1"
+                                    <div class="modal fade" id="detailsModal_{{ $client->id }}" tabindex="-1"
                                         role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="modal-dialog" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h5 class="modal-title" id="exampleModalLabel">Détails du restaurant
+                                                    <h5 class="modal-title" id="exampleModalLabel">Détails du client
                                                     </h5>
                                                     <button class="close" type="button" data-dismiss="modal"
                                                         aria-label="Close">
                                                         <span aria-hidden="true">×</span>
                                                     </button>
                                                 </div>
-                                                <div class="modal-body">Voici tous les détails sur le restaurant<strong>
-                                                        {{ $restaurant->name }}</strong></br></br>
+                                                <div class="modal-body">Voici tous les détails sur le client<strong>
+                                                        {{ $client->name }}</strong></br></br>
 
-                                                    <label>Nom du resto</label>
+                                                    <label>Nom du client</label>
                                                     <input type="text" name="name"
                                                         class="form-control"readonly="readonly"
-                                                        value="{{ $restaurant->name }}"></br>
+                                                        value="{{ $client->name }}"></br>
 
-                                                    <label>Emplacement du resto</label>
+
+
+                                                    <label>Email du client</label>
                                                     <input type="text" name="name"
                                                         class="form-control"readonly="readonly"
-                                                        value="{{ $restaurant->location }}"></br>
+                                                        value="{{ $client->email }}"></br>
 
-                                                    <label>Description du resto</label>
-                                                    <input type="text" name="name"
-                                                        class="form-control"readonly="readonly"
-                                                        value="{{ $restaurant->description }}"></br>
 
-                                                    <label>Email du resto</label>
-                                                    <input type="text" name="name"
-                                                        class="form-control"readonly="readonly"
-                                                        value="{{ $restaurant->email }}"></br>
-
-                                                    <label>Status du resto</label>
-                                                    <input type="text" name="name"
-                                                        class="form-control"readonly="readonly"
-                                                        value="{{ $restaurant->status }}"></br>
 
                                                 </div>
 
                                             </div>
-                                        </div>
+                                        </div>client
                                     </div>
                                     <!-- delete Modal-->
-                                    <div class="modal fade" id="deleteModal_{{ $restaurant->id }}"" tabindex="-1" role="dialog"
+                                    <div class="modal fade" id="deleteModal_{{ $client->id }}" tabindex="-1" role="dialog"
                                         aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="modal-dialog" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h5 class="modal-title" id="deleteModal_{{ $restaurant->id }}">Supprimer restaurant</h5>
+                                                    <h5 class="modal-title" id="deleteModal_{{ $client->id }}">Supprimer client</h5>
                                                     <button class="close" type="button" data-dismiss="modal"
                                                         aria-label="Close">
                                                         <span aria-hidden="true">×</span>
                                                     </button>
                                                 </div>
-                                                <div class="modal-body">Sélectionnez "supprimer" ci-dessous si vous êtes prêt à supprimer ce restaurant : {{ $restaurant->name }}</div>
+                                                <div class="modal-body">Sélectionnez "supprimer" ci-dessous si vous êtes prêt à supprimer ce client : {{ $client->name }}</div>
                                                 <div class="modal-footer">
                                                     <button class="btn btn-secondary" type="button"
                                                         data-dismiss="modal">Annuler</button>
-                                                        <form action="{{ route('restaurant.delete') }}" method="POST">
+                                                        <form action="{{ route('client.delete') }}" method="POST">
                                                             @csrf
-                                                            <input type="hidden" name="id" value="{{ $restaurant->id }}">
-                                                            <input type="submit"class="btn btn-danger" value="Supprimer" href="{{ route('restaurant.delete') }} ">
+                                                            <input type="hidden" name="id" value="{{ $client->id }}">
+                                                            <input type="submit"class="btn btn-danger" value="Supprimer" href="{{ route('client.delete') }} ">
 
                                                         </form>
 

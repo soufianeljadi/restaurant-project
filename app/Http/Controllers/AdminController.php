@@ -22,7 +22,7 @@ class AdminController extends Controller
     }
     public function profile()
     {
-        return view('admin.admin_profile');
+        return view('admin.profile');
     }
 
     public function connect(Request $request)

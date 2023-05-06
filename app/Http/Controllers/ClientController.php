@@ -18,7 +18,7 @@ class ClientController extends Controller
     public function clients()
     {
         $clients = Client::all();
-        return view("admin.clients_list", compact("clients"));
+        return view("admin.clients", compact("clients"));
     }
 
     public function dashboard()
