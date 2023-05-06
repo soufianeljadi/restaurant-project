@@ -7,6 +7,7 @@
     <meta name="description" content="Foogra - Discover & Book the best restaurants at the best price">
     <meta name="author" content="Ansonika">
     {{-- <title>Resto - Découvrez & Réservez</title> --}}
+    <title>Resto - Inscription client</title>
 
     {{-- <!-- Favicons-->
     <link rel="shortcut icon" href="{{ asset('img/favicon.ico') }}" type="image/x-icon">
@@ -58,10 +59,11 @@
     <!-- ALTERNATIVE COLORS CSS -->
     <link href="#" id="colors" rel="stylesheet">
     <!-- SPECIFIC CSS -->
-    <link href="{{ asset('assets-home/css/submit.css') }}" rel="stylesheet">
+    <link href="css/booking-sign_up.css" rel="stylesheet">
 </head>
+
 <body>
-    <header class="header clearfix element_to_stick">
+    <header class="header_in clearfix">
         <div class="container">
             <div id="logo">
                 <a href="/">
@@ -113,8 +115,8 @@
                                 </ul>
                             </li>
                         </ul>
-                        <li><a href="{{ route('info') }}" target="_parent">Pourquoi Resto ?</a></li>
-                        <li><a href="{{ route('view_all') }}" target="_parent">Découvrez les restaurants</a></li>
+                    <li><a href="{{ route('info') }}" target="_parent">Pourquoi Resto ?</a></li>
+                    <li><a href="{{ route('view_all') }}" target="_parent">Découvrez les restaurants</a></li>
                     </li>
 
 
@@ -122,11 +124,50 @@
             </nav>
         </div>
     </header>
-    <div class="page-wrapper">
+    <main class="bg_gray pattern">
 
-        @yield('guest')
+        <div class="container margin_60_40">
+            <div class="row justify-content-center">
+                <div class="col-lg-4">
+                    <div class="sign_up">
+                        <div class="head">
+                            <div class="title">
+                                <h3>S'inscrire</h3>
+                            </div>
+                        </div>
+                        <!-- /head -->
+                        <div class="main">
+                            <form method="post" action="{{ route('client.register.create') }}">
+                                @csrf
+                                <h6>Détails personnels</h6>
+                                <div class="form-group">
+                                    <i class="icon_pencil"></i>
+                                    <input class="form-control" placeholder="Nom" name="name" type="text">
+                                </div>
+                                <div class="form-group">
+                                    <i class="icon_mail"></i>
+                                    <input class="form-control" placeholder="Email " name="email" type="email">
+                                </div>
+                                <div class="form-group">
+                                    <i class="icon_lock"></i>
+                                    <input class="form-control" placeholder="Mot de passe" name="password"
+                                        type="password">
+                                </div>
+                                <div class="form-group text-center"><input type="submit" class="btn_1" 
+                                    id="submit-register" value="S'inscrire maintenant"></div>
+                                </div>
+                            </form>
+                    </div>
+                    <!-- /box_booking -->
+                </div>
+                <!-- /col -->
 
-    </div>
+            </div>
+            <!-- /row -->
+        </div>
+        <!-- /container -->
+
+    </main>
     <footer>
         <div class="container">
             <div class="row">
@@ -134,12 +175,13 @@
                     <h3 data-bs-target="#collapse_1">Liens rapides</h3>
                     <div class="collapse dont-collapse-sm links" id="collapse_1">
                         <ul>
-                            <li><a href="{{ route('info') }}">Êtes-vous un restaurant ? Pourquoi soumettre à Resto?</a></li>
-							<li><a href="{{ route('view_all') }}">Découvrez les restaurants disponibles</a></li>
-							{{-- <li><a href="help.html">Help</a></li>
-							<li><a href="account.html">My account</a></li>
-							<li><a href="blog.html">Blog</a></li>
-							<li><a href="contacts.html">Contacts</a></li> --}}
+                            <li><a href="{{ route('info') }}">Êtes-vous un restaurant ? Pourquoi soumettre à
+                                    Resto?</a></li>
+                            <li><a href="{{ route('view_all') }}">Découvrez les restaurants disponibles</a></li>
+                            {{-- <li><a href="help.html">Help</a></li>
+                        <li><a href="account.html">My account</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contacts.html">Contacts</a></li> --}}
                         </ul>
                     </div>
                 </div>
@@ -168,19 +210,19 @@
                     {{-- <h3 data-bs-target="#collapse_4">Keep in touch</h3> --}}
                     <div class="collapse dont-collapse-sm" id="collapse_4">
                         {{-- <div id="newsletter">
-							<div id="message-newsletter"></div>
-							<form method="post" action="assets/newsletter.php" name="newsletter_form" id="newsletter_form">
-								<div class="form-group">
-									<input type="email" name="email_newsletter" id="email_newsletter" class="form-control" placeholder="Your email">
-									<button type="submit" id="submit-newsletter"><i class="arrow_carrot-right"></i></button>
-								</div>
-							</form>
-						</div> --}}
+                        <div id="message-newsletter"></div>
+                        <form method="post" action="assets/newsletter.php" name="newsletter_form" id="newsletter_form">
+                            <div class="form-group">
+                                <input type="email" name="email_newsletter" id="email_newsletter" class="form-control" placeholder="Your email">
+                                <button type="submit" id="submit-newsletter"><i class="arrow_carrot-right"></i></button>
+                            </div>
+                        </form>
+                    </div> --}}
                         <div class="follow_us">
                             <h5>Suivez-nous</h5>
                             <ul>
-                                <li><a href="#0"><img data-src="{{ asset('assets-home/img/facebook1.svg') }}" alt=""
-                                            class="lazy"></a></li>
+                                <li><a href="#0"><img data-src="{{ asset('assets-home/img/facebook1.svg') }}"
+                                            alt="" class="lazy"></a></li>
                             </ul>
                         </div>
                     </div>
@@ -213,9 +255,6 @@
             typeSpeed: 50
         });
     </script>
-
-    <!-- COLOR SWITCHER  -->
-
 
 </body>
 

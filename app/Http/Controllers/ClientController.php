@@ -53,7 +53,7 @@ class ClientController extends Controller
     }
     public function register()
     {
-        return view('client.client_register');
+        return view('client.register');
     }
     public function create(Request $request)
     {
@@ -66,7 +66,7 @@ class ClientController extends Controller
        ]);
        Auth::guard("client")->login($client);
        toastr()->success('Données enregistrées avec succès');
-        return redirect()->route("client.dashboard");
+        return redirect()->back();
 
 
     }
