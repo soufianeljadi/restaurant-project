@@ -18,7 +18,9 @@ class AdminController extends Controller
     }
     public function dashboard()
     {
-        return view('admin.dashboard');
+        $nbr_resto = Restaurant :: count();
+        $nbr_client = Client :: count();
+        return view('admin.dashboard',compact('nbr_resto','nbr_client'));
     }
     public function profile()
     {

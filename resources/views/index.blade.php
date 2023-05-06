@@ -48,16 +48,17 @@
 			</div>
 
 			<div class="owl-carousel owl-theme carousel_4">
+            @foreach ($restaurants as $restaurant)
 			    <div class="item">
 			        <div class="strip">
 			            <figure>
 			                <span class="ribbon off">-30%</span>
-			                <img src="img/lazy-placeholder.png" data-src="img/location_1.jpg" class="owl-lazy" alt="">
+			                <img src="{{ asset('assets-home/img/lazy-placeholder.png') }}" data-src="{{ asset('assets-home/img/location_1.jpg') }}" class="owl-lazy" alt="">
 			                <a href="detail-restaurant.html" class="strip_info">
-			                    <small>Pizza</small>
+			                    <small>{{ $restaurant->name }}</small>
 			                    <div class="item_title">
-			                        <h3>Da Alfredo</h3>
-			                        <small>27 Old Gloucester St</small>
+			                        <h3>{{ $restaurant->name }}</h3>
+			                        <small>{{ $restaurant->location }}</small>
 			                    </div>
 			                </a>
 			            </figure>
@@ -69,6 +70,7 @@
 			            </ul>
 			        </div>
 			    </div>
+                @endforeach
 			</div>
 			<!-- /carousel -->
 

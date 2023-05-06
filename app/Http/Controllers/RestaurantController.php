@@ -84,11 +84,12 @@ class RestaurantController extends Controller
         $restaurant->name = $request->name;
         $restaurant->email = $request->email;
         $restaurant->location = $request->location;
+        $restaurant->status = $request->status;
         $restaurant->description = $request->description;
         // $restaurant->password = Hash::make($request->password);
         $restaurant->save();
         toastr()->success('Données enregistrées avec succès');
-        return redirect()->route("restaurant.profile");
+        return redirect()->back();
     }
 
 

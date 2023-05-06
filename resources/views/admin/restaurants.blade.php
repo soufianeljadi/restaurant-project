@@ -43,8 +43,8 @@
                                         <td>{{ $restaurant->name }} </td>
                                         <td>{{ $restaurant->status }} </td>
                                         <td>{{ $restaurant->email }}</td>
-                                        <td><a data-toggle="modal" href="#detailsModal_{{ $restaurant->id }}"><strong>Voir
-                                                    les détails</strong></a> | <a data-toggle="modal"
+                                        <td><a data-toggle="modal" href="#detailsModal_{{ $restaurant->id }}"><strong>Modifier
+                                                    </strong></a> | <a data-toggle="modal"
                                                 href="#deleteModal_{{ $restaurant->id }}"><strong>Supprimer</strong></a>
                                         </td>
                                     </tr>
@@ -54,7 +54,7 @@
                                         <div class="modal-dialog" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h5 class="modal-title" id="exampleModalLabel">Détails du restaurant
+                                                    <h5 class="modal-title" id="exampleModalLabel">Modifier restaurant
                                                     </h5>
                                                     <button class="close" type="button" data-dismiss="modal"
                                                         aria-label="Close">
@@ -63,39 +63,42 @@
                                                 </div>
                                                 <div class="modal-body">Voici tous les détails sur le restaurant<strong>
                                                         {{ $restaurant->name }}</strong></br></br>
-
+                                                        <form action="{{ route('restaurant.update') }}" method="POST">
+                                                            @csrf
                                                     <label>Nom du resto</label>
                                                     <input type="text" name="name"
-                                                        class="form-control"readonly="readonly"
+                                                        class="form-control"
                                                         value="{{ $restaurant->name }}"></br>
 
                                                     <label>Emplacement du resto</label>
-                                                    <input type="text" name="name"
-                                                        class="form-control"readonly="readonly"
+                                                    <input type="text" name="location"
+                                                        class="form-control"
                                                         value="{{ $restaurant->location }}"></br>
 
                                                     <label>Description du resto</label>
-                                                    <input type="text" name="name"
-                                                        class="form-control"readonly="readonly"
+                                                    <input type="text" name="description"
+                                                        class="form-control"
                                                         value="{{ $restaurant->description }}"></br>
 
                                                     <label>Email du resto</label>
-                                                    <input type="text" name="name"
-                                                        class="form-control"readonly="readonly"
+                                                    <input type="text" name="email"
+                                                        class="form-control"
                                                         value="{{ $restaurant->email }}"></br>
 
                                                     <label>Status du resto</label>
-                                                    <input type="text" name="name"
-                                                        class="form-control"readonly="readonly"
+                                                    <input type="text" name="status"
+                                                        class="form-control"
                                                         value="{{ $restaurant->status }}"></br>
-
+                                                        <input type="hidden" name="id" value="{{ $restaurant->id }}">
+                                                        <input type="submit"class="btn btn-success" value="Modifier" href="{{ route('restaurant.update') }} ">
+                                                        </form>
                                                 </div>
 
                                             </div>
                                         </div>
                                     </div>
                                     <!-- delete Modal-->
-                                    <div class="modal fade" id="deleteModal_{{ $restaurant->id }}"" tabindex="-1" role="dialog"
+                                    <div class="modal fade" id="deleteModal_{{ $restaurant->id }}" tabindex="-1" role="dialog"
                                         aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="modal-dialog" role="document">
                                             <div class="modal-content">

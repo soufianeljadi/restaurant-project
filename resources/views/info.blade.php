@@ -137,13 +137,13 @@
                             <div class="row add_bottom_15">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Mot de passe *" name="password"
+                                        <input type="password" class="form-control" placeholder="Mot de passe *" name="password"
                                         required >
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Confirmez le mot de passe *" name="password_confirmation"
+                                        <input type="password" class="form-control" placeholder="Confirmez le mot de passe *" name="password_confirmation"
                                         required>
                                     </div>
                                 </div>

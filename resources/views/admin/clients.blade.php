@@ -43,8 +43,7 @@
                                         <td>{{ $client->name }} </td>
                                         <td>{{ $client->status }} </td>
                                         <td>{{ $client->email }}</td>
-                                        <td><a data-toggle="modal" href="#detailsModal_{{ $client->id }}"><strong>Voir
-                                                    les détails</strong></a> | <a data-toggle="modal"
+                                        <td><a data-toggle="modal" href="#detailsModal_{{ $client->id }}"><strong>Modifier</strong></a> | <a data-toggle="modal"
                                                 href="#deleteModal_{{ $client->id }}"><strong>Supprimer</strong></a>
                                         </td>
                                     </tr>
@@ -64,17 +63,23 @@
                                                 <div class="modal-body">Voici tous les détails sur le client<strong>
                                                         {{ $client->name }}</strong></br></br>
 
-                                                    <label>Nom du client</label>
-                                                    <input type="text" name="name"
-                                                        class="form-control"readonly="readonly"
-                                                        value="{{ $client->name }}"></br>
+                                                            <form action="{{ route('client.update') }}" method="POST">
+                                                                @csrf
+                                                        <label>Nom du client</label>
+                                                        <input type="text" name="name"
+                                                            class="form-control"
+                                                            value="{{ $client->name }}"></br>
 
 
+                                                        <label>Email du client</label>
+                                                        <input type="text" name="email"
+                                                            class="form-control"
+                                                            value="{{ $client->email }}"></br>
 
-                                                    <label>Email du client</label>
-                                                    <input type="text" name="name"
-                                                        class="form-control"readonly="readonly"
-                                                        value="{{ $client->email }}"></br>
+
+                                                            <input type="hidden" name="id" value="{{ $client->id }}">
+                                                            <input type="submit"class="btn btn-success" value="Modifier" href="{{ route('client.update') }} ">
+                                                            </form>
 
 
 

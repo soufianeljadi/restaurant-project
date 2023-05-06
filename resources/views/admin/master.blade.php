@@ -16,6 +16,11 @@
     <link href="{{ asset('assets-admin/css/admin.css') }}" rel="stylesheet">
     <!-- Icon fonts-->
     <link href="{{ asset('assets-admin/vendor/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+    <head>
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-TzYZF5rZ09nwRGdjQkb8MdHCSgxhJcIzL9+h7xsYgouS8eON17pYOwHxr/hD/iSq" crossorigin="anonymous">
+      </head>
+
     <!-- Plugin styles -->
     <link href="{{ asset('assets-admin/vendor/datatables/dataTables.bootstrap4.css') }}" rel="stylesheet">
     <!-- Your custom styles -->

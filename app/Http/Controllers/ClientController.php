@@ -78,7 +78,7 @@ class ClientController extends Controller
         // $client->password = Hash::make($request->password);
         $client->save();
         toastr()->success('Données enregistrées avec succès');
-        return redirect()->route("client.profile");
+        return redirect()->back();
 
 
     }

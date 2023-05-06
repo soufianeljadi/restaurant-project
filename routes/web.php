@@ -7,6 +7,8 @@ use App\Http\Controllers\ClientController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\TableController;
 use GuzzleHttp\Middleware;
+use App\Models\Restaurant;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -79,9 +81,11 @@ Route::prefix('admin')->group(function () {
         Route::get('/profile', [AdminController::class, 'profile'])->name('admin.profile');
         //manage restaurants
         Route::get('/restaurants', [RestaurantController::class, 'restaurants'])->name('Admin.restaurants');
+        Route::post('/update', [RestaurantController::class, 'update'])->name('restaurant.update');
         Route::post('/destroy-restaurant', [RestaurantController::class, 'destroy'])->name('restaurant.delete');
         //manage clients
         Route::get('/clients', [ClientController::class, 'clients'])->name('Admin.clients');
+        Route::post('/update', [ClientController::class, 'update'])->name('client.update');
         Route::post('/destroy-client', [ClientController::class, 'destroy'])->name('client.delete');
     });
 });
@@ -89,7 +93,8 @@ Route::prefix('admin')->group(function () {
 
 //Common routes
 Route::get('/', function () {
-    return view('index');
+    $restaurants = Restaurant::all();
+    return view('index', compact("restaurants"));
 });
 
 
