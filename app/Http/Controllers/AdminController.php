@@ -47,6 +47,7 @@ class AdminController extends Controller
     {
         return view('admin.admin_register');
     }
+
     public function create(Request $request)
     {
        // dd($request->all());

@@ -22,7 +22,7 @@ use GuzzleHttp\Middleware;
 /*-----------------------------Restaurant routes--------------------------------- */
 
 Route::prefix('restaurant')->group(function () {
-
+    Route::get('/info', [RestaurantController::class, 'info'])->name('info');
     //Auth ROUTES
     Route::get('/login', [RestaurantController::class, 'login'])->name('login_form');
     Route::post('/connect', [RestaurantController::class, 'connect'])->name('restaurant.login');
@@ -91,6 +91,7 @@ Route::prefix('admin')->group(function () {
 Route::get('/', function () {
     return view('index');
 });
+
 
 
 

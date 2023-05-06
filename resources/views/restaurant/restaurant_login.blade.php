@@ -73,7 +73,7 @@
 										<a class="forgot-link" href="forgot-password.html">Forgot Password ?</a>
 									</div> --}}
 									<button class="btn btn-primary login-btn" type="submit">Login</button>
-									<div class="text-center dont-have">Don’t have an account? <a href="{{ route('restaurant.register') }}">Register</a></div>
+									<div class="text-center dont-have">Don’t have an account? <a href="{{ route('info') }}">Register</a></div>
 								</form>
 							</div>
 						</div>

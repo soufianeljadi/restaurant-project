@@ -54,7 +54,10 @@ class RestaurantController extends Controller
     {
         return view('restaurant.restaurant_register');
     }
-
+    public function info()
+    {
+        return view('info');
+    }
 
 
     public function create(Request $request)
