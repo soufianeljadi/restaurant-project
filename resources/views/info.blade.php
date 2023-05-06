@@ -1,10 +1,10 @@
 @extends('master')
 @section('guest')
     <main>
-		<div class="hero_single version_3">
-			<div class="opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.6)">
+        <div class="hero_single version_3">
+            <div class="opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.6)">
                 <div class="container">
-                <div class="row justify-content-center">
+                    <div class="row justify-content-center">
                         <div class="col-xl-9 col-lg-10 col-md-8">
                             <h1>Attirez de nouveaux clients</h1>
                             <p>Plus de réservations de restaurants du coin</p>
@@ -27,11 +27,14 @@
                     <div class="col-lg-5">
                         <div class="box_about">
                             <h3>Boostez vos réservations</h3>
-                            <p class="lead">Est falli invenire interpretaris id, magna libris sensibus mel id.</p>
-                            <p>Per eu nostrud feugiat. Et quo molestiae persecuti neglegentur. At zril definitionem mei, vel
-                                ei choro volumus. An tota nulla soluta has, ei nec essent audiam, te nisl dignissim vel. Ex
-                                velit audire perfecto pro, ei mei doming vivendo legendos. Cu sit magna zril, an odio
-                                delectus constituto vis. Vis ludus omnesque ne, est veri quaeque ad.</p>
+                            <p class="lead"></p>
+                            <p> Resto est un service en ligne qui aide les restaurants à augmenter le nombre de réservations
+                                en
+                                ligne. En utilisant notre plateforme, les restaurants peuvent créer un profil en ligne pour
+                                leur entreprise, ajouter des photos, des menus et des informations sur leurs horaires
+                                d'ouverture et leurs emplacements. Les clients peuvent ensuite effectuer des réservations
+                                directement depuis le site web du restaurant, ce qui facilite le processus de réservation
+                                pour eux.</p>
                             <img src="{{ asset('assets-home/img/arrow_about.png') }}" alt="" class="arrow_1">
                         </div>
                     </div>
@@ -49,9 +52,10 @@
                     <div class="col-lg-5">
                         <div class="box_about">
                             <h3>Gérer facilement</h3>
-                            <p class="lead">Fidéliser la clientèle en offrant un service de réservation multilingue de
-                                premier ordre et des communications ciblées. Construisez une solide base de données clients,
-                                connectez-vous facilement avec vos clients et gérez tous vos avis en quelques clics.</p>
+                            <p>En choisissant "Gérer facilement", les propriétaires d'entreprise peuvent gagner du temps et
+                                de l'efficacité en ayant tous les outils de gestion essentiels à portée de main. Cela peut
+                                leur permettre de se concentrer sur la croissance de leur entreprise et de fournir un
+                                meilleur service à leurs clients.</p>
                             <img src="{{ asset('assets-home/img/arrow_about.png') }}" alt="" class="arrow_2">
                         </div>
                     </div>
@@ -61,11 +65,9 @@
                     <div class="col-lg-5">
                         <div class="box_about">
                             <h3>Atteindre de nouveaux clients</h3>
-                            <p class="lead">Est falli invenire interpretaris id, magna libris sensibus mel id.</p>
-                            <p>Per eu nostrud feugiat. Et quo molestiae persecuti neglegentur. At zril definitionem mei, vel
-                                ei choro volumus. An tota nulla soluta has, ei nec essent audiam, te nisl dignissim vel. Ex
-                                velit audire perfecto pro, ei mei doming vivendo legendos. Cu sit magna zril, an odio
-                                delectus constituto vis. Vis ludus omnesque ne, est veri quaeque ad.</p>
+                            <p>les entreprises peuvent étendre leur portée et augmenter leur nombre de clients
+                                potentiels. Cela peut aider à stimuler la croissance de l'entreprise et à améliorer sa
+                                rentabilité.</p>
                         </div>
 
                     </div>
@@ -90,8 +92,7 @@
                     <div class="col-lg-5">
                         <div class="text-center add_bottom_15">
                             <h4>Veuillez remplir le formulaire ci-dessous</h4>
-                            <p>Id persius indoctum sed, audiam verear his in, te eum quot comprehensam. Sed impetus vocibus
-                                repudiare et.</p>
+                            <p>pour créer un compte Restaurant</p>
                         </div>
                         <div id="message-register"></div>
                         <form method="post" action="{{ route('restaurant.register.create') }}">
@@ -100,8 +101,8 @@
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Nom du resto *"
-                                        required  name="name" >
+                                        <input type="text" class="form-control" placeholder="Nom du resto *" required
+                                            name="name">
                                     </div>
                                 </div>
                             </div>
@@ -110,7 +111,7 @@
                                 <div class="col-lg-12">
                                     <div class="form-group">
                                         <input type="text" class="form-control" placeholder="Emplacement du resto"
-                                            name="location" >
+                                            name="location">
                                     </div>
                                 </div>
                             </div>
@@ -118,7 +119,7 @@
                                 <div class="col-lg-12">
                                     <div class="form-group">
                                         <input type="text" class="form-control" placeholder="Descreption du resto"
-                                            name="descreption" >
+                                            name="descreption">
                                     </div>
                                 </div>
                             </div>
@@ -127,8 +128,8 @@
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="form-group">
-                                        <input type="email" class="form-control" placeholder="Adresse e-mail *"
-                                           required name="email" >
+                                        <input type="email" class="form-control" placeholder="Adresse e-mail *" required
+                                            name="email">
                                     </div>
                                 </div>
                             </div>
@@ -137,14 +138,14 @@
                             <div class="row add_bottom_15">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input type="password" class="form-control" placeholder="Mot de passe *" name="password"
-                                        required >
+                                        <input type="password" class="form-control" placeholder="Mot de passe *"
+                                            name="password" required>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input type="password" class="form-control" placeholder="Confirmez le mot de passe *" name="password_confirmation"
-                                        required>
+                                        <input type="password" class="form-control"
+                                            placeholder="Confirmez le mot de passe *" name="password_confirmation" required>
                                     </div>
                                 </div>
                             </div>

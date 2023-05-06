@@ -125,7 +125,7 @@ Version      : 1.0
 }
 .home-icon {
     font-size: 20px;
-    color: #7a1717;
+    color: #187026;
     float: right;
     padding-right: 10px;
 
@@ -511,16 +511,16 @@ button.bg-danger:hover {
     color: #757575 !important;
 }
 .btn-primary {
-	background-color: #ac1e1e;
-	border: 1px solid #ac1e1e;
+	background-color: #297512;
+	border: 1px solid #297512;
 }
 .btn-primary:hover,
 .btn-primary:focus,
 .btn-primary.active,
 .btn-primary:active,
 .open > .dropdown-toggle.btn-primary {
-	background-color: #ac1e1e;
-	border: 1px solid #ac1e1e;
+	background-color: #297512;
+	border: 1px solid #297512;
 }
 .btn-primary.active.focus,
 .btn-primary.active:focus,
@@ -2836,7 +2836,7 @@ html.menu-opened body {
     text-transform: uppercase;
 }
 .login-header h3 span {
-    color: #e51e1e;
+    color: #297512;
 }
 .login-header h3 a {
     color: #e51e1e;
@@ -2851,7 +2851,7 @@ html.menu-opened body {
 }
 .login-right .dont-have a {
     border-bottom: 1px dashed;
-    color: #ac1e1e;
+    color: #297512;
 }
 .login-btn {
     font-size: 16px;
