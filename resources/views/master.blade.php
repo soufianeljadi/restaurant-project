@@ -8,9 +8,9 @@
     <meta name="author" content="Ansonika">
     <title>Resto - Découvrez & Réservez</title>
 
-    <!-- Favicons-->
+    {{-- <!-- Favicons-->
     <link rel="shortcut icon" href="{{ asset('img/favicon.ico') }}" type="image/x-icon">
-    <link rel="apple-touch-icon" type="image/x-icon" href="{{ asset('img/favicon.ico') }}">
+    <link rel="apple-touch-icon" type="image/x-icon" href="{{ asset('img/favicon.ico') }}"> --}}
 
 
     <!-- GOOGLE WEB FONT -->
