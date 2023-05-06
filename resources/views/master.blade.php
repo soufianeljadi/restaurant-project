@@ -114,6 +114,7 @@
                             </li>
                         </ul>
                         <li><a href="{{ route('info') }}" target="_parent">Pourquoi Resto ?</a></li>
+                        <li><a href="{{ route('view_all') }}" target="_parent">Discover restaurants</a></li>
                     </li>
 
 
@@ -134,8 +135,8 @@
                     <div class="collapse dont-collapse-sm links" id="collapse_1">
                         <ul>
                             <li><a href="{{ route('info') }}">Êtes-vous un restaurant ? Pourquoi soumettre à Resto?</a></li>
-							{{-- <li><a href="submit-restaurant.html">Add your restaurant</a></li>
-							<li><a href="help.html">Help</a></li>
+							<li><a href="{{ route('view_all') }}">Discover available restaurants</a></li>
+							{{-- <li><a href="help.html">Help</a></li>
 							<li><a href="account.html">My account</a></li>
 							<li><a href="blog.html">Blog</a></li>
 							<li><a href="contacts.html">Contacts</a></li> --}}
