@@ -81,11 +81,11 @@ Route::prefix('admin')->group(function () {
         Route::get('/profile', [AdminController::class, 'profile'])->name('admin.profile');
         //manage restaurants
         Route::get('/restaurants', [RestaurantController::class, 'restaurants'])->name('Admin.restaurants');
-        Route::post('/update', [RestaurantController::class, 'update'])->name('restaurant.update');
+        Route::post('/update-restaurant', [RestaurantController::class, 'update'])->name('restaurant.update');
         Route::post('/destroy-restaurant', [RestaurantController::class, 'destroy'])->name('restaurant.delete');
         //manage clients
         Route::get('/clients', [ClientController::class, 'clients'])->name('Admin.clients');
-        Route::post('/update', [ClientController::class, 'update'])->name('client.update');
+        Route::post('/update-client', [ClientController::class, 'update'])->name('client.update');
         Route::post('/destroy-client', [ClientController::class, 'destroy'])->name('client.delete');
     });
 });
