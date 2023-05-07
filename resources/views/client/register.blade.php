@@ -59,7 +59,7 @@
     <!-- ALTERNATIVE COLORS CSS -->
     <link href="#" id="colors" rel="stylesheet">
     <!-- SPECIFIC CSS -->
-    <link href="css/booking-sign_up.css" rel="stylesheet">
+    <link href="{{ asset('assets-home/css/booking-sign_up.css') }}" rel="stylesheet">
 </head>
 
 <body>
@@ -86,7 +86,7 @@
                     <a href="#0" class="open_close">
                         <i class="icon_close"></i><span>Menu</span>
                     </a>
-                    <a href="index.html"><img src="img/logo.svg" width="140" height="35" alt=""></a>
+                    <a href="/"><img src="{{ asset('assets-home/img/resto2.png') }}" width="140" height="35" alt=""></a>
                 </div>
                 <ul>
                     <li class="submenu">
@@ -142,18 +142,18 @@
                                 <h6>Détails personnels</h6>
                                 <div class="form-group">
                                     <i class="icon_pencil"></i>
-                                    <input class="form-control" placeholder="Nom" name="name" type="text">
+                                    <input class="form-control" placeholder="Nom *" name="name" type="text" required>
                                 </div>
                                 <div class="form-group">
                                     <i class="icon_mail"></i>
-                                    <input class="form-control" placeholder="Email " name="email" type="email">
+                                    <input class="form-control" placeholder="Email *" name="email" type="email"required>
                                 </div>
                                 <div class="form-group">
                                     <i class="icon_lock"></i>
-                                    <input class="form-control" placeholder="Mot de passe" name="password"
-                                        type="password">
+                                    <input class="form-control" placeholder="Mot de passe *" name="password"
+                                        type="password" required>
                                 </div>
-                                <div class="form-group text-center"><input type="submit" class="btn_1" 
+                                <div class="form-group text-center"><input type="submit" class="btn_1"
                                     id="submit-register" value="S'inscrire maintenant"></div>
                                 </div>
                             </form>

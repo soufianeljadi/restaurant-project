@@ -1,6 +1,6 @@
 @extends('master')
 @section('guest')
-    <title>Resto - Découvrez & Réservez</title>
+    <title>Resto - Découvrez les restaurants</title>
     <main>
         <div class="hero_single version_4">
             <div class="opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.6)">
@@ -85,7 +85,7 @@
                     <div class="strip">
                         <figure>
                             <span class="ribbon off">-30%</span>
-                            <img src="img/lazy-placeholder.png" data-src="img/location_1.jpg" class="img-fluid lazy"
+                            <img src="" data-src="" class="img-fluid lazy"
                                 alt="">
                             <a href="detail-restaurant.html" class="strip_info">
                                 <small>{{ $restaurant->name }}</small>
