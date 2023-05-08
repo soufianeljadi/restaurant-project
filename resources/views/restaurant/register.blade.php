@@ -120,8 +120,8 @@
                             <div class="row add_bottom_15">
                                 <div class="col-lg-12">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Descreption du resto"
-                                            name="descreption">
+                                        <input type="text" class="form-control" placeholder="Description du resto"
+                                            name="description">
                                     </div>
                                 </div>
                             </div>
