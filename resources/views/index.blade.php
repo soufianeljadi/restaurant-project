@@ -96,7 +96,7 @@
 		            <div class="box_1">
 		                <h3>Êtes-vous un propriétaire de restaurant?</h3>
 		                <p>Rejoignez-nous pour augmenter votre visibilité en ligne. Vous aurez accès à encore plus de clients qui souhaitent profiter de vos plats savoureux à la maison.</p>
-		                <a href="{{ route ('info') }}" class="btn_1">En savoir plus</a>
+		                <a href="{{ route ('restaurant.register') }}" class="btn_1">En savoir plus</a>
 		            </div>
 		        </div>
     		</div>

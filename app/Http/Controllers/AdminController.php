@@ -14,7 +14,7 @@ class AdminController extends Controller
     //
     public function login()
     {
-        return view('admin.admin_login');
+        return view('admin.login');
     }
     public function dashboard()
     {
@@ -45,10 +45,10 @@ class AdminController extends Controller
         toastr()->info('Se déconnecter avec succès');
         return redirect('/');
     }
-    public function register()
-    {
-        return view('admin.admin_register');
-    }
+    // public function register()
+    // {
+    //     return view('admin.register');
+    // }
 
     public function create(Request $request)
     {

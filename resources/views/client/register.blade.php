@@ -103,7 +103,7 @@
                             <li class="third-level"><a href="#0">Espace <strong>Restaurant!</strong></a>
                                 <ul>
                                     <li><a href="{{ route('login_form') }}">Connexion</a></li>
-                                    <li><a href="{{ route('info') }}">Registre votre restaurant</a></li>
+                                    <li><a href="{{ route('restaurant.register') }}">Registre votre restaurant</a></li>
 
                                 </ul>
                             </li>
@@ -115,7 +115,7 @@
                                 </ul>
                             </li>
                         </ul>
-                    <li><a href="{{ route('info') }}" target="_parent">Pourquoi Resto ?</a></li>
+                    <li><a href="{{ route('restaurant.register') }}" target="_parent">Pourquoi Resto ?</a></li>
                     <li><a href="{{ route('view_all') }}" target="_parent">Découvrez les restaurants</a></li>
                     </li>
 
@@ -175,7 +175,7 @@
                     <h3 data-bs-target="#collapse_1">Liens rapides</h3>
                     <div class="collapse dont-collapse-sm links" id="collapse_1">
                         <ul>
-                            <li><a href="{{ route('info') }}">Êtes-vous un restaurant ? Pourquoi soumettre à
+                            <li><a href="{{ route('restaurant.register') }}">Êtes-vous un restaurant ? Pourquoi soumettre à
                                     Resto?</a></li>
                             <li><a href="{{ route('view_all') }}">Découvrez les restaurants disponibles</a></li>
                             {{-- <li><a href="help.html">Help</a></li>

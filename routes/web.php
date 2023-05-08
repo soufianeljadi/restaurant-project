@@ -24,7 +24,7 @@ use App\Models\Restaurant;
 /*-----------------------------Restaurant routes--------------------------------- */
 
 Route::prefix('restaurant')->group(function () {
-    Route::get('/info', [RestaurantController::class, 'info'])->name('info');
+    // Route::get('/info', [RestaurantController::class, 'info'])->name('info');
     //Auth ROUTES
     Route::get('/login', [RestaurantController::class, 'login'])->name('login_form');
     Route::post('/connect', [RestaurantController::class, 'connect'])->name('restaurant.login');

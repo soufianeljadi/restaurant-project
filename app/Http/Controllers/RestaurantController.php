@@ -13,7 +13,7 @@ class RestaurantController extends Controller
     //
     public function login()
     {
-        return view('restaurant.restaurant_login');
+        return view('restaurant.login');
     }
     public function profile()
     {
@@ -52,16 +52,17 @@ class RestaurantController extends Controller
     }
     public function register()
     {
-        return view('restaurant.restaurant_register');
+        return view('restaurant.register');
     }
-    public function info()
-    {
-        return view('info');
-    }
+    // public function info()
+    // {
+    //     return view('info');
+    // }
 
 
     public function create(Request $request)
     {
+        
         // dd($request->all());
         $restaurant = Restaurant::create([
             'name' => $request->name,

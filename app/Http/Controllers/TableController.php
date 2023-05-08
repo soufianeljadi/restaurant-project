@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Carbon\Carbon;
+use Illuminate\Database\QueryException;
 
 class TableController extends Controller
 {
@@ -36,32 +37,58 @@ class TableController extends Controller
      */
     public function store(Request $request)
     {
-                // dd($request->all());
-        $table = Table::create([
-            'number' => $request->number,
-            'location' => $request->location,
-            'status' => $request->status,
-            'guest_number' => $request->guest_number,
-            'restaurant_id' => $request->restaurant_id,
-            'created_at' => Carbon::now(),
-        ]);
-        toastr()->success('Table enregistrées avec succès');
-        return redirect()->route("restaurant.table.create");
+        try {
+            // dd($request->all());
+    $table = Table::create([
+        'number' => $request->number,
+        'location' => $request->location,
+        'status' => $request->status,
+        'guest_number' => $request->guest_number,
+        'restaurant_id' => $request->restaurant_id,
+        'created_at' => Carbon::now(),
+    ]);
+    toastr()->success('Table enregistrées avec succès');
+    return redirect()->route("restaurant.table.create");
+
+        }  catch (QueryException $exception) {
+            if ($exception->errorInfo[1] == 1062) {
+                // Duplicate entry for 'number' column
+                toastr()->error('Le numéro de la table est déjà utilisé.');
+                return redirect()->back()->withInput();
+            } else {
+                // Handle other database errors
+                toastr()->error('Erreur de base de données.');
+                return redirect()->back()->withInput();
+            }
+        }
     }
 
     public function update(Request $request)
     {
         //
-        $table = Table::find($request->id);
-        $table->number = $request->number;
-        $table->location = $request->location;
-        $table->guest_number = $request->guest_number;
-        $table->status = $request->status;
+        try {
+            $table = Table::find($request->id);
+            $table->number = $request->number;
+            $table->location = $request->location;
+            $table->guest_number = $request->guest_number;
+            $table->status = $request->status;
 
-        // $restaurant->password = Hash::make($request->password);
-        $table->save();
-        toastr()->success('Table enregistrées avec succès');
-        return redirect()->back();
+            // $restaurant->password = Hash::make($request->password);
+            $table->save();
+            toastr()->success('Table enregistrées avec succès');
+            return redirect()->back();
+
+        }catch (QueryException $exception) {
+            if ($exception->errorInfo[1] == 1062) {
+                // Duplicate entry for 'number' column
+                toastr()->error('Le numéro de la table est déjà utilisé.');
+                return redirect()->back()->withInput();
+            } else {
+                // Handle other database errors
+                toastr()->error('Erreur de base de données.');
+                return redirect()->back()->withInput();
+            }
+        }
     }
     /**
      * Display the specified resource.

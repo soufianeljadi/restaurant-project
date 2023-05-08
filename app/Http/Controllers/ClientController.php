@@ -13,7 +13,7 @@ class ClientController extends Controller
     //
     public function login()
     {
-        return view('client.client_login');
+        return view('client.login');
     }
     public function clients()
     {
