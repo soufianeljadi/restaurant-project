@@ -22,18 +22,18 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>Restaurant</th>
-                                    <th>Status</th>
-                                    <th>email</th>
-                                    <th>Controle</th>
+                                    <th>Statut</th>
+                                    <th>Email</th>
+                                    <th>Contrôle</th>
                                 </tr>
                             </thead>
                             <tfoot>
                                 <tr>
                                     <th>ID</th>
                                     <th>Restaurant</th>
-                                    <th>Status</th>
-                                    <th>email</th>
-                                    <th>Controle</th>
+                                    <th>Statut</th>
+                                    <th>Email</th>
+                                    <th>Contrôle</th>
                                 </tr>
                             </tfoot>
                             <tbody>

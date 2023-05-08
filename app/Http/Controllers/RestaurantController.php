@@ -18,7 +18,7 @@ class RestaurantController extends Controller
     public function profile()
     {
         $restaurants = Restaurant::all();
-        return view("restaurant.restaurant_profile", compact("restaurants"));
+        return view("restaurant.profile", compact("restaurants"));
     }
     public function restaurants()
     {
@@ -28,7 +28,7 @@ class RestaurantController extends Controller
 
     public function dashboard()
     {
-        return view('restaurant.index');
+        return view('restaurant.dashboard');
     }
 
     public function connect(Request $request)

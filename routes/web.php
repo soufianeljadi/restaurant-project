@@ -41,6 +41,7 @@ Route::prefix('restaurant')->group(function () {
         Route::get('/tables', [TableController::class, 'index'])->name('restaurant.tables');
         Route::get('/new-table', [TableController::class, 'create'])->name('restaurant.table.create');
         Route::post('/store-table', [TableController::class, 'store'])->name('restaurant.table.store');
+        Route::post('/update-table', [TableController::class, 'update'])->name('table.update');
         Route::post('/destroy-table', [TableController::class, 'destroy'])->name('table.delete');
     });
 });

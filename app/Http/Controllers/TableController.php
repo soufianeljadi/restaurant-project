@@ -16,7 +16,7 @@ class TableController extends Controller
     public function index()
     {
         //
-        return view('restaurant.restaurant_tables')->with([
+        return view('restaurant.tables')->with([
             "restaurants" => Restaurant::all(),
             "tables" => Table::all(),]);
 
@@ -27,7 +27,7 @@ class TableController extends Controller
      */
     public function create()
     {
-        return view('restaurant.table_create');
+        return view('restaurant.addtable');
     }
 
 
@@ -40,6 +40,7 @@ class TableController extends Controller
         $table = Table::create([
             'number' => $request->number,
             'location' => $request->location,
+            'status' => $request->status,
             'guest_number' => $request->guest_number,
             'restaurant_id' => $request->restaurant_id,
             'created_at' => Carbon::now(),
@@ -48,6 +49,20 @@ class TableController extends Controller
         return redirect()->route("restaurant.table.create");
     }
 
+    public function update(Request $request)
+    {
+        //
+        $table = Table::find($request->id);
+        $table->number = $request->number;
+        $table->location = $request->location;
+        $table->guest_number = $request->guest_number;
+        $table->status = $request->status;
+
+        // $restaurant->password = Hash::make($request->password);
+        $table->save();
+        toastr()->success('Table enregistrées avec succès');
+        return redirect()->back();
+    }
     /**
      * Display the specified resource.
      */
@@ -67,10 +82,6 @@ class TableController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
 
     /**
      * Remove the specified resource from storage.
