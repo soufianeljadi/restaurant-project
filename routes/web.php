@@ -103,6 +103,11 @@ Route::get('/restaurants', function () {
     $restaurants = Restaurant::all();
     return view('view_all', compact("restaurants","nbr_resto" ));
 })->name('view_all');
+Route::get('/book', function () {
+    $nbr_resto = Restaurant::count();
+    $restaurants = Restaurant::all();
+    return view('book', compact("restaurants","nbr_resto" ));
+})->name('book');
 
 
 

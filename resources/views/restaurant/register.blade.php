@@ -162,6 +162,8 @@
                                 </div>
                             </div> --}}
                             <!-- /row -->
+                            <div class="text-center dont-have">Vous avez déjà un compte ? <a href="{{ route('login_form') }}">Connexion</a></div><br>
+
                             <div class="form-group text-center"><input type="submit" class="btn_1" value="Submit"
                                     id="submit-register"></div>
                         </form>

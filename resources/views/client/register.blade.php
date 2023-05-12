@@ -67,9 +67,9 @@
         <div class="container">
             <div id="logo">
                 <a href="/">
-                    <img src="{{ asset('assets-home/img/resto2.png') }}" width="125" height="40" alt=""
+                    <img src="{{ asset('assets-home/img/resto2.png') }}" width="100" height="30" alt=""
                         class="logo_normal">
-                    <img src="{{ asset('assets-home/img/resto.png') }}" width="125" height="40" alt=""
+                    <img src="{{ asset('assets-home/img/resto.png') }}" width="100" height="30" alt=""
                         class="logo_sticky">
                 </a>
             </div>
@@ -153,6 +153,8 @@
                                     <input class="form-control" placeholder="Mot de passe *" name="password"
                                         type="password" required>
                                 </div>
+                                <div class="text-center dont-have">Vous avez déjà un compte ? <a href="{{ route('client_login_form') }}">Connexion</a></div><br>
+
                                 <div class="form-group text-center"><input type="submit" class="btn_1"
                                     id="submit-register" value="S'inscrire maintenant"></div>
                                 </div>

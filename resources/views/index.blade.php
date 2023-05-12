@@ -1,9 +1,7 @@
 @extends('master')
 @section('guest')
 <title>Resto - Découvrez & Réservez</title>
-
 	<!-- /header -->
-
 	<main>
 		<div class="hero_single version_2">
 			<div class="opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.6)">
@@ -53,9 +51,9 @@
 			    <div class="item">
 			        <div class="strip">
 			            <figure>
-			                <span class="ribbon off">-30%</span>
-			                <img src="{{ asset('assets-home/img/lazy-placeholder.png') }}" data-src="{{ asset('assets-home/img/location_1.jpg') }}" class="owl-lazy" alt="">
-			                <a href="detail-restaurant.html" class="strip_info">
+			                {{-- <span class="ribbon off">-30%</span> --}}
+			                <img src="{{ asset('assets-home/img/detail_3.jpg') }}" data-src="{{ asset('assets-home/img/home_section_1.jpg') }}" class="owl-lazy" alt="">
+			                <a href="" class="strip_info">
 			                    <small>{{ $restaurant->name }}</small>
 			                    <div class="item_title">
 			                        <h3>{{ $restaurant->name }}</h3>
@@ -64,9 +62,9 @@
 			                </a>
 			            </figure>
 			            <ul>
-			                <li><span class="loc_open">Now Open</span></li>
+			                <li><span class="loc_open">Réservez ici</span></li>
 			                <li>
-			                    <div class="score"><span>Superb<em>350 Reviews</em></span><strong>8.9</strong></div>
+			                    {{-- <div class="score"><span>Superb<em>350 Reviews</em></span><strong>8.9</strong></div> --}}
 			                </li>
 			            </ul>
 			        </div>

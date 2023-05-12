@@ -44,7 +44,7 @@ class ClientController extends Controller
         $check = $request->all();
         if (Auth::guard('client')->attempt(['email' => $check['email'], 'password' => $check['password']])) {
             toastr()->success('Connectez-vous avec succès');
-            return redirect()->route('client.dashboard');
+            return redirect()->route('view_all');
         } else {
             toastr()->error('Email ou mot de passe invalide');
             return back();
@@ -66,7 +66,7 @@ class ClientController extends Controller
        ]);
        Auth::guard("client")->login($client);
        toastr()->success('Données enregistrées avec succès');
-        return redirect()->back();
+        return redirect()->route('view_all');
 
 
     }

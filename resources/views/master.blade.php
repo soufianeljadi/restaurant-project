@@ -55,26 +55,53 @@
     <link href="{{ asset('assets-home/css/style.css') }}" rel="stylesheet">
     <!-- SPECIFIC CSS -->
     <link href="{{ asset('assets-home/css/home.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets-home/css/detail-page.css') }}" rel="stylesheet">
     <!-- ALTERNATIVE COLORS CSS -->
     <link href="#" id="colors" rel="stylesheet">
     <!-- SPECIFIC CSS -->
     <link href="{{ asset('assets-home/css/submit.css') }}" rel="stylesheet">
 </head>
+
 <body>
     <header class="header clearfix element_to_stick">
         <div class="container">
             <div id="logo">
                 <a href="/">
-                    <img src="{{ asset('assets-home/img/resto2.png') }}" width="125" height="40" alt=""
+                    <img src="{{ asset('assets-home/img/resto2.png') }}" width="100" height="30" alt=""
                         class="logo_normal">
-                    <img src="{{ asset('assets-home/img/resto.png') }}" width="125" height="40" alt=""
+                    <img src="{{ asset('assets-home/img/resto.png') }}" width="100" height="30" alt=""
                         class="logo_sticky">
                 </a>
             </div>
-            <ul id="top_menu">
-                <li><a href="{{ route('client.register') }}" class="login">Login</a></li>
-                {{-- <li><a href="wishlist.html" class="wishlist_bt_top" title="Your wishlist">Your wishlist</a></li> --}}
-            </ul>
+            @guest('client')
+                <ul id="top_menu">
+                    <li><a href="{{ route('client_login_form') }}" class="login">Login</a></li>
+                    {{-- <li><a href="wishlist.html" class="wishlist_bt_top" title="Your wishlist">Your wishlist</a></li> --}}
+                </ul>
+            @endguest
+
+            @auth('client')
+                <ul id="top_menu" class="drop_user">
+                    <li>
+                        <div class="dropdown user clearfix">
+                            <a href="#" data-bs-toggle="dropdown">
+                                {{-- <figure><img src="img/avatar1.jpg" alt=""></figure> --}}
+                                <span>{{ Auth::guard('client')->name }}</span>
+                            </a></br>
+                            <div class="dropdown-menu">
+                                <div class="dropdown-menu-content">
+                                    <ul>
+
+                                        <li><a href="{{ route('client.logout') }}"><i class="icon_key"></i>Se
+                                                déconnecter</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /dropdown -->
+                    </li>
+                </ul>
+            @endauth
             <!-- /top_menu -->
             <a href="#0" class="open_close">
                 <i class="icon_menu"></i><span>Menu</span>
@@ -84,13 +111,17 @@
                     <a href="#0" class="open_close">
                         <i class="icon_close"></i><span>Menu</span>
                     </a>
-                    <a href="/"><img src="{{ asset('assets-home/img/resto2.png') }}" width="140" height="35" alt=""></a>
+                    <a href="/"><img src="{{ asset('assets-home/img/resto2.png') }}" width="140"
+                            height="35" alt=""></a>
                 </div>
                 <ul>
+
+
+
                     <li class="submenu">
+                        @guest('client')
                         <a href="#0" class="show-submenu">Login & Register</a>
                         <ul>
-
                             <li class="third-level"><a href="#0">Espace <strong>Client!</strong></a>
                                 <ul>
                                     <li><a href="{{ route('client_login_form') }}">Connexion</a></li>
@@ -113,8 +144,9 @@
                                 </ul>
                             </li>
                         </ul>
-                        <li><a href="{{ route('restaurant.register') }}" target="_parent">Pourquoi Resto ?</a></li>
-                        <li><a href="{{ route('view_all') }}" target="_parent">Découvrez les restaurants</a></li>
+                    <li><a href="{{ route('restaurant.register') }}" target="_parent">Pourquoi Resto ?</a></li>
+                    @endguest
+                    <li><a href="{{ route('view_all') }}" target="_parent">Découvrez les restaurants</a></li>
                     </li>
 
 
@@ -134,9 +166,10 @@
                     <h3 data-bs-target="#collapse_1">Liens rapides</h3>
                     <div class="collapse dont-collapse-sm links" id="collapse_1">
                         <ul>
-                            <li><a href="{{ route('restaurant.register') }}">Êtes-vous un restaurant ? Pourquoi soumettre à Resto?</a></li>
-							<li><a href="{{ route('view_all') }}">Découvrez les restaurants disponibles</a></li>
-							{{-- <li><a href="help.html">Help</a></li>
+                            <li><a href="{{ route('restaurant.register') }}">Êtes-vous un restaurant ? Pourquoi
+                                    soumettre à Resto?</a></li>
+                            <li><a href="{{ route('view_all') }}">Découvrez les restaurants disponibles</a></li>
+                            {{-- <li><a href="help.html">Help</a></li>
 							<li><a href="account.html">My account</a></li>
 							<li><a href="blog.html">Blog</a></li>
 							<li><a href="contacts.html">Contacts</a></li> --}}
@@ -179,8 +212,8 @@
                         <div class="follow_us">
                             <h5>Suivez-nous</h5>
                             <ul>
-                                <li><a href="#0"><img data-src="{{ asset('assets-home/img/facebook1.svg') }}" alt=""
-                                            class="lazy"></a></li>
+                                <li><a href="#0"><img data-src="{{ asset('assets-home/img/facebook1.svg') }}"
+                                            alt="" class="lazy"></a></li>
                             </ul>
                         </div>
                     </div>

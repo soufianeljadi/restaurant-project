@@ -11,11 +11,13 @@
             </ol>
 
             <!-- Example DataTables Card-->
+            {{-- <a class="btn_1 medium" href="{{ route('restaurant.table.create') }}">Ajouter une table</a></br> --}}
             <div class="card mb-3">
                 <div class="card-header">
                     <i class="fa fa-table"></i> Liste des tables
                 </div>
                 <div class="card-body">
+        
                     <div class="table-responsive">
                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                             <thead>
