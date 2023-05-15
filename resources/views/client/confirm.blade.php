@@ -26,6 +26,7 @@
                             </div>
                             <h3>Réservation confirmée!</h3>
                             <p>votre réservation effectuée avec succès</p>
+                            <div class="text-center dont-have">retour à  <a href="/">l'accueil</a></div><br>
                         </div>
                     </div>
                 </div>

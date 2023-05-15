@@ -78,6 +78,12 @@
                         </li> --}}
                     </ul>
                 </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+                    <a class="nav-link" href="{{ route('restaurant.reservations') }}">
+                        <i class="fa fa-fw fa-list"></i>
+                        <span class="nav-link-text">Reservations</span>
+                    </a>
+                </li>
 
             </ul>
             <ul class="navbar-nav sidenav-toggler">
@@ -89,7 +95,7 @@
             </ul>
             <ul class="navbar-nav ml-auto">
                 </li>
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <form class="form-inline my-2 my-lg-0 mr-lg-2">
                         <div class="input-group">
                             <input class="form-control search-top" type="text" placeholder="Search for...">
@@ -100,7 +106,7 @@
                             </span>
                         </div>
                     </form>
-                </li>
+                </li> --}}
                 <li class="nav-item">
                     <a class="nav-link" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-fw fa-sign-out"></i>SE DÉCONNECTER</a>
                 </li>

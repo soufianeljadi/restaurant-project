@@ -124,7 +124,7 @@
 
                     <li class="submenu">
                         @guest('client')
-                        <a href="#0" class="show-submenu">Login & Register</a>
+                        <a href="#0" class="show-submenu">Connexion</a>
                         <ul>
                             <li class="third-level"><a href="#0">Espace <strong>Client!</strong></a>
                                 <ul>
@@ -222,6 +222,10 @@
                                             alt="" class="lazy"></a></li>
                             </ul>
                         </div> --}}
+                        <div class="follow_us"><br>
+                            <h5>© 2023 RESTO - TOUS LES DROITS SONT RÉSERVÉS</h5>
+
+                        </div>
                     </div>
                 </div>
             </div>

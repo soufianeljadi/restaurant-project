@@ -40,7 +40,7 @@ Route::prefix('restaurant')->group(function () {
         Route::post('/update', [RestaurantController::class, 'update'])->name('restaurant.update');
         //manage Tables
         Route::get('/tables', [TableController::class, 'index'])->name('restaurant.tables');
-        Route::get('/reservations', [TableController::class, 'reservation'])->name('restaurant.reservation');
+        Route::get('/reservations', [ReservationController::class, 'reservation'])->name('restaurant.reservations');
         Route::get('/new-table', [TableController::class, 'create'])->name('restaurant.table.create');
         Route::post('/store-table', [TableController::class, 'store'])->name('restaurant.table.store');
         Route::post('/update-table', [TableController::class, 'update'])->name('table.update');

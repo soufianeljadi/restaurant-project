@@ -6,6 +6,7 @@ use App\Models\Reservation;
 use App\Models\Client;
 use App\Models\Table;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ReservationController extends Controller
 {
@@ -14,6 +15,7 @@ class ReservationController extends Controller
      */
     public function confirmed(Request $request)
     {
+
         $restaurant = Restaurant::find($request->id);
         return view('client.confirm', ['restaurant' => $restaurant]);
     }
@@ -22,9 +24,16 @@ class ReservationController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function reservation()
     {
         //
+        $restaurant = Auth::guard('restaurant')->user();
+        $reservations = Reservation::with('client', 'table')
+            ->whereHas('table', function ($query) use ($restaurant) {
+                $query->where('restaurant_id', $restaurant->id);
+            })
+            ->get();
+        return view('restaurant.reservations', compact('reservations'));
     }
 
     /**
