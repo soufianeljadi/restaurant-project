@@ -37,7 +37,7 @@ Route::prefix('restaurant')->group(function () {
         Route::get('/logout', [RestaurantController::class, 'logout'])->name('restaurant.logout');
         Route::get('/dashboard', [RestaurantController::class, 'dashboard'])->name('restaurant.dashboard');
         Route::get('/profile', [RestaurantController::class, 'profile'])->name('restaurant.profile');
-        Route::post('/update', [RestaurantController::class, 'update'])->name('restaurant.update');
+        Route::post('/update', [RestaurantController::class, 'update'])->name('restaurant.update.profile');
         //manage Tables
         Route::get('/tables', [TableController::class, 'index'])->name('restaurant.tables');
         Route::get('/reservations', [ReservationController::class, 'reservation'])->name('restaurant.reservations');
