@@ -93,7 +93,7 @@
                                 <div class="item_title">
                                     <h3>{{ $restaurant->name }}</h3>
                                     <small>{{ $restaurant->location }}</small>
-                                    <small>{{ $restaurant->description }}</small>
+                                    {{-- <small>{{ $restaurant->description }}</small> --}}
                                 </div>
                             </a>
                         </figure>
