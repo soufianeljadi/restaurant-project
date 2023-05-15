@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Reservation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Restaurant;
@@ -28,7 +29,14 @@ class RestaurantController extends Controller
 
     public function dashboard()
     {
-        return view('restaurant.dashboard');
+        $restaurant = Auth::guard('restaurant')->user();
+
+        $reservationCount = Reservation::whereHas('table', function ($query) use ($restaurant) {
+                $query->where('restaurant_id', $restaurant->id);
+            })
+            ->count();
+
+        return view('restaurant.dashboard', compact('restaurant', 'reservationCount'));
     }
 
     public function connect(Request $request)
@@ -62,7 +70,7 @@ class RestaurantController extends Controller
 
     public function create(Request $request)
     {
-        
+
         // dd($request->all());
         $restaurant = Restaurant::create([
             'name' => $request->name,
