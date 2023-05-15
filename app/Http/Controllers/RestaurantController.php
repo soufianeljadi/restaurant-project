@@ -6,6 +6,7 @@ use App\Models\Reservation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Restaurant;
+use App\Models\Table;
 use Illuminate\Support\Facades\Hash;
 use Carbon\Carbon;
 
@@ -30,13 +31,17 @@ class RestaurantController extends Controller
     public function dashboard()
     {
         $restaurant = Auth::guard('restaurant')->user();
-
+        $tables = Table::all();
         $reservationCount = Reservation::whereHas('table', function ($query) use ($restaurant) {
                 $query->where('restaurant_id', $restaurant->id);
             })
             ->count();
 
-        return view('restaurant.dashboard', compact('restaurant', 'reservationCount'));
+        $tableCount = Table::whereHas('restaurant', function ($query) use ($restaurant) {
+            $query->where('restaurant_id', $restaurant->id);
+        })->count();
+
+        return view('restaurant.dashboard', compact('restaurant', 'reservationCount','tableCount'));
     }
 
     public function connect(Request $request)

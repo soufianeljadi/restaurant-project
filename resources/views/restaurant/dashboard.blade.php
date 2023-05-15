@@ -30,24 +30,24 @@
                         </a>
                     </div>
                 </div>
-                {{-- <div class="col-xl-3 col-sm-6 mb-3">
+                <div class="col-xl-3 col-sm-6 mb-3">
                     <div class="card dashboard text-white bg-warning o-hidden h-100">
                         <div class="card-body">
                             <div class="card-body-icon">
                                 <i class="fa fa-fw fa-calendar-check-o"></i>
                             </div>
                             <div class="mr-5">
-                                <h5>{{ $nbr_client }} Clients !</h5>
+                                <h5>{{ $tableCount }} Tables !</h5>
                             </div>
                         </div>
-                        <a class="card-footer text-white clearfix small z-1" href="{{ route('Admin.clients') }}">
+                        <a class="card-footer text-white clearfix small z-1" href="{{ route('restaurant.tables') }}">
                             <span class="float-left">Voir les détails</span>
                             <span class="float-right">
                                 <i class="fa fa-angle-right"></i>
                             </span>
                         </a>
                     </div>
-                </div> --}}
+                </div>
             </div>
         </div>
     </div>
