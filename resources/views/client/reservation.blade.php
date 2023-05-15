@@ -1,6 +1,6 @@
 @extends('client.master')
 @section('client')
-<title>Resto - Reservation</title>
+    <title>Resto - Reservation</title>
     <main>
 
         <div class="container margin_detail">
@@ -391,26 +391,26 @@
                             {{-- <div class="offer">Up to -40% off</div> --}}
                         </div>
                         <div class="main">
-                        <form method="post" action="{{ route('client.reservation.create') }}">
-                            @csrf
-                            {{-- <form method="post" action="{{ route('test') }}">
-                            @csrf
-                            <input type="date" name="date">
-                            <input type="time" name="time">
-                            <button type="sumbit" >ok</button>
-                            </form> --}}
-                            <!-- /head -->
-                            <input type="hidden" name="client_id" value="{{ Auth::guard('client')->id() }}">
+                            <form method="post" action="{{ route('client.reservation.create') }}">
+                                @csrf
+                                {{-- <form method="post" action="{{ route('test') }}">
+                                @csrf
+                                <input type="date" name="date">
+                                    <input type="time" name="time">
+                                <button type="sumbit" >ok</button>
+                                </form> --}}
+                                <!-- /head -->
+                                <input type="hidden" name="client_id" value="{{ Auth::guard('client')->id() }}">
 
                                 <div class="input-group mb-3">
                                     <span class="input-group-text">Date</span>
-                                    <input class="form-control" type="date" name="reservation_date"
+                                    <input required class="form-control" type="date" name="reservation_date"
                                         min="{{ date('Y-m-d') }}">
                                 </div>
 
                                 <div class="input-group mb-3">
                                     <span class="input-group-text">Heure</span>
-                                    <select class="form-select" name="reservation_time">
+                                    <select required class="form-select" name="reservation_time">
                                         <option value="" disabled selected>sélectionner</option>
                                         <optgroup label="Déjeuner">
                                             <option value="12:00:00">12:00 AM</option>
@@ -427,24 +427,24 @@
                                     </select>
                                 </div>
 
-{{-- <input type="hidden" name="restaurant_id" value="{{ $restaurant->id }}"> --}}
+                                {{-- <input type="hidden" name="restaurant_id" value="{{ $restaurant->id }}"> --}}
                                 <div class="input-group mb-3">
                                     <span class="input-group-text">Combien de personnes?</span>
-                                    <select class="form-control" id="number_of_people" name="table_id">
+                                    <select required class="form-control" id="number_of_people" name="table_id">
                                         <option value="" disabled selected>sélectionner</option>
                                         @foreach ($restaurant->tables as $table)
-                                        @if ($table->status == 'Disponible')
+                                            @if ($table->status == 'Disponible')
                                                 <option value="{{ $table->id }}">{{ $table->guest_number }}</option>
-                                        @endif
+                                            @endif
                                         @endforeach
                                     </select>
                                 </div>
 
-                            </div>
-                            <button type="submit" class="btn_1 full-width mb_5">Réservez maintenant</button>
-                        </form>
+                                <button type="submit" class="btn_1 full-width mb_5">Réservez maintenant</button>
+                            </form>
                         </div>
-                        <!-- /dropdown -->
+                    </div>
+                    <!-- /dropdown -->
 
                     <!-- /dropdown -->
                     {{-- <a href="wishlist.html" class="btn_1 full-width outline wishlist"><i class="icon_heart"></i> Add to wishlist</a> --}}
