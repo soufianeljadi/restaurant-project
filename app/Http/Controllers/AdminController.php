@@ -27,6 +27,16 @@ class AdminController extends Controller
         return view('admin.profile');
     }
 
+    public function test(Request $request){
+//         $inputDateTime = $request->input('date');
+//         $carbonDateTime = Carbon::parse($inputDateTime);
+
+//         $date = $carbonDateTime->format('Y-m-d');
+//         $time = $carbonDateTime->format('H:i:s');
+// dd($date ,$time);
+return $request;
+
+    }
     public function connect(Request $request)
     {
         //dd($request->all());

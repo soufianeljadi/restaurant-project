@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Restaurant;
+use App\Models\Reservation;
 use App\Models\Client;
+use App\Models\Table;
 use Illuminate\Support\Facades\Hash;
 use Carbon\Carbon;
 
@@ -14,6 +16,27 @@ class ClientController extends Controller
     public function login()
     {
         return view('client.login');
+    }
+    public function book(Request $request)
+    {
+        $restaurant = Restaurant::find($request->id);
+        return view('client.reservation', ['restaurant' => $restaurant]);
+    }
+    public function reserve(Request $request)
+    {
+        $table = Table::findOrFail($request->table_id);
+        $table->status = 'Indisponible';
+        $table->save();
+
+        $reservation = Reservation::create([
+            'client_id' => $request->client_id,
+            'table_id' => $request->table_id,
+            'reservation_date' =>$request->reservation_date,
+            'reservation_time' =>$request->reservation_time,
+            'created_at' => Carbon::now(),
+           ]);
+           $restaurant = Restaurant::find($request->restaurant_id);
+           return view('client.confirm', ['restaurant' => $restaurant]);
     }
     public function clients()
     {

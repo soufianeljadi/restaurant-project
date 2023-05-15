@@ -42,24 +42,24 @@
                         <div class="breadcrumbs">
                             <ul>
                                 <li><a href="/">Home</a></li>
-                                <li><a href="#">View restaurant</a></li>
+                                <li><a href="{{ route('view_all') }}">View restaurant</a></li>
 
                             </ul>
                         </div>
                         <h1>{{ $nbr_resto }} restaurants existent en ce moment</h1>
                     </div>
-                    <div class="col-xl-4 col-lg-5 col-md-5">
+                    {{-- <div class="col-xl-4 col-lg-5 col-md-5">
                         <div class="search_bar_list">
                             <input type="text" class="form-control" placeholder="Search again...">
                             <input type="submit" value="Search">
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
                 <!-- /row -->
             </div>
         </div>
         <!-- /page_header -->
-
+{{--
         <div class="filters_full clearfix add_bottom_15">
             <div class="container">
                 <div class="switch-field">
@@ -72,7 +72,7 @@
                     <label for="latest">Latest</label>
                 </div>
             </div>
-        </div>
+        </div> --}}
         <!-- /filters_full -->
 
 
@@ -84,21 +84,25 @@
                 <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 isotope-item popular">
                     <div class="strip">
                         <figure>
-                            <span class="ribbon off">-30%</span>
-                            <img src="" data-src="" class="img-fluid lazy"
-                                alt="">
-                            <a href="detail-restaurant.html" class="strip_info">
+                            {{-- <span class="ribbon off">-30%</span> --}}
+                            <img src="{{ asset('assets-home/img/detail_3.jpg') }}" data-src="{{ asset('assets-home/img/home_section_1.jpg') }}" class="img-fluid lazy" alt="">
+
+
+                            <a href="client/book/{{ $restaurant->id }}" class="strip_info">
                                 <small>{{ $restaurant->name }}</small>
                                 <div class="item_title">
                                     <h3>{{ $restaurant->name }}</h3>
                                     <small>{{ $restaurant->location }}</small>
+                                    <small>{{ $restaurant->description }}</small>
                                 </div>
                             </a>
                         </figure>
                         <ul>
-                            <li><span>Avg. Price 24$</span></li>
+                            <li><a class="loc_open" href="client/book/{{ $restaurant->id }}">Réservez ici</a></li>
+
+                            {{-- <li><span>Avg. Price 24$</span></li> --}}
                             <li>
-                                <div class="score"><span>Superb<em>350 Reviews</em></span><strong>8.9</strong></div>
+                                {{-- <div class="score"><span>Superb<em>350 Reviews</em></span><strong>8.9</strong></div> --}}
                             </li>
                         </ul>
                     </div>

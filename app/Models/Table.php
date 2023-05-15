@@ -27,4 +27,10 @@ class Table extends Model
     {
         return $this->belongsTo(Restaurant::class,"restaurant_id");
     }
+
+
+    public function reservation()
+    {
+        return $this->hasOne(Reservation::class);
+    }
 }

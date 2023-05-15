@@ -28,6 +28,9 @@ class Client extends Authenticatable
        'password',
        'remember_token',
    ];
+   public function reservations(){
+    return $this->hasMany(Reservation::class);
+   }
 
    protected $casts = [
     'email_verified_at' => 'datetime',

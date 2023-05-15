@@ -53,16 +53,17 @@
 			            <figure>
 			                {{-- <span class="ribbon off">-30%</span> --}}
 			                <img src="{{ asset('assets-home/img/detail_3.jpg') }}" data-src="{{ asset('assets-home/img/home_section_1.jpg') }}" class="owl-lazy" alt="">
-			                <a href="" class="strip_info">
+			                <a href="client/book/{{ $restaurant->id }}" class="strip_info">
 			                    <small>{{ $restaurant->name }}</small>
 			                    <div class="item_title">
 			                        <h3>{{ $restaurant->name }}</h3>
 			                        <small>{{ $restaurant->location }}</small>
+			                        <small>{{ $restaurant->description }}</small>
 			                    </div>
 			                </a>
 			            </figure>
 			            <ul>
-			                <li><span class="loc_open">Réservez ici</span></li>
+			                <li><a class="loc_open" href="client/book/{{ $restaurant->id }}">Réservez ici</a></li>
 			                <li>
 			                    {{-- <div class="score"><span>Superb<em>350 Reviews</em></span><strong>8.9</strong></div> --}}
 			                </li>

@@ -1,7 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Restaurant;
+use App\Models\Reservation;
+use App\Models\Client;
+use App\Models\Table;
 use Illuminate\Http\Request;
 
 class ReservationController extends Controller
@@ -9,10 +12,12 @@ class ReservationController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function confirmed(Request $request)
     {
-        //
+        $restaurant = Restaurant::find($request->id);
+        return view('client.confirm', ['restaurant' => $restaurant]);
     }
+
 
     /**
      * Show the form for creating a new resource.

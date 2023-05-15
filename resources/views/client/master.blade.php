@@ -8,6 +8,7 @@
     <meta name="author" content="Ansonika">
     {{-- <title>Resto - Découvrez & Réservez</title> --}}
 
+
     {{-- <!-- Favicons-->
     <link rel="shortcut icon" href="{{ asset('img/favicon.ico') }}" type="image/x-icon">
     <link rel="apple-touch-icon" type="image/x-icon" href="{{ asset('img/favicon.ico') }}"> --}}
@@ -58,14 +59,15 @@
     <link href="{{ asset('assets-home/css/detail-page.css') }}" rel="stylesheet">
     <link href="{{ asset('assets-home/css/booking-sign_up.css') }}" rel="stylesheet">
 
+
     <!-- ALTERNATIVE COLORS CSS -->
     <link href="#" id="colors" rel="stylesheet">
     <!-- SPECIFIC CSS -->
-    <link href="{{ asset('assets-home/css/submit.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets-home/css/booking-sign_up.css') }}" rel="stylesheet">
 </head>
 
 <body>
-    <header class="header clearfix element_to_stick">
+    <header class="header_in clearfix">
         <div class="container">
             <div id="logo">
                 <a href="/">
@@ -86,6 +88,7 @@
                     <li>
                         <div class="dropdown user clearfix">
                             <a href="#" data-bs-toggle="dropdown">
+                                {{-- <figure><img src="img/avatar1.jpg" alt=""></figure> --}}                                <figure><img src="{{ asset("img/client_user.png") }}" alt=""></figure>
                                 <figure><img src="{{ asset("img/client_user.png") }}" alt=""></figure>
                                 <span>{{ Auth::guard('client')->name }}</span>
                             </a></br>
@@ -157,9 +160,11 @@
     </header>
     <div class="page-wrapper">
 
-        @yield('guest')
 
-    </div>
+        @yield('client')
+
+       </div>
+       <!-- /Page Wrapper -->
     <footer>
         <div class="container">
             <div class="row">
@@ -167,15 +172,13 @@
                     <h3 data-bs-target="#collapse_1">Liens rapides</h3>
                     <div class="collapse dont-collapse-sm links" id="collapse_1">
                         <ul>
-                            {{-- <li><a href="{{ route('book') }}">Êtes-vous un restaurant ? Pourquoi
-                                    soumettre à Resto?</a></li> --}}
-                            <li><a href="{{ route('restaurant.register') }}">Êtes-vous un restaurant ? Pourquoi
-                                    soumettre à Resto?</a></li>
+                            <li><a href="{{ route('restaurant.register') }}">Êtes-vous un restaurant ? Pourquoi soumettre à
+                                    Resto?</a></li>
                             <li><a href="{{ route('view_all') }}">Découvrez les restaurants disponibles</a></li>
                             {{-- <li><a href="help.html">Help</a></li>
-							<li><a href="account.html">My account</a></li>
-							<li><a href="blog.html">Blog</a></li>
-							<li><a href="contacts.html">Contacts</a></li> --}}
+                        <li><a href="account.html">My account</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contacts.html">Contacts</a></li> --}}
                         </ul>
                     </div>
                 </div>
@@ -204,14 +207,14 @@
                     {{-- <h3 data-bs-target="#collapse_4">Keep in touch</h3> --}}
                     <div class="collapse dont-collapse-sm" id="collapse_4">
                         {{-- <div id="newsletter">
-							<div id="message-newsletter"></div>
-							<form method="post" action="assets/newsletter.php" name="newsletter_form" id="newsletter_form">
-								<div class="form-group">
-									<input type="email" name="email_newsletter" id="email_newsletter" class="form-control" placeholder="Your email">
-									<button type="submit" id="submit-newsletter"><i class="arrow_carrot-right"></i></button>
-								</div>
-							</form>
-						</div> --}}
+                        <div id="message-newsletter"></div>
+                        <form method="post" action="assets/newsletter.php" name="newsletter_form" id="newsletter_form">
+                            <div class="form-group">
+                                <input type="email" name="email_newsletter" id="email_newsletter" class="form-control" placeholder="Your email">
+                                <button type="submit" id="submit-newsletter"><i class="arrow_carrot-right"></i></button>
+                            </div>
+                        </form>
+                    </div> --}}
                         {{-- <div class="follow_us">
                             <h5>Suivez-nous</h5>
                             <ul>
@@ -225,6 +228,11 @@
             <!-- /row-->
             <hr>
         </div>
+
+
+
+
+
     </footer>
     <!--/footer-->
 
@@ -232,11 +240,16 @@
 
     <div class="layer"></div><!-- Opacity Mask Menu Mobile -->
 
-
+    <!-- SPECIFIC SCRIPTS -->
+    <script src="{{ asset('assets-home/js/sticky_sidebar.min.js') }}"></script>
+    <script src="{{ asset('assets-home/js/specific_detail.js') }}"></script>
+	<script src="{{ asset('assets-home/js/datepicker.min.js') }}"></script>
+	<script src="{{ asset('assets-home/js/datepicker_func_1.js') }}"></script>
     <!-- COMMON SCRIPTS -->
     <script src="{{ asset('assets-home/js/common_scripts.min.js') }}"></script>
     <script src="{{ asset('assets-home/js/common_func.js') }}"></script>
     <script src="{{ asset('assets-home/assets/validate.js') }}"></script>
+
 
     <!-- TYPE EFFECT -->
     <script src="{{ asset('assets-home/js/typed.min.js') }}"></script>
@@ -249,9 +262,6 @@
             typeSpeed: 50
         });
     </script>
-
-    <!-- COLOR SWITCHER  -->
-
 
 </body>
 

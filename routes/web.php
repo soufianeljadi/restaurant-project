@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RestaurantController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\TableController;
 use GuzzleHttp\Middleware;
 use App\Models\Restaurant;
@@ -39,6 +40,7 @@ Route::prefix('restaurant')->group(function () {
         Route::post('/update', [RestaurantController::class, 'update'])->name('restaurant.update');
         //manage Tables
         Route::get('/tables', [TableController::class, 'index'])->name('restaurant.tables');
+        Route::get('/reservations', [TableController::class, 'reservation'])->name('restaurant.reservation');
         Route::get('/new-table', [TableController::class, 'create'])->name('restaurant.table.create');
         Route::post('/store-table', [TableController::class, 'store'])->name('restaurant.table.store');
         Route::post('/update-table', [TableController::class, 'update'])->name('table.update');
@@ -50,6 +52,8 @@ Route::prefix('restaurant')->group(function () {
 
 /*------------------------------Client routes----------------------------------- */
 Route::prefix('client')->group(function () {
+
+    Route::get('/book/{id}', [ClientController::class,'book'])->name('book');
     //Auth ROUTES
     Route::get('/login', [ClientController::class, 'login'])->name('client_login_form');
     Route::post('/connect', [ClientController::class, 'connect'])->name('client.login');
@@ -62,7 +66,10 @@ Route::prefix('client')->group(function () {
         Route::get('/dashboard', [ClientController::class, 'dashboard'])->name('client.dashboard');
         Route::get('/profile', [ClientController::class, 'profile'])->name('client.profile');
         Route::post('/update', [ClientController::class, 'update'])->name('client.update');
-        Route::get('/reservation', [ClientController::class, 'reservation'])->name('client.reservation');
+        Route::post('/reserve', [ClientController::class, 'reserve'])->name('client.reservation.create');
+        Route::post('/confirmed', function(){
+            return view('client.confirm');
+        })->name('client.reservation.confirmed');
     });
 });
 /*-----------------------------End Client routes-------------------------------- */
@@ -92,6 +99,10 @@ Route::prefix('admin')->group(function () {
 });
 /*-----------------------------End admin routes-------------------------------- */
 
+
+Route::post('/test', [AdminController::class, 'test'])->name('test');
+
+
 //Common routes
 Route::get('/', function () {
     $restaurants = Restaurant::all();
@@ -103,11 +114,6 @@ Route::get('/restaurants', function () {
     $restaurants = Restaurant::all();
     return view('view_all', compact("restaurants","nbr_resto" ));
 })->name('view_all');
-Route::get('/book', function () {
-    $nbr_resto = Restaurant::count();
-    $restaurants = Restaurant::all();
-    return view('book', compact("restaurants","nbr_resto" ));
-})->name('book');
 
 
 
