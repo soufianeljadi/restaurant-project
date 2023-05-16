@@ -1,34 +1,76 @@
-"Système de réservation de tables en ligne pour restaurants - Laravel"
+# Système de réservation de tables en ligne pour restaurants
 
-Description :
-Ce dépôt GitHub contient le code source d'un site web de réservation de tables en ligne pour les restaurants, développé en utilisant Laravel, HTML, CSS, JavaScript, Bootstrap et MySQL. Le système permet à trois acteurs principaux, à savoir l'administrateur, le propriétaire du restaurant et le client, d'interagir avec la plateforme.
+Ce projet est un site web de réservation de tables en ligne pour les restaurants, développé en utilisant Laravel, HTML, CSS, JavaScript, Bootstrap et MySQL. Le système permet à trois acteurs principaux, à savoir l'administrateur, le propriétaire du restaurant et le client, d'interagir avec la plateforme.
 
-Fonctionnalités :
+## Fonctionnalités
 
-Administrateur :
+- **Administrateur** :
+    - Gestion des comptes utilisateurs (ajout, suppression, modification)
+    - Gestion des restaurants (ajout, suppression, modification)
+    - Suivi des réservations et des statistiques
 
-Gestion des comptes utilisateurs (ajout, suppression, modification)
-Gestion des restaurants (ajout, suppression, modification)
-Suivi des réservations et des statistiques
-Propriétaire du restaurant :
+- **Propriétaire du restaurant** :
+    - Création et gestion du profil du restaurant
+    - Paramétrage de la capacité des tables (ajout, suppression, modification)
+    - Gestion des réservations 
+    - Consultation des statistiques de réservation
 
-Création et gestion du profil du restaurant
-Configuration des heures d'ouverture et de fermeture
-Paramétrage de la capacité des tables
-Gestion des réservations (confirmation, annulation, modification)
-Consultation des statistiques de réservation
-Client :
+- **Client** :
+    - Recherche de restaurants disponibles par emplacement, date et heure
+    - Visualisation des informations détaillées du restaurant
+    - Réservation d'une table en spécifiant le nombre de personnes
+   
 
-Recherche de restaurants disponibles par emplacement, date et heure
-Visualisation des informations détaillées du restaurant
-Réservation d'une table en spécifiant le nombre de personnes
-Annulation ou modification de la réservation
-Technologies utilisées :
+## Technologies utilisées
 
-Laravel : Framework PHP pour le développement back-end
-HTML, CSS, JavaScript : Développement front-end pour l'interface utilisateur
-Bootstrap : Framework CSS pour un design réactif et esthétique
-MySQL : Base de données relationnelle pour le stockage des informations sur les restaurants et les réservations
-Ce projet utilise Laravel pour tirer parti de sa puissance et de sa simplicité dans le développement d'applications web. Le système offre une expérience utilisateur fluide et intuitive grâce à l'utilisation de HTML, CSS, JavaScript et Bootstrap. Les données sont stockées dans une base de données MySQL pour assurer la persistance des informations.
+- Laravel : Framework PHP pour le développement back-end
+- HTML, CSS, JavaScript : Développement front-end pour l'interface utilisateur
+- Bootstrap : Framework CSS pour un design réactif et esthétique
+- MySQL : Base de données relationnelle pour le stockage des informations sur les restaurants et les réservations
 
-L'objectif de ce projet est de fournir une solution complète de réservation de tables en ligne pour les restaurants, offrant une interface conviviale pour les clients, une gestion efficace des réservations pour les propriétaires de restaurants et des fonctionnalités d'administration pour l'administrateur.
+## Installation
+
+1. Clonez le dépôt GitHub :
+git clone https://github.com/soufianeljadi/restaurant-project
+
+2. Accédez au répertoire du projet :
+cd restaurant-project
+
+3. Installez les dépendances PHP via Composer :
+composer install
+
+4. Copiez le fichier d'environnement :
+cp .env.example .env
+
+5. Générez la clé d'application :
+php artisan key:generate
+
+6. Configurez votre base de données dans le fichier `.env`.
+
+7. Exécutez les migrations et les seeders :
+php artisan migrate --seed
+
+8. Démarrez le serveur de développement :
+php artisan serve
+
+9. Accédez au site web dans votre navigateur à l'adresse `http://localhost:8000`.
+
+## Contribution
+
+Les contributions sont les bienvenues ! Si vous souhaitez contribuer à ce projet, veuillez suivre les étapes suivantes :
+
+1. Fork du dépôt
+2. Créez une nouvelle branche (`git checkout -b feature/ajouter-fonctionnalite`)
+3. Effectuez vos modifications
+4. Committez vos changements (`git commit -am 'Ajouter une fonctionnalité'`)
+5. Push vers la branche (`git push origin feature/ajouter-fonctionnalite`)
+6. Ouvrez une Pull Request
+
+## Auteurs
+
+- EL JADI Soufiane eljadi.souf@gmail.com
+- Tasmim Web mahjoubweb
+
+## Licence
+
+Ce projet est sous licence [MIT](LICENSE).
