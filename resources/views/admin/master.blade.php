@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="Ansonika">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>RESTO - Admin dashboard</title>
+    <title>Resto - Admin dashboard</title>
 
     <!-- Bootstrap core CSS-->
     <link href="{{ asset('assets-admin/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
