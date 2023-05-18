@@ -31,27 +31,27 @@ Ce projet est une application web de réservation de tables en ligne pour les re
 ## Installation
 
 1. Clonez le dépôt GitHub :
-~~~git clone https://github.com/soufianeljadi/restaurant-project ~~~
+```git clone https://github.com/soufianeljadi/restaurant-project ```
 
 2. Accédez au répertoire du projet :
-~~~cd restaurant-project~~~
+```cd restaurant-project```
 
 3. Installez les dépendances PHP via Composer :
-~~~composer install~~~
+```composer install```
 
 4. Copiez le fichier d'environnement :
-~~~cp .env.example .env~~~
+```cp .env.example .env```
 
 5. Générez la clé d'application :
-~~~php artisan key:generate~~~
+```php artisan key:generate```
 
 6. Configurez votre base de données dans le fichier `.env`.
 
 7. Exécutez les migrations et les seeders :
-~~~php artisan migrate --seed~~~
+```php artisan migrate --seed```
 
 8. Démarrez le serveur de développement :
-~~~php artisan serve~~~
+```php artisan serve```
 
 9. Accédez au site web dans votre navigateur à l'adresse `http://localhost:8000`.
 
