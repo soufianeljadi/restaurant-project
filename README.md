@@ -31,7 +31,7 @@ Ce projet est une application web de réservation de tables en ligne pour les re
 ## Installation
 
 1. Clonez le dépôt GitHub :
-~~~ git clone https://github.com/soufianeljadi/restaurant-project
+``` git clone https://github.com/soufianeljadi/restaurant-project ```
 
 2. Accédez au répertoire du projet :
 cd restaurant-project
