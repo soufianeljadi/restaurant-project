@@ -1,6 +1,6 @@
 # Système de réservation de tables en ligne pour restaurants
 
-Ce projet est un site web de réservation de tables en ligne pour les restaurants, développé en utilisant Laravel, HTML, CSS, JavaScript, Bootstrap et MySQL. Le système permet à trois acteurs principaux, à savoir l'administrateur, le propriétaire du restaurant et le client, d'interagir avec la plateforme.
+Ce projet est une application web de réservation de tables en ligne pour les restaurants, développé en utilisant Laravel, HTML, CSS, JavaScript, Bootstrap et MySQL. Le système permet à trois acteurs principaux, à savoir l'administrateur, le propriétaire du restaurant et le client, d'interagir avec la plateforme.
 
 ## Fonctionnalités
 
@@ -31,7 +31,7 @@ Ce projet est un site web de réservation de tables en ligne pour les restaurant
 ## Installation
 
 1. Clonez le dépôt GitHub :
-git clone https://github.com/soufianeljadi/restaurant-project
+//git clone https://github.com/soufianeljadi/restaurant-project
 
 2. Accédez au répertoire du projet :
 cd restaurant-project
