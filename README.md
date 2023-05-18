@@ -2,6 +2,8 @@
 
 Ce projet est une application web de réservation de tables en ligne pour les restaurants, développé en utilisant Laravel, HTML, CSS, JavaScript, Bootstrap et MySQL. Le système permet à trois acteurs principaux, à savoir l'administrateur, le propriétaire du restaurant et le client, d'interagir avec la plateforme.
 
+![Accueil](screenshots/accueil.png)
+
 ## Fonctionnalités
 
 - **Administrateur** :
