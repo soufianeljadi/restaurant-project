@@ -49,6 +49,56 @@
                     </div>
                 </div>
             </div>
+            <div class="card mb-3">
+                <div class="card-header">
+                    <i class="fa fa-area-chart"></i> Graphique presente nombre de reservation par jour</div>
+                <div >
+                    <canvas id="reservationChart" width="80%" height="20%"></canvas>
+                </div>
+                {{-- <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div> --}}
+            </div>
         </div>
-    </div>
+
+        <script>
+            // Retrieve the chart labels and data from the PHP variables
+            var chartLabels = JSON.parse('{!! $chartLabels !!}');
+            var chartData = JSON.parse('{!! $chartData !!}');
+
+            // Create the area chart
+            var ctx = document.getElementById('reservationChart').getContext('2d');
+            var chart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: chartLabels,
+                    datasets: [{
+                        label: 'Reservations',
+                        data: chartData,
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)', // Area fill color
+                        borderColor: 'rgba(75, 192, 192, 1)', // Line color
+                        borderWidth: 2,
+                        tension: 0.2 // Controls the curve of the line
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: [{
+                            ticks: {
+                                min: 0, // Set the minimum value to 0
+                                stepSize: 5, // Step size between ticks
+                                max: 50 // Set the maximum value to 50
+                            }
+                        }]
+                    }
+                }
+            });
+        </script>
+
+
+
+
+
+
+
+
+
 @endsection

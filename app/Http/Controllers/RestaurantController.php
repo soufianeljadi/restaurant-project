@@ -30,19 +30,35 @@ class RestaurantController extends Controller
 
     public function dashboard()
     {
+        $reservations = Reservation::where('created_at', '>=', now()->subDays(7))->get(); // Retrieve reservations for the last 7 days (adjust the query as per your database structure)
+
+        $labels = [];
+        $data = [];
+
+        for ($i = 6; $i >= 0; $i--) {
+            $date = now()->subDays($i)->format('Y-m-d');
+            $count = Reservation::whereDate('created_at', $date)->count();
+            $labels[] = now()->subDays($i)->format('D');
+            $data[] = $count;
+        }
+
         $restaurant = Auth::guard('restaurant')->user();
         $tables = Table::all();
         $reservationCount = Reservation::whereHas('table', function ($query) use ($restaurant) {
-                $query->where('restaurant_id', $restaurant->id);
-            })
-            ->count();
+            $query->where('restaurant_id', $restaurant->id);
+        })->count();
 
         $tableCount = Table::whereHas('restaurant', function ($query) use ($restaurant) {
             $query->where('restaurant_id', $restaurant->id);
         })->count();
 
-        return view('restaurant.dashboard', compact('restaurant', 'reservationCount','tableCount'));
-    }
+
+    // Pass the labels and data to the view
+    $chartLabels = json_encode($labels); // Convert PHP array to JSON
+    $chartData = json_encode($data); // Convert PHP array to JSON
+    // dd($chartLabels, $chartData);
+    return view('restaurant.dashboard', compact('restaurant', 'reservationCount', 'tableCount', 'reservations', 'chartLabels', 'chartData', 'tables'));
+}
 
     public function connect(Request $request)
     {

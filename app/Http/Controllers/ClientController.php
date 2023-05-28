@@ -72,6 +72,7 @@ class ClientController extends Controller
             toastr()->error('Email ou mot de passe invalide');
             return back();
         }
+
         //return view('restaurant.index');
     }
     public function register()

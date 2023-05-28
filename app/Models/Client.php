@@ -17,7 +17,7 @@ class Client extends Authenticatable
         'name',
         'email',
         'password',
-        'status'
+        'yums'
     ];
     /**
      * The attributes that should be hidden for serialization.

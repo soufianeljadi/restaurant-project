@@ -8,6 +8,10 @@
     <meta name="description" content="">
     <meta name="author" content="Ansonika">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" crossorigin="anonymous"></script> --}}
+    {{-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> --}}<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
     <title>RESTO - Restaurant dashboard</title>
 
     <!-- Bootstrap core CSS-->
@@ -173,14 +177,28 @@
     <!-- Core plugin JavaScript-->
     <script src="{{ asset('assets-admin/vendor/jquery-easing/jquery.easing.min.js') }}"></script>
     <!-- Page level plugin JavaScript-->
-    <script src="{{ asset('assets-admin/vendor/chart.js/Chart.js') }}"></script>
+    {{-- <script src="{{ asset('assets-admin/vendor/chart.js/Chart.js') }}"></script>
+    <script src="{{ asset('assets-admin/vendor/chart.js/Chart.min.js') }}"></script> --}}
+    <script src="{{ asset('assets-admin/js/admin-chart.js') }}"></script>
     <script src="{{ asset('assets-admin/vendor/datatables/jquery.dataTables.js') }}"></script>
     <script src="{{ asset('assets-admin/vendor/datatables/dataTables.bootstrap4.js') }}"></script>
     <script src="{{ asset('assets-admin/vendor/jquery.magnific-popup.min.js') }}"></script>
     <!-- Custom scripts for all pages-->
     <script src="{{ asset('assets-admin/js/admin.js') }}"></script>
     <!-- Custom scripts for this page-->
-    <script src="{{ asset('assets-admin/js/admin-charts.js') }}"></script>
+    {{-- <script src="{{ asset('assets-admin/js/admin-charts.js') }}"></script>
+    <script src="{{ asset('assets-admin/js/admin-charts-all.js') }}"></script> --}}
+    {{-- <script src="vendor/jquery/jquery.min.js"></script> --}}
+    {{-- <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script> --}}
+    <!-- Core plugin JavaScript-->
+    {{-- <script src="vendor/jquery-easing/jquery.easing.min.js"></script> --}}
+    <!-- Page level plugin JavaScript-->
+    {{-- <script src="vendor/datatables/jquery.dataTables.js"></script> --}}
+    {{-- <script src="vendor/datatables/dataTables.bootstrap4.js"></script> --}}
+    {{-- <script src="vendor/jquery.magnific-popup.min.js"></script> --}}
+    <!-- Custom scripts for all pages-->
+    {{-- <script src="js/admin.js"></script> --}}
+    <!-- Custom scripts for this page-->
 </body>
 
 </html>

@@ -87,7 +87,10 @@
                         <div class="dropdown user clearfix">
                             <a href="#" data-bs-toggle="dropdown">
                                 <figure><img src="{{ asset("img/client_user.png") }}" alt=""></figure>
-                                <span>{{ Auth::guard('client')->user()->name }}</span>
+                                <span>{{ Auth::guard('client')->user()->name }}</span><br><br>
+
+                                <span>{{ Auth::guard('client')->user()->status }} Yums</span>&nbsp;&nbsp;
+
                             </a></br>
                             <div class="dropdown-menu">
                                 <div class="dropdown-menu-content">
