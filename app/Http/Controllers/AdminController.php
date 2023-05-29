@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Restaurant;
+use App\Models\Reservation;
 use App\Models\Client;
 use App\Models\Admin;
 use Illuminate\Support\Facades\Hash;
@@ -20,7 +21,15 @@ class AdminController extends Controller
     {
         $nbr_resto = Restaurant :: count();
         $nbr_client = Client :: count();
-        return view('admin.dashboard',compact('nbr_resto','nbr_client'));
+        $restaurants = Restaurant::all();
+        foreach ($restaurants as $restaurant) {
+            $reservationCount = Reservation::whereHas('table', function ($query) use ($restaurant) {
+                $query->where('restaurant_id', $restaurant->id);
+            })->count();
+
+            $restaurant->reservationCount = $reservationCount;
+        }
+        return view('admin.dashboard',compact('nbr_resto','nbr_client','restaurants'));
     }
     public function profile()
     {

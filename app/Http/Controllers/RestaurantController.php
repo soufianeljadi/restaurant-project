@@ -8,7 +8,10 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Restaurant;
 use App\Models\Table;
 use Illuminate\Support\Facades\Hash;
-use Carbon\Carbon;
+// use Carbon\Carbon;
+use Illuminate\Support\Carbon;
+use Carbon\CarbonInterface;
+
 
 class RestaurantController extends Controller
 {
@@ -28,17 +31,22 @@ class RestaurantController extends Controller
         return view("admin.restaurants", compact("restaurants"));
     }
 
+
+
+
     public function dashboard()
     {
-        $reservations = Reservation::where('created_at', '>=', now()->subDays(7))->get(); // Retrieve reservations for the last 7 days (adjust the query as per your database structure)
+        $reservations = Reservation::where('created_at', '>=', now()->subDays(7))->get();
 
         $labels = [];
         $data = [];
+        $locale = 'fr'; // Set the locale to French
 
         for ($i = 6; $i >= 0; $i--) {
-            $date = now()->subDays($i)->format('Y-m-d');
-            $count = Reservation::whereDate('created_at', $date)->count();
-            $labels[] = now()->subDays($i)->format('D');
+            $date = Carbon::now()->subDays($i)->locale($locale);
+            $formattedDate = $date->isoFormat('ddd'); // Format the day name according to the locale
+            $count = Reservation::whereDate('created_at', $date->format('Y-m-d'))->count();
+            $labels[] = $formattedDate;
             $data[] = $count;
         }
 
@@ -52,13 +60,13 @@ class RestaurantController extends Controller
             $query->where('restaurant_id', $restaurant->id);
         })->count();
 
+        $chartLabels = json_encode($labels);
+        $chartData = json_encode($data);
 
-    // Pass the labels and data to the view
-    $chartLabels = json_encode($labels); // Convert PHP array to JSON
-    $chartData = json_encode($data); // Convert PHP array to JSON
-    // dd($chartLabels, $chartData);
-    return view('restaurant.dashboard', compact('restaurant', 'reservationCount', 'tableCount', 'reservations', 'chartLabels', 'chartData', 'tables'));
-}
+        return view('restaurant.dashboard', compact('restaurant', 'reservationCount', 'tableCount', 'reservations', 'chartLabels', 'chartData', 'tables'));
+    }
+
+
 
     public function connect(Request $request)
     {
