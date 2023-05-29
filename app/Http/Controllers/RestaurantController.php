@@ -52,10 +52,11 @@ class RestaurantController extends Controller
 
         $restaurant = Auth::guard('restaurant')->user();
         $tables = Table::all();
+//reservation number
         $reservationCount = Reservation::whereHas('table', function ($query) use ($restaurant) {
             $query->where('restaurant_id', $restaurant->id);
         })->count();
-
+//table number
         $tableCount = Table::whereHas('restaurant', function ($query) use ($restaurant) {
             $query->where('restaurant_id', $restaurant->id);
         })->count();
@@ -63,7 +64,15 @@ class RestaurantController extends Controller
         $chartLabels = json_encode($labels);
         $chartData = json_encode($data);
 
-        return view('restaurant.dashboard', compact('restaurant', 'reservationCount', 'tableCount', 'reservations', 'chartLabels', 'chartData', 'tables'));
+        $restaurants = Restaurant::all();
+
+
+        $latestReservation = Reservation::whereHas('table', function ($query) use ($restaurant) {
+            $query->where('restaurant_id', $restaurant->id);
+        })->latest()->first();
+// return $restaurant->lastReservation;
+
+        return view('restaurant.dashboard', compact('restaurant', 'reservationCount', 'tableCount', 'reservations', 'chartLabels', 'chartData', 'tables','latestReservation'));
     }
 
 

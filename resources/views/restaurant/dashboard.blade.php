@@ -49,10 +49,21 @@
                     </div>
                 </div>
             </div>
+
+            <div class="alert alert-primary" role="alert">
+                @if ($latestReservation)
+                    La dernière réservation est par <strong>{{ $latestReservation->client->name }}</strong> pour la table
+                    <strong>{{ $latestReservation->table->number }}</strong> à
+                    <strong>{{ $latestReservation->reservation_date }} , {{ $latestReservation->reservation_time }}</strong>
+                @else
+                    Pas encore de réservations.
+                @endif
+            </div>
             <div class="card mb-3">
                 <div class="card-header">
-                    <i class="fa fa-area-chart"></i> Graphique presente nombre de reservation par jour</div>
-                <div >
+                    <i class="fa fa-area-chart"></i> Graphique presente nombre de reservation par jour
+                </div>
+                <div>
                     <canvas id="reservationChart" width="80%" height="20%"></canvas>
                 </div>
                 {{-- <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div> --}}
@@ -92,13 +103,4 @@
                 }
             });
         </script>
-
-
-
-
-
-
-
-
-
-@endsection
+    @endsection

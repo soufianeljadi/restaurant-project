@@ -23,7 +23,8 @@
                             <thead>
                                 <tr>
                                     <th>Numéro de table</th>
-                                    <th>Client</th>
+                                    <th>Nom du client</th>
+                                    <th>E-mail du client</th>
                                     <th>Date de réservation</th>
                                     <th>Heure de réservation</th>
                                     {{-- <th>Contrôle</th> --}}
@@ -33,17 +34,19 @@
                             <tfoot>
                                 <tr>
                                     <th>Numéro de table</th>
-                                    <th>Client</th>
+                                    <th>Nom du client</th>
+                                    <th>E-mail du client</th>
                                     <th>Date de réservation</th>
                                     <th>Heure de réservation</th>
                                     {{-- <th>Contrôle</th> --}}
                                 </tr>
                             </tfoot>
                             <tbody>
-                              
+
                                 @foreach($reservations as $reservation)
                                     <tr>
                                         <td>{{ $reservation->table->number }} </td>
+                                        <td>{{ $reservation->client->name }} </td>
                                         <td>{{ $reservation->client->email }} </td>
                                         <td>{{ $reservation->reservation_date }} </td>
                                         <td>{{ $reservation->reservation_time }}</td>

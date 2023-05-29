@@ -18,6 +18,7 @@ Ce projet est une application web de réservation de tables en ligne pour les re
     - Consultation des statistiques de réservation
 
 - **Client** :
+    - Création du profil client
     - Recherche de restaurants disponibles par emplacement, date et heure
     - Visualisation des informations détaillées du restaurant
     - Réservation d'une table en spécifiant le nombre de personnes
