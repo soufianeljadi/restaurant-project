@@ -61,7 +61,15 @@
                                 </div>
 
                             </div>
-
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Yums offer ( 100 yums = 1$ de rabais )</label>
+                                        <input type="number" class="form-control" name="yums"
+                                            value="{{ Auth::guard('restaurant')->user()->yums }}">
+                                    </div>
+                                </div>
+                            </div>
                             <!-- /row-->
                             <div class="row">
                                 <div class="col-md-6">

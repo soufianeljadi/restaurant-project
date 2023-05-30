@@ -84,7 +84,9 @@
                 <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 isotope-item popular">
                     <div class="strip">
                         <figure>
-                            {{-- <span class="ribbon off">-30%</span> --}}
+                            @if( $restaurant->yums > 0)
+			                <span class="ribbon off">+ {{  $restaurant->yums  }} Yums</span>
+                            @endif
                             <img src="{{ asset('assets-home/img/detail_3.jpg') }}" data-src="{{ asset('assets-home/img/home_section_1.jpg') }}" class="img-fluid lazy" alt="">
 
 

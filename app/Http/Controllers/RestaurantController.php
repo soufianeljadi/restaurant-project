@@ -143,7 +143,7 @@ class RestaurantController extends Controller
         $restaurant->name = $request->name;
         $restaurant->email = $request->email;
         $restaurant->location = $request->location;
-        $restaurant->status = $request->status;
+        $restaurant->yums = $request->yums;
         $restaurant->description = $request->description;
         // $restaurant->password = Hash::make($request->password);
         $restaurant->save();

@@ -51,7 +51,9 @@
 			    <div class="item">
 			        <div class="strip">
 			            <figure>
-			                {{-- <span class="ribbon off">-30%</span> --}}
+                            @if( $restaurant->yums > 0)
+			                <span class="ribbon off">+ {{  $restaurant->yums  }} Yums</span>
+                            @endif
 			                <img src="{{ asset('assets-home/img/detail_3.jpg') }}" data-src="{{ asset('assets-home/img/home_section_1.jpg') }}" class="owl-lazy" alt="">
 			                <a href="client/book/{{ $restaurant->id }}" class="strip_info">
 			                    <small>{{ $restaurant->name }}</small>
@@ -61,6 +63,7 @@
 			                        {{-- <small>{{ $restaurant->description }}</small> --}}
 			                    </div>
 			                </a>
+                            
 			            </figure>
 			            <ul>
 			                <li><a class="loc_open" href="client/book/{{ $restaurant->id }}">Réservez ici</a></li>
