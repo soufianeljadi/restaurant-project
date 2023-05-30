@@ -404,7 +404,10 @@
                                 </form> --}}
                                 <!-- /head -->
                                 <input type="hidden" name="client_id" value="{{ Auth::guard('client')->id() }}">
+                                @if (auth()->check() && auth()->guard('client')->user())
+
                                 <input type="hidden" name="yums" value="{{ Auth::guard('client')->user()->yums + $restaurant->yums }}">
+@endif
                                 <div class="input-group mb-3">
                                     <span class="input-group-text">Date</span>
                                     <input required class="form-control" type="date" name="reservation_date"
