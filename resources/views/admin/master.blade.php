@@ -102,6 +102,9 @@
                     </form>
                 </li> --}}
                 <li class="nav-item">
+                    <a class="nav-link" href="{{ route ('admin.profile') }}">    {{  Auth::guard('admin')->user()->name }}</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-fw fa-sign-out"></i>SE DÉCONNECTER</a>
                 </li>
             </ul>
