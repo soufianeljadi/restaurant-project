@@ -52,7 +52,7 @@
 
             <div class="alert alert-primary" role="alert">
                 @if ($latestReservation)
-                    La dernière réservation est par <strong>{{ $latestReservation->client->name }}</strong> pour la table
+                    La dernière réservation est par <strong>{{ $latestReservation->client->name }} ({{ $latestReservation->client->email }})</strong> pour la table
                     <strong>{{ $latestReservation->table->number }}</strong> à
                     <strong>{{ $latestReservation->reservation_date }} , {{ $latestReservation->reservation_time }}</strong>
                 @else
@@ -61,7 +61,7 @@
             </div>
             <div class="card mb-3">
                 <div class="card-header">
-                    <i class="fa fa-area-chart"></i> Graphique presente nombre de reservation par jour
+                    <i class="fa fa-area-chart"></i> Graphique presente le nombre de reservation par jour
                 </div>
                 <div>
                     <canvas id="reservationChart" width="80%" height="20%"></canvas>

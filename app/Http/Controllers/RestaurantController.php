@@ -36,7 +36,14 @@ class RestaurantController extends Controller
 
     public function dashboard()
     {
-        $reservations = Reservation::where('created_at', '>=', now()->subDays(7))->get();
+        $restaurant = Auth::guard('restaurant')->user();
+        $restaurantId = $restaurant->id;
+
+        $reservations = Reservation::where('created_at', '>=', now()->subDays(7))
+            ->whereHas('table.restaurant', function ($query) use ($restaurantId) {
+                $query->where('id', $restaurantId);
+            })
+            ->get();
 
         $labels = [];
         $data = [];
@@ -45,10 +52,17 @@ class RestaurantController extends Controller
         for ($i = 6; $i >= 0; $i--) {
             $date = Carbon::now()->subDays($i)->locale($locale);
             $formattedDate = $date->isoFormat('ddd'); // Format the day name according to the locale
-            $count = Reservation::whereDate('created_at', $date->format('Y-m-d'))->count();
+            $count = Reservation::whereDate('created_at', $date->format('Y-m-d'))
+                ->whereHas('table.restaurant', function ($query) use ($restaurantId) {
+                    $query->where('id', $restaurantId);
+                })
+                ->count();
             $labels[] = $formattedDate;
             $data[] = $count;
         }
+
+        $chartLabels = json_encode($labels);
+        $chartData = json_encode($data);
 
         $restaurant = Auth::guard('restaurant')->user();
         $tables = Table::all();
@@ -61,8 +75,6 @@ class RestaurantController extends Controller
             $query->where('restaurant_id', $restaurant->id);
         })->count();
 
-        $chartLabels = json_encode($labels);
-        $chartData = json_encode($data);
 
         $restaurants = Restaurant::all();
 
