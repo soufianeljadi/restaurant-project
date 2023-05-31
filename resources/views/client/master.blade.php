@@ -71,8 +71,7 @@
         <div class="container">
             <div id="logo">
                 <a href="/">
-                    <img src="{{ asset('assets-home/img/resto2.png') }}" width="100" height="30" alt=""
-                        class="logo_normal">
+
                     <img src="{{ asset('assets-home/img/resto.png') }}" width="100" height="30" alt=""
                         class="logo_sticky">
                 </a>
