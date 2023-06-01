@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('client_id')->references("id")->on("clients")->onDelete('cascade');
             $table->foreignId("table_id")->references("id")->on("tables")->onDelete('cascade');
+            $table->bigInteger("reservation_tele");
             $table->date("reservation_date");
             $table->time("reservation_time");
             $table->timestamps();

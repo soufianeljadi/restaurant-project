@@ -20,6 +20,7 @@ class Reservation extends Model
        'client_id',
        'table_id',
        'reservation_date',
+       'reservation_tele',
        'reservation_time',
    ];
 

@@ -25,6 +25,7 @@
                                     <th>Numéro de table</th>
                                     <th>Nom du client</th>
                                     <th>E-mail du client</th>
+                                    <th>Téléphone du client</th>
                                     <th>Date de réservation</th>
                                     <th>Heure de réservation</th>
                                     {{-- <th>Contrôle</th> --}}
@@ -36,6 +37,7 @@
                                     <th>Numéro de table</th>
                                     <th>Nom du client</th>
                                     <th>E-mail du client</th>
+                                    <th>Téléphone du client</th>
                                     <th>Date de réservation</th>
                                     <th>Heure de réservation</th>
                                     {{-- <th>Contrôle</th> --}}
@@ -48,6 +50,7 @@
                                         <td>{{ $reservation->table->number }} </td>
                                         <td>{{ $reservation->client->name }} </td>
                                         <td>{{ $reservation->client->email }} </td>
+                                        <td>{{ $reservation->reservation_tele }} </td>
                                         <td>{{ $reservation->reservation_date }} </td>
                                         <td>{{ $reservation->reservation_time }}</td>
                                         <td><a data-toggle="modal"

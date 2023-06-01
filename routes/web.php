@@ -67,7 +67,8 @@ Route::prefix('client')->group(function () {
         Route::get('/profile', [ClientController::class, 'profile'])->name('client.profile');
         Route::post('/update', [ClientController::class, 'update'])->name('client.update');
         Route::post('/reserve', [ClientController::class, 'reserve'])->name('client.reservation.create');
-        Route::post('/confirmed', function(){
+
+        Route::get('/confirmed', function(){
             return view('client.confirm');
         })->name('client.reservation.confirmed');
     });

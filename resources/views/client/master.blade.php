@@ -87,11 +87,10 @@
                     <li>
                         <div class="dropdown user clearfix">
                             <a href="#" data-bs-toggle="dropdown">
-                                {{-- <figure><img src="img/avatar1.jpg" alt=""></figure> --}}                                <figure><img src="{{ asset("img/client_user.png") }}" alt=""></figure>
+                             <figure><img src="{{ asset("img/client_user.png") }}" alt=""></figure>
                                 <figure><img src="{{ asset("img/client_user.png") }}" alt=""></figure>
                                 <span>{{ Auth::guard('client')->user()->name }}</span><br><br>
-
-                                <span>{{ Auth::guard('client')->user()->yums }} Yums</span>&nbsp;&nbsp;
+                                <span>{{ Auth::guard('client')->user()->yums  == 0 ? 0:Auth::guard('client')->user()->yums}} Yums</span>&nbsp;&nbsp;
                             </a></br>
                             <div class="dropdown-menu">
                                 <div class="dropdown-menu-content">

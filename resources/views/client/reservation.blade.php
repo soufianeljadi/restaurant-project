@@ -28,7 +28,8 @@
                         </div>
                         <div class="rating">
                             <div class="score"><span>Nous vous remercions d'avoir choisi notre restaurant pour votre
-                                    prochain repas. Nous serions ravis de vous accueillir <em>{{ $restaurant->name }}</em></span>
+                                    prochain repas. Nous serions ravis de vous accueillir
+                                    <em>{{ $restaurant->name }}</em></span>
                             </div>
                         </div>
                     </div>
@@ -404,10 +405,12 @@
                                 </form> --}}
                                 <!-- /head -->
                                 <input type="hidden" name="client_id" value="{{ Auth::guard('client')->id() }}">
-                                @if (auth()->check() && auth()->guard('client')->user())
+                                <input type="hidden" name="restaurant_id" value="{{ $restaurant->id }}">
 
-                                <input type="hidden" name="yums" value="{{ Auth::guard('client')->user()->yums + $restaurant->yums }}">
-@endif
+
+                                    {{-- <input type="hidden" name="yums"
+                                        value="{{ Auth::guard('client')->user()->yums + $restaurant->yums }}"> --}}
+
                                 <div class="input-group mb-3">
                                     <span class="input-group-text">Date</span>
                                     <input required class="form-control" type="date" name="reservation_date"
@@ -436,14 +439,20 @@
                                 {{-- <input type="hidden" name="restaurant_id" value="{{ $restaurant->id }}"> --}}
                                 <div class="input-group mb-3">
                                     <span class="input-group-text">Combien de personnes?</span>
-                                    <select required class="form-control" id="number_of_people" name="table_id">
+                                    <select required class="form-control " id="number_of_people" name="table_id">
                                         <option value="" disabled selected>sélectionner</option>
                                         @foreach ($restaurant->tables as $table)
                                             @if ($table->status == 'Disponible')
-                                                <option value="{{ $table->id }}">{{ $table->guest_number }}</option>
+                                                <option value="{{ $table->id }}">
+                                                    <strong>{{ $table->guest_number }}</strong> et {{ $table->location }}
+                                                </option>
                                             @endif
                                         @endforeach
                                     </select>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">Téléphone</span>
+                                    <input class="form-control " required type="text" name="reservation_tele">
                                 </div>
 
                                 <button type="submit" class="btn_1 full-width mb_5">Réservez maintenant</button>

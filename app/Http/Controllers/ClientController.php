@@ -28,20 +28,23 @@ class ClientController extends Controller
         $table = Table::findOrFail($request->table_id);
         $table->status = 'Indisponible';
         $table->save();
+        // $client = Client::findOrFail($request->client_id);
         $client = Client::findOrFail($request->client_id);
-        $client->yums = $request->yums;
+        $restaurant = Restaurant::findOrFail($request->restaurant_id);
+        $client->yums = Auth::guard('client')->user()->yums + $restaurant->yums;
         $client->save();
 
         // return $client->yums;
         $reservation = Reservation::create([
             'client_id' => $request->client_id,
             'table_id' => $request->table_id,
+            'reservation_tele' => $request->reservation_tele,
             'reservation_date' => $request->reservation_date,
             'reservation_time' => $request->reservation_time,
             'created_at' => Carbon::now(),
         ]);
         $restaurant = Restaurant::find($request->restaurant_id);
-        return view('client.confirm', ['restaurant' => $restaurant]);
+        return redirect()->route('client.reservation.confirmed')->with(['restaurant' => $restaurant]) ;
     }
     public function clients()
     {
@@ -73,6 +76,8 @@ class ClientController extends Controller
         if (Auth::guard('client')->attempt(['email' => $check['email'], 'password' => $check['password']])) {
             toastr()->success('Connectez-vous avec succès');
             return redirect()->route('view_all');
+
+            
         } else {
             toastr()->error('Email ou mot de passe invalide');
             return back();
