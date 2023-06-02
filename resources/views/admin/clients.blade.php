@@ -21,8 +21,8 @@
                             <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Restaurant</th>
-                                    <th>Statut</th>
+                                    <th>Nom</th>
+                                    <th>Yums</th>
                                     <th>Email</th>
                                     <th>Contrôle</th>
                                 </tr>
@@ -30,8 +30,8 @@
                             <tfoot>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Restaurant</th>
-                                    <th>Statut</th>
+                                    <th>Nom</th>
+                                    <th>Yums</th>
                                     <th>Email</th>
                                     <th>Contrôle</th>
                                 </tr>
@@ -41,7 +41,7 @@
                                     <tr>
                                         <td>{{ $client->id }} </td>
                                         <td>{{ $client->name }} </td>
-                                        <td>{{ $client->status }} </td>
+                                        <td>{{ $client->yums }} </td>
                                         <td>{{ $client->email }}</td>
                                         <td><a data-toggle="modal" href="#detailsModal_{{ $client->id }}"><strong>Modifier</strong></a> | <a data-toggle="modal"
                                                 href="#deleteModal_{{ $client->id }}"><strong>Supprimer</strong></a>

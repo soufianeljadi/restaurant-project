@@ -24,9 +24,10 @@
                                     </g>
                                 </svg>
                             </div>
+                            <a href="/" class="home-icon"><i class="fas fa-arrow-circle-left"></i></a>
                             <h3>Réservation confirmée!</h3>
                             <p>votre réservation effectuée avec succès</p>
-                            <div class="text-center dont-have">retour à  <a href="/">l'accueil</a></div><br>
+                            <div class="text-center dont-have"> <a href="{{ route('client.reservations') }}">En savoir plus</a></div><br>
                         </div>
                     </div>
                 </div>

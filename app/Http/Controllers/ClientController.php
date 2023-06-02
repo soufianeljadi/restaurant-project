@@ -23,6 +23,14 @@ class ClientController extends Controller
         $restaurant = Restaurant::find($request->id);
         return view('client.reservation', ['restaurant' => $restaurant]);
     }
+
+    public function reservations(Request $request)
+    {
+        $client = Auth::guard('client')->user();
+        $reservations = Reservation::where('client_id', $client->id)->get();
+        return view('client.mybooking', ['reservations' => $reservations]);
+    }
+
     public function reserve(Request $request)
     {
         $table = Table::findOrFail($request->table_id);
@@ -34,17 +42,17 @@ class ClientController extends Controller
         $client->yums = Auth::guard('client')->user()->yums + $restaurant->yums;
         $client->save();
 
-        // return $client->yums;
         $reservation = Reservation::create([
             'client_id' => $request->client_id,
             'table_id' => $request->table_id,
             'reservation_tele' => $request->reservation_tele,
+            'reservation_email' => $request->reservation_email,
             'reservation_date' => $request->reservation_date,
             'reservation_time' => $request->reservation_time,
             'created_at' => Carbon::now(),
         ]);
         $restaurant = Restaurant::find($request->restaurant_id);
-        return redirect()->route('client.reservation.confirmed')->with(['restaurant' => $restaurant]) ;
+        return redirect()->route('client.reservation.confirmed')->with(['restaurant' => $restaurant]);
     }
     public function clients()
     {
@@ -76,14 +84,10 @@ class ClientController extends Controller
         if (Auth::guard('client')->attempt(['email' => $check['email'], 'password' => $check['password']])) {
             toastr()->success('Connectez-vous avec succès');
             return redirect()->route('view_all');
-
-            
         } else {
             toastr()->error('Email ou mot de passe invalide');
             return back();
         }
-
-        //return view('restaurant.index');
     }
     public function register()
     {

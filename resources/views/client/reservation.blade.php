@@ -397,19 +397,9 @@
                         <div class="main">
                             <form method="post" action="{{ route('client.reservation.create') }}">
                                 @csrf
-                                {{-- <form method="post" action="{{ route('test') }}">
-                                @csrf
-                                <input type="date" name="date">
-                                    <input type="time" name="time">
-                                <button type="sumbit" >ok</button>
-                                </form> --}}
-                                <!-- /head -->
+
                                 <input type="hidden" name="client_id" value="{{ Auth::guard('client')->id() }}">
                                 <input type="hidden" name="restaurant_id" value="{{ $restaurant->id }}">
-
-
-                                    {{-- <input type="hidden" name="yums"
-                                        value="{{ Auth::guard('client')->user()->yums + $restaurant->yums }}"> --}}
 
                                 <div class="input-group mb-3">
                                     <span class="input-group-text">Date</span>
@@ -451,10 +441,17 @@
                                     </select>
                                 </div>
                                 <div class="input-group mb-3">
-                                    <span class="input-group-text">Téléphone</span>
-                                    <input class="form-control " required type="text" name="reservation_tele">
+                                    <span class="input-group-text">E-mail</span>
+                                    <input class="form-control " required type="email" name="reservation_email"
+                                        @if (Auth::guard('client')->check()) value="{{ Auth::guard('client')->user()->email }}">
+                                        @else
+                                        placeholder="Votre email"> @endif
                                 </div>
-
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">Téléphone</span>
+                                    <input class="form-control " required type="text" name="reservation_tele"
+                                        placeholder="Votre téléphone">
+                                </div>
                                 <button type="submit" class="btn_1 full-width mb_5">Réservez maintenant</button>
                             </form>
                         </div>

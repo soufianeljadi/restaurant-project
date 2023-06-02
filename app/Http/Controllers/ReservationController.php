@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\Restaurant;
 use App\Models\Reservation;
 use App\Models\Client;
@@ -71,8 +72,16 @@ class ReservationController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+
+    public function destroy(Request $request)
     {
-        //
+        $table = Table::findOrFail($request->table_id);
+        $table->status = "Disponible";
+        $table->save();
+        
+        $reservation = Reservation::findOrFail($request->id);
+        $reservation->delete();
+        toastr()->error('La reservation a été bien supprimé !', " ");
+        return redirect()->route("client.reservations");
     }
 }

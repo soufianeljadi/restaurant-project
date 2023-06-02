@@ -22,7 +22,7 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>Restaurant</th>
-                                    <th>Statut</th>
+                                    <th>Yums</th>
                                     <th>Email</th>
                                     <th>Contrôle</th>
                                 </tr>
@@ -31,7 +31,7 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>Restaurant</th>
-                                    <th>Statut</th>
+                                    <th>Yums</th>
                                     <th>Email</th>
                                     <th>Contrôle</th>
                                 </tr>
@@ -41,7 +41,7 @@
                                     <tr>
                                         <td>{{ $restaurant->id }} </td>
                                         <td>{{ $restaurant->name }} </td>
-                                        <td>{{ $restaurant->status }} </td>
+                                        <td>{{ $restaurant->yums }} </td>
                                         <td>{{ $restaurant->email }}</td>
                                         <td><a data-toggle="modal" href="#detailsModal_{{ $restaurant->id }}"><strong>Modifier
                                                     </strong></a> | <a data-toggle="modal"
@@ -84,11 +84,12 @@
                                                     <input type="text" name="email"
                                                         class="form-control"
                                                         value="{{ $restaurant->email }}"></br>
-
-                                                    <label>Status du resto</label>
-                                                    <input type="text" name="status"
+                                                    <label>Yums du resto</label>
+                                                    <input type="text" name="yums"
                                                         class="form-control"
-                                                        value="{{ $restaurant->status }}"></br>
+                                                        value="{{ $restaurant->yums }}"></br>
+
+
                                                         <input type="hidden" name="id" value="{{ $restaurant->id }}">
                                                         <input type="submit"class="btn btn-success" value="Modifier" href="{{ route('restaurant.update') }} ">
                                                         </form>

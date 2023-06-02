@@ -86,9 +86,10 @@
                     <li>
                         <div class="dropdown user clearfix">
                             <a href="#" data-bs-toggle="dropdown">
-                                <figure><img src="{{ asset("img/client_user.png") }}" alt=""></figure>
+                                <figure><img src="{{ asset('img/client_user.png') }}" alt=""></figure>
                                 <span>{{ Auth::guard('client')->user()->name }}</span><br><br>
-                                <span>{{ Auth::guard('client')->user()->yums  == 0 ? 0:Auth::guard('client')->user()->yums}} Yums</span>&nbsp;&nbsp;
+                                <span>{{ Auth::guard('client')->user()->yums == 0 ? 0 : Auth::guard('client')->user()->yums }}
+                                    Yums</span>&nbsp;&nbsp;
                             </a></br>
                             <div class="dropdown-menu">
                                 <div class="dropdown-menu-content">
@@ -122,34 +123,38 @@
 
                     <li class="submenu">
                         @guest('client')
-                        <a href="#0" class="show-submenu">Connexion</a>
-                        <ul>
-                            <li class="third-level"><a href="#0">Espace <strong>Client!</strong></a>
-                                <ul>
-                                    <li><a href="{{ route('client_login_form') }}">Connexion</a></li>
-                                    <li><a href="{{ route('client.register') }}">Créer un compte</a></li>
+                            <a href="#0" class="show-submenu">Connexion</a>
+                            <ul>
+                                <li class="third-level"><a href="#0">Espace <strong>Client!</strong></a>
+                                    <ul>
+                                        <li><a href="{{ route('client_login_form') }}">Connexion</a></li>
+                                        <li><a href="{{ route('client.register') }}">Créer un compte</a></li>
 
-                                </ul>
-                            </li>
-                            <li class="third-level"><a href="#0">Espace <strong>Restaurant!</strong></a>
-                                <ul>
-                                    <li><a href="{{ route('login_form') }}">Connexion</a></li>
-                                    <li><a href="{{ route('restaurant.register') }}">Registre votre restaurant</a></li>
+                                    </ul>
+                                </li>
+                                <li class="third-level"><a href="#0">Espace <strong>Restaurant!</strong></a>
+                                    <ul>
+                                        <li><a href="{{ route('login_form') }}">Connexion</a></li>
+                                        <li><a href="{{ route('restaurant.register') }}">Registre votre restaurant</a></li>
 
-                                </ul>
-                            </li>
-                            <li class="third-level"><a href="#0">Espace <strong>Admin!</strong></a>
-                                <ul>
-                                    <li><a href="{{ route('admin_login_form') }}">Connexion</a></li>
+                                    </ul>
+                                </li>
+                                <li class="third-level"><a href="#0">Espace <strong>Admin!</strong></a>
+                                    <ul>
+                                        <li><a href="{{ route('admin_login_form') }}">Connexion</a></li>
 
 
-                                </ul>
-                            </li>
-                        </ul>
-                    <li><a href="{{ route('restaurant.register') }}" target="_parent">Pourquoi Resto ?</a></li>
-                    <li><a href="{{ route('view_all') }}" target="_parent">Découvrez les restaurants</a></li>
-                    </li>
-                    @endguest
+                                    </ul>
+                                </li>
+                            </ul>
+                        <li><a href="{{ route('restaurant.register') }}" target="_parent">Pourquoi Resto ?</a></li>
+                        <li><a href="{{ route('view_all') }}" target="_parent">Découvrez les restaurants</a></li>
+                        @endguest
+                        @auth('client')
+                        <li><a href="{{ route('client.reservations') }}" target="_parent">Mes reservations</a></li>
+                        </li>
+                    @endauth
+
 
 
                 </ul>

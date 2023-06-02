@@ -64,6 +64,7 @@
     <link href="#" id="colors" rel="stylesheet">
     <!-- SPECIFIC CSS -->
     <link href="{{ asset('assets-home/css/booking-sign_up.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets-home/css/detail-page.css') }}" rel="stylesheet">
 </head>
 
 <body>
@@ -87,10 +88,11 @@
                     <li>
                         <div class="dropdown user clearfix">
                             <a href="#" data-bs-toggle="dropdown">
-                             <figure><img src="{{ asset("img/client_user.png") }}" alt=""></figure>
-                                <figure><img src="{{ asset("img/client_user.png") }}" alt=""></figure>
+                                <figure><img src="{{ asset('img/client_user.png') }}" alt=""></figure>
+                                <figure><img src="{{ asset('img/client_user.png') }}" alt=""></figure>
                                 <span>{{ Auth::guard('client')->user()->name }}</span><br><br>
-                                <span>{{ Auth::guard('client')->user()->yums  == 0 ? 0:Auth::guard('client')->user()->yums}} Yums</span>&nbsp;&nbsp;
+                                <span>{{ Auth::guard('client')->user()->yums == 0 ? 0 : Auth::guard('client')->user()->yums }}
+                                    Yums</span>&nbsp;&nbsp;
                             </a></br>
                             <div class="dropdown-menu">
                                 <div class="dropdown-menu-content">
@@ -124,35 +126,37 @@
 
                     <li class="submenu">
                         @guest('client')
-                        <a href="#0" class="show-submenu">Connexion</a>
-                        <ul>
-                            <li class="third-level"><a href="#0">Espace <strong>Client!</strong></a>
-                                <ul>
-                                    <li><a href="{{ route('client_login_form') }}">Connexion</a></li>
-                                    <li><a href="{{ route('client.register') }}">Créer un compte</a></li>
+                            <a href="#0" class="show-submenu">Connexion</a>
+                            <ul>
+                                <li class="third-level"><a href="#0">Espace <strong>Client!</strong></a>
+                                    <ul>
+                                        <li><a href="{{ route('client_login_form') }}">Connexion</a></li>
+                                        <li><a href="{{ route('client.register') }}">Créer un compte</a></li>
 
-                                </ul>
-                            </li>
-                            <li class="third-level"><a href="#0">Espace <strong>Restaurant!</strong></a>
-                                <ul>
-                                    <li><a href="{{ route('login_form') }}">Connexion</a></li>
-                                    <li><a href="{{ route('restaurant.register') }}">Registre votre restaurant</a></li>
+                                    </ul>
+                                </li>
+                                <li class="third-level"><a href="#0">Espace <strong>Restaurant!</strong></a>
+                                    <ul>
+                                        <li><a href="{{ route('login_form') }}">Connexion</a></li>
+                                        <li><a href="{{ route('restaurant.register') }}">Registre votre restaurant</a></li>
 
-                                </ul>
-                            </li>
-                            <li class="third-level"><a href="#0">Espace <strong>Admin!</strong></a>
-                                <ul>
-                                    <li><a href="{{ route('admin_login_form') }}">Connexion</a></li>
+                                    </ul>
+                                </li>
+                                <li class="third-level"><a href="#0">Espace <strong>Admin!</strong></a>
+                                    <ul>
+                                        <li><a href="{{ route('admin_login_form') }}">Connexion</a></li>
 
 
-                                </ul>
-                            </li>
-                        </ul>
-                    <li><a href="{{ route('restaurant.register') }}" target="_parent">Pourquoi Resto ?</a></li>
-                    <li><a href="{{ route('view_all') }}" target="_parent">Découvrez les restaurants</a></li>
-                    </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        <li><a href="{{ route('restaurant.register') }}" target="_parent">Pourquoi Resto ?</a></li>
+                        <li><a href="{{ route('view_all') }}" target="_parent">Découvrez les restaurants</a></li>
                     @endguest
-
+                    @auth('client')
+                        <li><a href="{{ route('client.reservations') }}" target="_parent">Mes reservations</a></li>
+                        </li>
+                    @endauth
 
                 </ul>
             </nav>
@@ -163,8 +167,8 @@
 
         @yield('client')
 
-       </div>
-       <!-- /Page Wrapper -->
+    </div>
+    <!-- /Page Wrapper -->
     <footer>
         <div class="container">
             <div class="row">
@@ -172,7 +176,8 @@
                     <h3 data-bs-target="#collapse_1">Liens rapides</h3>
                     <div class="collapse dont-collapse-sm links" id="collapse_1">
                         <ul>
-                            <li><a href="{{ route('restaurant.register') }}">Êtes-vous un restaurant ? Pourquoi soumettre à
+                            <li><a href="{{ route('restaurant.register') }}">Êtes-vous un restaurant ? Pourquoi
+                                    soumettre à
                                     Resto?</a></li>
                             <li><a href="{{ route('view_all') }}">Découvrez les restaurants disponibles</a></li>
                             {{-- <li><a href="help.html">Help</a></li>
@@ -247,13 +252,26 @@
     <!-- SPECIFIC SCRIPTS -->
     <script src="{{ asset('assets-home/js/sticky_sidebar.min.js') }}"></script>
     <script src="{{ asset('assets-home/js/specific_detail.js') }}"></script>
-	<script src="{{ asset('assets-home/js/datepicker.min.js') }}"></script>
-	<script src="{{ asset('assets-home/js/datepicker_func_1.js') }}"></script>
+    <script src="{{ asset('assets-home/js/datepicker.min.js') }}"></script>
+    <script src="{{ asset('assets-home/js/datepicker_func_1.js') }}"></script>
     <!-- COMMON SCRIPTS -->
     <script src="{{ asset('assets-home/js/common_scripts.min.js') }}"></script>
     <script src="{{ asset('assets-home/js/common_func.js') }}"></script>
     <script src="{{ asset('assets-home/assets/validate.js') }}"></script>
-
+    <!-- Bootstrap core JavaScript-->
+    <script src="{{ asset('assets-admin/vendor/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('assets-admin/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="{{ asset('assets-admin/vendor/jquery-easing/jquery.easing.min.js') }}"></script>
+    <!-- Page level plugin JavaScript-->
+    <script src="{{ asset('assets-admin/vendor/chart.js/Chart.js') }}"></script>
+    <script src="{{ asset('assets-admin/vendor/datatables/jquery.dataTables.js') }}"></script>
+    <script src="{{ asset('assets-admin/vendor/datatables/dataTables.bootstrap4.js') }}"></script>
+    <script src="{{ asset('assets-admin/vendor/jquery.magnific-popup.min.js') }}"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="{{ asset('assets-admin/js/admin.js') }}"></script>
+    <!-- Custom scripts for this page-->
+    <script src="{{ asset('assets-admin/js/admin-charts.js') }}"></script>
 
     <!-- TYPE EFFECT -->
     <script src="{{ asset('assets-home/js/typed.min.js') }}"></script>
