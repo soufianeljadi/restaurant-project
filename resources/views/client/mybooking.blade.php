@@ -75,6 +75,8 @@
                                     <form action="{{ route('reservation.delete') }}" method="POST">
                                         @csrf
                                         <input type="hidden" name="id" value="{{ $reservation->id }}">
+                                        <input type="hidden" name="client_id" value="{{ $reservation->client->id }}">
+                                        <input type="hidden" name="restaurant_id" value="{{ $reservation->table->restaurant->id }}">
                                         <input type="hidden" name="table_id" value="{{ $reservation->table->id }}">
                                         <input type="submit"class="btn btn-danger" value="Supprimer"
                                             href="{{ route('restaurant.delete') }} ">

@@ -75,10 +75,16 @@ class ReservationController extends Controller
 
     public function destroy(Request $request)
     {
+
         $table = Table::findOrFail($request->table_id);
         $table->status = "Disponible";
         $table->save();
-        
+
+        $restaurant = Restaurant::findOrFail($request->restaurant_id);
+        $client = Client::findOrFail($request->client_id);
+        $client->yums = $client->yums - $restaurant->yums ;
+        $client->save();
+
         $reservation = Reservation::findOrFail($request->id);
         $reservation->delete();
         toastr()->error('La reservation a été bien supprimé !', " ");
