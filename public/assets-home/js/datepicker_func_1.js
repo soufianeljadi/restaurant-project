@@ -21,9 +21,6 @@ $('#DatePicker').datepicker({
             return [true, '', ''];
         }
     },
-
-
-
 });
 
 function updateDatePickerCells(a, b) {

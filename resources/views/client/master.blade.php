@@ -13,13 +13,14 @@
     <link rel="shortcut icon" href="{{ asset('img/favicon.ico') }}" type="image/x-icon">
     <link rel="apple-touch-icon" type="image/x-icon" href="{{ asset('img/favicon.ico') }}"> --}}
 
-
     <!-- GOOGLE WEB FONT -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
-    <link rel="preload" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap"
+    <link rel="preload" href="https://fonts.
+    googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap"
         as="fetch" crossorigin="anonymous">
+
     <script type="text/javascript">
         ! function(e, n, t) {
             "use strict";
@@ -58,10 +59,6 @@
     <link href="{{ asset('assets-home/css/home.css') }}" rel="stylesheet">
     <link href="{{ asset('assets-home/css/detail-page.css') }}" rel="stylesheet">
     <link href="{{ asset('assets-home/css/booking-sign_up.css') }}" rel="stylesheet">
-
-
-    <!-- ALTERNATIVE COLORS CSS -->
-    <link href="#" id="colors" rel="stylesheet">
     <!-- SPECIFIC CSS -->
     <link href="{{ asset('assets-home/css/booking-sign_up.css') }}" rel="stylesheet">
     <link href="{{ asset('assets-home/css/detail-page.css') }}" rel="stylesheet">
@@ -254,6 +251,8 @@
     <script src="{{ asset('assets-home/js/specific_detail.js') }}"></script>
     <script src="{{ asset('assets-home/js/datepicker.min.js') }}"></script>
     <script src="{{ asset('assets-home/js/datepicker_func_1.js') }}"></script>
+
+
     <!-- COMMON SCRIPTS -->
     <script src="{{ asset('assets-home/js/common_scripts.min.js') }}"></script>
     <script src="{{ asset('assets-home/js/common_func.js') }}"></script>

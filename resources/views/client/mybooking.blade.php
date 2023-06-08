@@ -29,7 +29,9 @@
                             <strong>Table</strong>
                             {{-- <h4>Reservation date </h4> --}}
                             <p>Numéro : {{ $reservation->table->number }} <br> Emplacement :
-                                {{ $reservation->table->location }}</p>
+                                {{ $reservation->table->location }}
+                             <br> Nombre des personnes :
+                                {{ $reservation->table->guest_number }}</p>
                             <p></p>
                         </div>
                         <div class="menu_item">

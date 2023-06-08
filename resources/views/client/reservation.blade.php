@@ -397,17 +397,120 @@
                         <div class="main">
                             <form method="post" action="{{ route('client.reservation.create') }}">
                                 @csrf
-
                                 <input type="hidden" name="client_id" value="{{ Auth::guard('client')->id() }}">
                                 <input type="hidden" name="restaurant_id" value="{{ $restaurant->id }}">
 
                                 <div class="input-group mb-3">
                                     <span class="input-group-text">Date</span>
-                                    <input required class="form-control" type="date" name="reservation_date"
+                                    <input required class="form-control date-input" type="date" name="reservation_date"
                                         min="{{ date('Y-m-d') }}">
                                 </div>
 
-                                <div class="input-group mb-3">
+
+                                <input type="text" id="datepicker_field">
+                                <div id="DatePicker"></div>
+
+                                <div class="dropdown time">
+                                    <a href="#" data-bs-toggle="dropdown">Heure <span id="selected_time"></span></a>
+                                    <div class="dropdown-menu">
+                                        <div class="dropdown-menu-content">
+                                            <h4>Déjeuner</h4>
+                                            <div class="radio_select add_bottom_15">
+                                                <ul>
+                                                    <li>
+                                                        <input type="radio" id="time_1" name="reservation_time"
+                                                            value="12:00:00">
+                                                        <label for="time_1">12.00<em>PM</em></label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="radio" id="time_2" name="reservation_time"
+                                                            value="12:30:00">
+                                                        <label for="time_2">12.30<em>PM</em></label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="radio" id="time_3" name="reservation_time"
+                                                            value="13:00:00">
+                                                        <label for="time_3">1.00 <em>PM</em></label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="radio" id="time_4" name="reservation_time"
+                                                            value="13:30:00">
+                                                        <label for="time_4">1.30 <em>PM</em></label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="radio" id="time_5" name="reservation_time"
+                                                            value="14:00:00">
+                                                        <label for="time_5">2.00 <em>PM</em></label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="radio" id="time_6" name="reservation_time"
+                                                            value="14:30:00">
+                                                        <label for="time_6">2.30 <em>PM</em></label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="radio" id="time_7" name="reservation_time"
+                                                            value="15:00:00">
+                                                        <label for="time_7">3.00 <em>PM</em></label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="radio" id="time_8" name="reservation_time"
+                                                            value="15:30:00">
+                                                        <label for="time_8">3.30 <em>PM</em></label>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <!-- /time_select -->
+                                            <h4>Dîner</h4>
+                                            <div class="radio_select add_bottom_15">
+                                                <ul>
+                                                    <li>
+                                                        <input type="radio" id="time_11" name="reservation_time"
+                                                            value="20:00:00">
+                                                        <label for="time_11">8.00<em>PM</em></label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="radio" id="time_12" name="reservation_time"
+                                                            value="20:30:00">
+                                                        <label for="time_12">8.30<em>PM</em></label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="radio" id="time_13" name="reservation_time"
+                                                            value="21:00:00">
+                                                        <label for="time_13">9.00<em>PM</em></label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="radio" id="time_14" name="reservation_time"
+                                                            value="21:30:00">
+                                                        <label for="time_14">9.30<em>PM</em></label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="radio" id="time_15" name="reservation_time"
+                                                            value="22:00:00">
+                                                        <label for="time_15">10.00<em>PM</em></label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="radio" id="time_16" name="reservation_time"
+                                                            value="22:30:00">
+                                                        <label for="time_16">10.30<em>PM</em></label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="radio" id="time_17" name="reservation_time"
+                                                            value="23:00:00">
+                                                        <label for="time_17">11.00<em>PM</em></label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="radio" id="time_18" name="reservation_time"
+                                                            value="23:30:00">
+                                                        <label for="time_18">11.30<em>PM</em></label>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <!-- /time_select -->
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {{-- <div class="input-group mb-3">
                                     <span class="input-group-text">Heure</span>
                                     <select required class="form-select" name="reservation_time">
                                         <option value="" disabled selected>sélectionner</option>
@@ -424,10 +527,67 @@
                                             <option value="09:30:00">21.30 PM</option>
                                         </optgroup>
                                     </select>
-                                </div>
+                                </div> --}}
+                                <div class="dropdown people">
+                                    <a href="#" data-bs-toggle="dropdown">Personne <span
+                                            id="selected_people"></span></a>
+                                    <div class="dropdown-menu">
+                                        <div class="dropdown-menu-content">
+                                            <h4>Combien de personnes?</h4>
+                                            <div class="radio_select">
+                                                <ul>
+                                                    {{-- @foreach ($restaurant->tables->where('status', '=', 'Disponible')->groupBy('guest_number') as $table)
+                                                        @if ($table->count() > 1)
+                                                            <p>{{ $table[0]->guest_number }} </p>
 
+                                                            {{-- @foreach ($table as $x)
+                                                                <p>{{ $x->guest_number }} / {{ $x->number }}</p>
+                                                            @endforeach --}}
+                                                    {{-- @else
+                                                            <p>{{ $table[0]->guest_number }}/{{ $table[0]->number }}</p> --}}
+                                                    {{-- <p>{{ $table->location }}</p> --}}
+                                                    {{-- <p>{{ $table->count() }}</p> --}}
+                                                    {{-- <p>{{ $table->count() }}</p> --}}
+                                                    {{-- @endif
+                                                    @endforeach --}}
+
+
+                                                    @foreach ($restaurant->tables->where('status', '=', 'Disponible')->groupBy('guest_number') as $table)
+                                                        @if ($table->count() > 1 && $table[0]->location != $table[1]->location )
+                                                            <li>
+                                                                <input type="radio" id="people_{{ $table[0]->id }}"
+                                                                    name="table_id" value="{{ $table[0]->id }}">
+                                                                <label
+                                                                    for="people_{{ $table[0]->id }}">{{ $table[0]->guest_number }}<em>{{ $table[0]->location }}</em>
+                                                                </label>
+                                                            </li>
+                                                            <li>
+                                                                <input type="radio" id="people_{{ $table[1]->id }}"
+                                                                    name="table_id" value="{{ $table[1]->id }}">
+                                                                <label
+                                                                    for="people_{{ $table[1]->id }}">{{ $table[1]->guest_number }}<em>{{ $table[1]->location }}</em>
+                                                                </label>
+                                                            </li>
+
+                                                            @else
+                                                            <li>
+                                                                <input type="radio" id="people_{{ $table[0]->id }}"
+                                                                    name="table_id" value="{{ $table[0]->id }}">
+                                                                <label
+                                                                    for="people_{{ $table[0]->id }}">{{ $table[0]->guest_number }}<em>{{ $table[0]->location }}</em>
+                                                                </label>
+                                                            </li>
+                                                        @endif
+                                                    @endforeach
+                                                </ul>
+                                            </div>
+                                            <!-- /people_select -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /dropdown -->
                                 {{-- <input type="hidden" name="restaurant_id" value="{{ $restaurant->id }}"> --}}
-                                <div class="input-group mb-3">
+                                {{-- <div class="input-group mb-3">
                                     <span class="input-group-text">Combien de personnes?</span>
                                     <select required class="form-control " id="number_of_people" name="table_id">
                                         <option value="" disabled selected>sélectionner</option>
@@ -439,20 +599,20 @@
                                             @endif
                                         @endforeach
                                     </select>
-                                </div>
+                                </div> --}}
                                 <div class="input-group mb-3">
                                     <span class="input-group-text">E-mail</span>
                                     <input class="form-control " required type="email" name="reservation_email"
                                         @if (Auth::guard('client')->check()) value="{{ Auth::guard('client')->user()->email }}">
                                         @else
                                         placeholder="Votre email"> @endif
-                                </div>
-                                <div class="input-group mb-3">
-                                    <span class="input-group-text">Téléphone</span>
-                                    <input class="form-control " required type="text" name="reservation_tele"
-                                        placeholder="Votre téléphone">
-                                </div>
-                                <button type="submit" class="btn_1 full-width mb_5">Réservez maintenant</button>
+                                        </div>
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text">Téléphone</span>
+                                        <input class="form-control " required type="text" name="reservation_tele"
+                                            placeholder="Votre téléphone">
+                                    </div>
+                                    <button type="submit" class="btn_1 full-width mb_5">Réservez maintenant</button>
                             </form>
                         </div>
                     </div>
@@ -476,4 +636,70 @@
         <!-- /container -->
 
     </main>
+    <script>
+        // Datepicker
+        var dates = {}
+        dates[new Date('10/23/2019')] = '-40%';
+        dates[new Date('12/14/2019')] = '-20%';
+        dates[new Date('01/25/2020')] = '-30%';
+
+        $('#DatePicker').datepicker({
+            showButtonPanel: false,
+            inline: true,
+            altField: '#datepicker_field',
+            minDate: 0,
+            beforeShowDay: function(date) {
+
+                var hlText = dates[date];
+                var date2 = new Date(date);
+                var tglAja = date2.getDate();
+                if (hlText) {
+                    updateDatePickerCells(tglAja, hlText);
+                    return [true, "", hlText];
+                } else {
+                    return [true, '', ''];
+                }
+            },
+        });
+
+        function updateDatePickerCells(a, b) {
+
+            var num = parseInt(a);
+
+            setTimeout(function() {
+
+                $('.ui-datepicker td > *').each(function(idx, elem) {
+
+                    if ((idx + 1) == num) {
+                        value = b;
+                    } else {
+                        value = 0;
+                    }
+
+                    var className = 'datepicker-content-' + CryptoJS.MD5(value).toString();
+
+                    if (value == 0)
+                        addCSSRule('.ui-datepicker td a.' + className +
+                            ':after {content: "\\a0";}'); //&nbsp;
+                    else
+                        addCSSRule('.ui-datepicker td a.' + className + ':after {content: "' + value +
+                            '";}');
+
+                    $(this).addClass(className);
+                });
+            }, 0);
+        }
+        var dynamicCSSRules = [];
+
+        function addCSSRule(rule) {
+            if ($.inArray(rule, dynamicCSSRules) == -1) {
+                $('head').append('<style>' + rule + '</style>');
+                dynamicCSSRules.push(rule);
+            }
+        }
+
+        $('#datepicker_field').on('change', function() {
+            $('#DatePicker').datepicker('setDate', $(this).val());
+        });
+    </script>
 @endsection

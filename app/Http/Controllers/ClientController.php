@@ -21,6 +21,8 @@ class ClientController extends Controller
     public function book(Request $request)
     {
         $restaurant = Restaurant::find($request->id);
+        // $restaurant = $restaurant->tables->where('status',"=",'Disponible')->groupBy('guest_number');
+// return $restaurant;
         return view('client.reservation', ['restaurant' => $restaurant]);
     }
 
