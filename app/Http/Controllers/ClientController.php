@@ -24,10 +24,11 @@ class ClientController extends Controller
         $tableCount = Table::whereHas('restaurant', function ($query) use ($restaurant) {
             $query->where('restaurant_id', $restaurant->id);
         })->count();
+        $comments = $restaurant->comments;
         // return $tableCount;
         // $restaurant = $restaurant->tables->where('status',"=",'Disponible')->groupBy('guest_number');
 // return $restaurant;
-        return view('client.reservation', ['restaurant' => $restaurant],compact('tableCount'));
+        return view('client.reservation', ['restaurant' => $restaurant],compact('tableCount','comments'));
     }
 
     public function reservations(Request $request)
@@ -43,11 +44,12 @@ class ClientController extends Controller
         // $table->status = 'Indisponible';
         $existingReservation = Reservation::where('table_id', $table->id)
         ->where('reservation_date', $request->reservation_date)
+        ->where('reservation_time', $request->reservation_time)
         ->first();
 
     if ($existingReservation) {
         // Table is already reserved on the requested date, handle the error
-        return redirect()->back()->with('error', 'La table est déjà réservée à cette date.');
+        return redirect()->back()->with('error', 'La table est déjà réservée à cette date et heure.');
     }
         $table->save();
         // $client = Client::findOrFail($request->client_id);

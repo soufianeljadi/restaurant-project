@@ -23,7 +23,7 @@
                             <h5>{{ $restaurant->location }}</h5>
                             <h5>{{ $restaurant->description }}</h5>
                             {{-- <a href="https://www.google.com/maps/dir//Assistance+%E2%80%93+H%C3%B4pitaux+De+Paris,+3+Avenue+Victoria,+75004+Paris,+Francia/@48.8606548,2.3348734,14z/data=!4m15!1m6!3m5!1s0x47e66e1de36f4147:0xb6615b4092e0351f!2sAssistance+Publique+-+H%C3%B4pitaux+de+Paris+(AP-HP)+-+Si%C3%A8ge!8m2!3d48.8568376!4d2.3504305!4m7!1m0!1m5!1m1!1s0x47e67031f8c20147:0xa6a9af76b1e2d899!2m2!1d2.3504327!2d48.8568361" target="blank">Get directions</a> --}}
-                            {{-- <ul class="tags">
+                        {{-- <ul class="tags">
                             <li><a href="#0">Pizza</a></li>
                             <li><a href="#0">Italian Food</a></li>
                             <li><a href="#0">Best Price</a></li>
@@ -31,7 +31,7 @@
                         {{-- </div>  --}}
 
                     </div>
-                    <br><br>
+
                     <div class="tab-content" role="tablist">
                         <div class="card-body info_content">
                             <div class="other_info">
@@ -40,35 +40,79 @@
 
                                     <div class="col-md-4">
                                         <h3>Plus à propos de {{ $restaurant->name }}</h3>
-                                        <p><strong>Description </strong><br> {{ $restaurant->description }}
-                                        <p>
+                                        <p><strong>Description </strong><br> {{ $restaurant->description }}</p>
                                         <p><strong>Table</strong><br> Plus de {{ $tableCount }}</p>
+                                        <p><strong>Yums offre</strong><br><span class="loc_closed">+ {{ $restaurant->yums }} yums</span></p>
+
                                     </div>
                                     <div class="col-md-4">
-                                        <h3>Address</h3>
-                                        <p>{{ $restaurant->location }}<br>
-
+                                        <h3></h3><br>
+                                            <p><strong>Address </strong><br>{{ $restaurant->location }}</p>
                                             {{-- <a target="blank"><strong>Get directions</strong></a></p> --}}
-                                        {{-- <strong>Follow Us</strong><br> --}}
+                                            {{-- <strong>Follow Us</strong><br> --}}
 
                                     </div>
                                     <div class="col-md-4">
                                         {{-- <h3>Services</h3>
                                         <p><strong>Credit Cards</strong><br> Mastercard, Visa, Amex</p>
                                         <p><strong>Other</strong><br> Wifi, Parking, Wheelchair Accessible</p> --}}
-                                        <p><span class="loc_closed">+ {{ $restaurant->yums }} yums</span></p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="detail_page_head clearfix">
-                    <div class="rating">
-                        <div class="score"><span>Nous vous remercions d'avoir choisi notre restaurant pour votre
-                                prochain repas. Nous serions ravis de vous accueillir
-                                <em>{{ $restaurant->name }}</em></span>
+                        <div class="rating">
+                            <div class="score"><span>Nous vous remercions d'avoir choisi notre restaurant pour votre
+                                    prochain repas. Nous serions ravis de vous accueillir
+                                    <em>{{ $restaurant->name }}</em></span>
+                            </div>
                         </div>
-                    </div>
+                        <br>
+                        {{-- <form action="{{ route('comments.store') }}" method="POST">
+                            @csrf
+                            <input type="hidden" name="restaurant_id" value="{{ $restaurant->id }}">
+                            <input type="hidden" name="client_id" value="{{ Auth::guard('client')->id() }}">
+                            <textarea name="comment" rows="4" required></textarea>
+                            <button type="submit">Submit Comment</button>
+                        </form> --}}
+                        <!-- index.blade.php -->
+
+                        <hr>
+                        <div class="box_general write_review">
+                            <div class="form-group">
+                                <form action="{{ route('comments.store') }}" method="POST">
+                                    @csrf
+                                    <input type="hidden" name="restaurant_id" value="{{ $restaurant->id }}">
+                                    <input type="hidden" name="client_id" value="{{ Auth::guard('client')->id() }}">
+                                    <label>Votre avis</label>
+                                    <textarea name="comment" required class="form-control" style="height: 100px;"
+                                        placeholder="Rédigez votre avis pour aider les autres à en savoir plus sur cette entreprise en ligne"></textarea>
+                                    <button type="submit" class="btn_1" style="text-align: left">Poster le commentaire</button><br>
+                                </form>
+                            </div>
+                            <br><label>Commentaires</label>
+                        </div>
+                        @foreach ($comments as $comment)
+                        <div class="review_card">
+                            <div class="row">
+                                <div class="col-md-2 user_info">
+                                        <figure><img src="{{ asset('img/client_user.png') }}" alt=""></figure>
+                                        <h5>{{ $comment->client->name }}</h5>
+                                </div>
+                                <div class="col-md-10 review_content">
+                                    <div class="clearfix add_bottom_15">
+                                        {{-- <span class="rating">8.5<small>/10</small> <strong>Rating average</strong></span> --}}
+                                        <em>{{ $comment->created_at }}</em>
+                                    </div>
+                                    <h4>{{ $comment->client->name }}</h4>
+                                    <p>{{ $comment->comment }}</p>
+
+                                </div>
+                            </div>
+                            <!-- /row -->
+                        </div>
+                        @endforeach
                     </div>
                 </div>
                 <!-- /col -->

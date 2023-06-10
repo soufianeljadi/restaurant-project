@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RestaurantController;
@@ -53,7 +54,8 @@ Route::prefix('restaurant')->group(function () {
 /*------------------------------Client routes----------------------------------- */
 Route::prefix('client')->group(function () {
 
-    Route::get('/book/{id}', [ClientController::class,'book'])->name('book');
+    Route::get('/book/{id}', [ClientController::class, 'book'])->name('book');
+
     //Auth ROUTES
     Route::get('/login', [ClientController::class, 'login'])->name('client_login_form');
     Route::post('/connect', [ClientController::class, 'connect'])->name('client.login');
@@ -62,6 +64,7 @@ Route::prefix('client')->group(function () {
     //middleware ROUTES
     Route::middleware(['Client'])->group(function () {
 
+        Route::post('/comments', [CommentController::class, 'store'])->name('comments.store');
         Route::get('/logout', [ClientController::class, 'logout'])->name('client.logout');
         Route::get('/dashboard', [ClientController::class, 'dashboard'])->name('client.dashboard');
         Route::get('/profile', [ClientController::class, 'profile'])->name('client.profile');
@@ -71,7 +74,7 @@ Route::prefix('client')->group(function () {
         Route::post('/destroy-reservation', [ReservationController::class, 'destroy'])->name('reservation.delete');
 
 
-        Route::get('/confirmed', function(){
+        Route::get('/confirmed', function () {
             return view('client.confirm');
         })->name('client.reservation.confirmed');
     });
@@ -116,7 +119,7 @@ Route::get('/', function () {
 Route::get('/restaurants', function () {
     $nbr_resto = Restaurant::count();
     $restaurants = Restaurant::all();
-    return view('view_all', compact("restaurants","nbr_resto" ));
+    return view('view_all', compact("restaurants", "nbr_resto"));
 })->name('view_all');
 
 

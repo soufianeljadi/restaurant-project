@@ -30,7 +30,10 @@ class Restaurant extends Authenticatable
     {
         return $this->hasMany(Table::class);
     }
-
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
     /**
      * The attributes that should be hidden for serialization.
      *

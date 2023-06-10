@@ -31,7 +31,10 @@ class Client extends Authenticatable
    public function reservations(){
     return $this->hasMany(Reservation::class);
    }
-
+   public function comments()
+   {
+       return $this->hasMany(Comment::class);
+   }
    protected $casts = [
     'email_verified_at' => 'datetime',
 ];
