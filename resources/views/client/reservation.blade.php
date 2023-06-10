@@ -57,7 +57,6 @@
                                         <p><strong>Credit Cards</strong><br> Mastercard, Visa, Amex</p>
                                         <p><strong>Other</strong><br> Wifi, Parking, Wheelchair Accessible</p> --}}
                                         <p><span class="loc_closed">+ {{ $restaurant->yums }} yums</span></p>
-
                                     </div>
                                 </div>
                             </div>

@@ -77,7 +77,7 @@ class ReservationController extends Controller
     {
 
         $table = Table::findOrFail($request->table_id);
-        $table->status = "Disponible";
+        // $table->status = "Disponible";
         $table->save();
 
         $restaurant = Restaurant::findOrFail($request->restaurant_id);

@@ -40,7 +40,15 @@ class ClientController extends Controller
     public function reserve(Request $request)
     {
         $table = Table::findOrFail($request->table_id);
-        $table->status = 'Indisponible';
+        // $table->status = 'Indisponible';
+        $existingReservation = Reservation::where('table_id', $table->id)
+        ->where('reservation_date', $request->reservation_date)
+        ->first();
+
+    if ($existingReservation) {
+        // Table is already reserved on the requested date, handle the error
+        return redirect()->back()->with('error', 'La table est déjà réservée à cette date.');
+    }
         $table->save();
         // $client = Client::findOrFail($request->client_id);
         $client = Client::findOrFail($request->client_id);
